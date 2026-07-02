@@ -1,0 +1,38 @@
+{
+	"id": "jackie",
+	"name": "Jackie",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Jackie shells peas without looking at her hands, watching you instead with a frank, amused appraisal. \"The boy the Virgin caught,\" she says. \"Sit. Eat. You've got the look of somebody about to ask a question he thinks is crazy.\"",
+			"options": [
+				{ "text": "\"Who is Vyèj Mirak? Really?\"", "next": "vyej" },
+				{ "text": "\"Are you... one of them? A houngan?\"", "next": "horse" }
+			]
+		},
+		"horse": {
+			"text": "\"Mambo. And a horse.\" She says it like a job title, which it is. \"When the loa come through, they ride. Danbala rode me the night your run went wrong — that's how the ice was tracked, that's why there were hands under you when you fell.\" She tips peas into the bowl. \"It's work, Bobby. Somebody's got to carry the gods. Beats waitressing.\"",
+			"options": [
+				{ "text": "\"Who is Vyèj Mirak? Really?\"", "next": "vyej" }
+			]
+		},
+		"vyej": {
+			"text": "\"Our Lady of Miracles. Newest of the loa, and the strangest.\" Her hands finally go still. \"The old ones come through the drums, through the hounfor, through the wire when it suits them. Her? She comes through *dreams*. No horse, no altar. Beauvoir thinks she's something new being born in the matrix. Me, I think she's somebody's daughter.\" Her eyes come up to yours. \"And she knew your name before you did, Count.\"",
+			"set_flag": "ch05_vyej_named",
+			"options": [
+				{ "text": "\"Somebody's *daughter*?\"", "next": "daughter" },
+				{ "text": "\"...I need my deck back.\" (leave)", "next": "bye" }
+			]
+		},
+		"daughter": {
+			"text": "\"Word moves in the hounfors: a girl out west, dreamed the grid without a deck, and the labs that grew her burned off the map last week.\" She goes back to the peas. \"The gods are converging on something, Bobby. And for reasons known only to them and the Virgin, one of the somethings is *you*.\"",
+			"options": [
+				{ "text": "\"...I need my deck back.\" (leave)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"Two-a-Day's sulking upstairs with it. Be kind,\" she calls after you, \"he's having the worst week of his life and it's only Tuesday.\"",
+			"options": []
+		}
+	}
+}

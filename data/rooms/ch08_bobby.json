@@ -1,0 +1,48 @@
+{
+	"_note": "Chapter 8 — the siege of Jammer's. Brief -> jack in with Jackie -> Jaylene Slide -> siege breaks.",
+	"start": "c8_hypermart",
+	"rooms": {
+		"c8_hypermart": {
+			"name": "Hypermart Maze",
+			"bg": "C8_hypermart",
+			"desc": "A dead department store gone coral reef: stall growing on stall, incense and solder smoke, a hundred small economies stacked to the water-stained ceiling. Half the stalls are shuttering early. The street knows something's coming.",
+			"shop": "hyper_stall",
+			"net": true,
+			"exits": { "north": "c8_escalator" }
+		},
+		"c8_escalator": {
+			"name": "Dead Escalators",
+			"bg": "C8_escalator",
+			"desc": "Twelve flights of stopped steel teeth, up through floors the mall forgot. From below, faint but rising, the chant and clatter of Gothicks massing like weather.",
+			"exits": { "south": "c8_hypermart", "north": "c8_club" }
+		},
+		"c8_club": {
+			"name": "Jammer's — Main Room",
+			"bg": "C8_club",
+			"desc": "A cowboy bar out of another decade: red booths, a long zinc counter, a stage nobody's played in years. Jammer moves behind the bar on a bad hip, all economy, watching his front door like it owes him money. It's about to.",
+			"npcs": ["jammer", "beauvoir8"],
+			"exits": { "south": "c8_escalator", "east": "c8_office", "west": "c8_window", "north": "c8_floor" }
+		},
+		"c8_office": {
+			"name": "Jammer's Office",
+			"bg": "C8_office",
+			"desc": "A desk, a safe, a wall of memorabilia from runs that are now folklore — and under a dust cover, the deck. An old thoroughbred of a rig, kept tuned. Jackie stands beside it wearing her working scarves, calm the way deep water is calm.",
+			"npcs": ["jackie8"],
+			"matrix": true,
+			"exits": { "west": "c8_club" }
+		},
+		"c8_window": {
+			"name": "Barricaded Windows",
+			"bg": "C8_window",
+			"desc": "Through the slats: the plaza twelve floors down, filling with leather and hairspray and worse. Somebody's handing out money down there — you can tell by how bravely strangers are volunteering to die.",
+			"exits": { "east": "c8_club" }
+		},
+		"c8_floor": {
+			"name": "Dance Floor",
+			"bg": "C8_floor",
+			"desc": "Dark parquet under a dead mirror ball. When the lights flicker, the room fills with almosts — and then she's simply there, a brown-haired girl in borrowed clothes the loa part around like water around a stone.",
+			"npcs": ["angie_club"],
+			"exits": { "south": "c8_club" }
+		}
+	}
+}

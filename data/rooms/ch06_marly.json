@@ -1,0 +1,58 @@
+{
+	"_note": "Chapter 6 — Marly follows the trail through Alain to orbit. Pay Alain -> find him dead -> coordinates -> Orly.",
+	"start": "c6_andrea",
+	"rooms": {
+		"c6_andrea": {
+			"name": "Andrea's Flat",
+			"bg": "C6_andrea",
+			"desc": "Morning light through tall windows, coffee going cold beside Virek's dossier. Andrea watches you dress for a meeting with the man who broke your career and asks, gently, if you're sure.",
+			"npcs": ["andrea6"],
+			"exits": { "south": "c6_ternes" }
+		},
+		"c6_ternes": {
+			"name": "Quartier des Ternes",
+			"bg": "C6_ternes",
+			"desc": "The same chestnut trees, the same bookshops — and twice now the same young man reading the same page of the same paper. Virek's protection, or somebody else's attention. In this game those may not differ.",
+			"exits": { "north": "c6_andrea", "east": "c6_brasserie", "south": "c6_louvre", "west": "c6_alain_flat" }
+		},
+		"c6_brasserie": {
+			"name": "Brasserie — Napoleon Court",
+			"bg": "C6_brasserie",
+			"desc": "Fifth sublevel, brass and old mirrors, the crowd all lawyers and gallery boys. Alain has taken the best table and ordered the most expensive thing on the card, secure in the knowledge that you're paying. Some men never change; it's their only virtue.",
+			"npcs": ["alain"],
+			"exits": { "west": "c6_ternes" }
+		},
+		"c6_louvre": {
+			"name": "Louvre Embankment",
+			"bg": "C6_louvre",
+			"desc": "The Seine sliding grey under a white sky. Paco falls into step beside you without appearing to arrive, coat collar up, apologetic as a knife in a velvet box.",
+			"npcs": ["paco_louvre"],
+			"exits": { "north": "c6_ternes", "south": "c6_orly" }
+		},
+		"c6_alain_flat": {
+			"name": "Alain's Flat",
+			"bg": "C6_alain",
+			"desc": "The door stands a centimeter open. Inside, the rented room is neat except for Alain, who is sitting in the good chair with a third eye that never blinks. Whoever did this searched nothing — they knew he'd carry it on him. They were wrong. He taped it inside his coat, like an amateur, like Alain.",
+			"requires_flag": "ch06_paid_alain",
+			"locked_text": "Alain named a place and a time. The brasserie first.",
+			"on_enter_flag": "ch06_found_alain",
+			"pickups": [ { "item": "orbit_coords", "label": "Take the coordinates from his coat" } ],
+			"exits": { "east": "c6_ternes" }
+		},
+		"c6_orly": {
+			"name": "Orly — JAL Concourse",
+			"bg": "C6_orly",
+			"desc": "Departure boards ripple: Freeside, the archipelago, the high frontier. Your reflection in the glass carries a dead man's coordinates and the unlimited credit of a man in a vat. A steward bows you toward the gate.",
+			"requires_flag": "took_orbit_coords",
+			"locked_text": "You have no destination yet worth a shuttle seat.",
+			"exits": { "north": "c6_louvre", "east": "c6_shuttle" }
+		},
+		"c6_shuttle": {
+			"name": "JAL Shuttle — Seat 3A",
+			"bg": "C6_shuttle",
+			"desc": "Acceleration presses you into the couch and Paris drops away like a stone into a well. Above the window's curve, the stars come out without weather to soften them. No one is following you now — except, of course, everyone.",
+			"on_enter_flag": "ch06_boarded_shuttle",
+			"exits": { "west": "c6_orly" }
+		}
+	}
+}

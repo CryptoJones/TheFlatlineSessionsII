@@ -1,0 +1,38 @@
+{
+	"id": "paco",
+	"name": "Paco",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "The man who conducts the interview is young, beautifully dressed, and entirely without warmth — a knife in a suit that costs more than your flat. \"Marly Krushkhova. Formerly of Galerie Krushkhova. Formerly of quite a lot of things.\" He doesn't look at his notes. \"Tell me about the forged Cornell.\"",
+			"options": [
+				{ "text": "Tell the truth: you were deceived too.", "next": "truth" },
+				{ "text": "\"If you know my name, you know the story.\"", "next": "pushback" }
+			]
+		},
+		"pushback": {
+			"text": "\"I know four versions of the story. I'm curious which one you carry.\" He folds his hands. \"Indulge me. My employer pays for thoroughness, and my employer can pay for anything.\"",
+			"options": [
+				{ "text": "Tell the truth: you were deceived too.", "next": "truth" }
+			]
+		},
+		"truth": {
+			"text": "You tell it plainly: the box, the lover who sourced it, the experts who blessed it, the morning it all came apart. Paco listens without blinking. \"Good,\" he says at last. \"The truth. Herr Virek has a horror of being lied to — he has so little else left to feel.\" He rises. \"The link room is prepared. He will see you in the garden.\"",
+			"set_flag": "ch03_interviewed",
+			"options": [
+				{ "text": "\"Which garden?\"", "next": "garden" },
+				{ "text": "Go to the link. (end)", "next": "bye" }
+			]
+		},
+		"garden": {
+			"text": "\"Güell Park, Barcelona. As it was on some particular afternoon a long time ago.\" Something that is not quite pity crosses the perfect face. \"He lives in places like that now. The body is in Stockholm. You will find it easier if you do not think about the body.\"",
+			"options": [
+				{ "text": "Go to the link. (end)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "Paco holds the door with the exact courtesy of a man who will be reporting everything you do for the rest of the contract — and who wants you to know it.",
+			"options": []
+		}
+	}
+}

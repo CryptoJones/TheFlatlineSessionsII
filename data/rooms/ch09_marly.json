@@ -1,0 +1,44 @@
+{
+	"_note": "Chapter 9 — the cores. Dock -> the Wig -> the boxmaker's dome -> Virek's end.",
+	"start": "c9_sweetjane",
+	"rooms": {
+		"c9_sweetjane": {
+			"name": "Sweet Jane — Cabin",
+			"bg": "C9_sweetjane",
+			"desc": "A salvage tug stitched from a century of parts, warm with the smell of coffee bulbs and machine oil. Rez hangs upside down in the pilot's web; Jones drifts with a cat that has opinions. Out the port, the dead cores tumble slowly against the stars.",
+			"npcs": ["rez", "jones"],
+			"exits": { "east": "c9_dock" }
+		},
+		"c9_dock": {
+			"name": "Docking Collar",
+			"bg": "C9_dock",
+			"desc": "The collar seats with a clang that rings away down kilometers of dead metal. Beyond the hatch: no lights, no gravity, air that tastes of centuries and freon. The old Tessier-Ashpool cores — a family's whole mind, sold for scrap.",
+			"on_enter_flag": "ch09_docked",
+			"exits": { "west": "c9_sweetjane", "north": "c9_tunnel" }
+		},
+		"c9_tunnel": {
+			"name": "Cold Corridor",
+			"bg": "C9_tunnel",
+			"desc": "Your lamp beam swims through drifting dust and dead cabling. Server racks line the walls like reliquaries. Somewhere ahead, faint as a pulse, machinery is still doing something with great patience.",
+			"exits": { "south": "c9_dock", "north": "c9_chapel" }
+		},
+		"c9_chapel": {
+			"name": "The Wig's Chapel",
+			"bg": "C9_chapel",
+			"desc": "A blister of light in the dead dark: icons soldered from circuit boards, candles that are diodes, and Wigan Ludgate — the Wig — floating cross-legged in a nest of cable, waiting for God in the place where he's sure God lives. He's been expecting you. He's been expecting everyone.",
+			"npcs": ["wig"],
+			"exits": { "south": "c9_tunnel", "north": "c9_dome" }
+		},
+		"c9_dome": {
+			"name": "Boxmaker's Dome",
+			"bg": "C9_dome",
+			"desc": "A zero-g dome full of slow weather: buttons, bones, lace, photographs, a doll's blue eye — a century of small lost things orbiting a cluster of manipulator arms that pick, and turn, and remember. A box is being born in the middle of the storm. You forget, entirely, to breathe.",
+			"requires_flag": "ch09_met_wig",
+			"locked_text": "The Wig's territory first. He knows the way through the dark — and the dark knows him.",
+			"on_enter_flag": "ch09_found_boxmaker",
+			"npcs": ["boxmaker", "virek9"],
+			"pickups": [ { "item": "marly_box", "label": "Accept the box it offers you" } ],
+			"exits": { "south": "c9_chapel" }
+		}
+	}
+}

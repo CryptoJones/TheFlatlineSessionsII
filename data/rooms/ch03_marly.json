@@ -1,0 +1,54 @@
+{
+	"_note": "Chapter 3 — Marly hired by Virek. Brussels interview -> the garden construct -> Paris base.",
+	"start": "c3_gallery",
+	"rooms": {
+		"c3_gallery": {
+			"name": "Galerie Duperey — Interview",
+			"bg": "C3_gallery",
+			"desc": "Glass, steel, and money too old to raise its voice. The receptionist's smile is exactly four percent warm. You are one scandal deep and they made you wait forty minutes to be sure you felt it.",
+			"npcs": ["paco"],
+			"exits": { "south": "c3_street", "east": "c3_construct" }
+		},
+		"c3_construct": {
+			"name": "Virek's Garden — Parque Güell",
+			"bg": "C3_construct",
+			"desc": "A sensory link, and then Barcelona: Gaudí's serpentine bench, tiled dragons, sun that has been dead for hours falling warm on your arms. Josef Virek sits on the bench feeding pigeons that don't exist. His body is a shed of support vats in Stockholm. This is where he lives.",
+			"requires_flag": "ch03_interviewed",
+			"locked_text": "The link isn't open to you yet. The interview comes first.",
+			"npcs": ["virek"],
+			"exits": { "west": "c3_gallery" }
+		},
+		"c3_street": {
+			"name": "Brussels — Rue au Beurre, Rain",
+			"bg": "C3_street",
+			"desc": "Grey rain on grey stone, your best coat soaked past saving. In a shop window, thirty screens replay a simstim star's smile. Every taxi in the city is somewhere else.",
+			"exits": { "north": "c3_gallery", "south": "c3_train" }
+		},
+		"c3_train": {
+			"name": "TGV — Brussels to Paris",
+			"bg": "C3_train",
+			"desc": "The flat country pours past at three hundred kph. In the seatback screen your own face looks out from an art-world scandal retrospective, four months old and still warm. Paris will know you before you arrive. Paris always did.",
+			"exits": { "north": "c3_street", "south": "c3_ternes" }
+		},
+		"c3_ternes": {
+			"name": "Quartier des Ternes",
+			"bg": "C3_ternes",
+			"desc": "Andrea's street: chestnut trees, dog-eared bookshops, an old man selling roasted things from a cart. The city that ruined you, smelling like the only home you've got.",
+			"exits": { "north": "c3_train", "east": "c3_andrea", "south": "c3_cafe" }
+		},
+		"c3_andrea": {
+			"name": "Andrea's Flat",
+			"bg": "C3_andrea",
+			"desc": "Books on every surface, a couch that knows you, coffee in mismatched cups. Andrea listens the way nobody in the gallery world ever has: to find out what's true.",
+			"npcs": ["andrea"],
+			"exits": { "west": "c3_ternes" }
+		},
+		"c3_cafe": {
+			"name": "Café Blanc",
+			"bg": "C3_cafe",
+			"desc": "Marble tables, bitter espresso, a terminal by the register older than the waiter. From the corner seat you can watch the whole street — which matters now, because the whole street is watching you back.",
+			"net": true,
+			"exits": { "north": "c3_ternes" }
+		}
+	}
+}

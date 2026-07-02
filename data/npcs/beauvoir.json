@@ -1,0 +1,45 @@
+{
+	"id": "beauvoir",
+	"name": "Beauvoir",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Beauvoir wears fatigues cut like a good suit and glasses with fashion-house frames, and he studies you across the vévé chalked on the floor like a man reading a lab result. \"Bobby Newmark. Count Zero Interrupt.\" No mockery in it — that's new. \"Tell me exactly what happened when the ice took you. Leave nothing out. It matters more than you know.\"",
+			"options": [
+				{ "text": "Tell him about the girl made of light.", "next": "girl" },
+				{ "text": "\"First tell me who you people are.\"", "next": "who" }
+			]
+		},
+		"who": {
+			"text": "\"Businessmen. Scholars.\" A small smile. \"Houngans. We serve the loa — the riders, the ones who come through the drums and the wire both. You want it in street: we do consulting work for entities resident in the matrix, and they pay us in favors and futures.\" He taps the chalk line with one polished shoe. \"Two structures, one truth. Now: the ice.\"",
+			"options": [
+				{ "text": "Tell him about the girl made of light.", "next": "girl" }
+			]
+		},
+		"girl": {
+			"text": "You tell it: the sheet of ice folding over you, your heart going down like a dropped call, and then the girl leaning out of nowhere, peeling death off you like a wet leaf. Beauvoir and the room both go very still. \"Vyèj Mirak,\" he says softly. \"Our Lady of Miracles. She has never come for anyone.\" He looks at you with fresh, unsettling arithmetic. \"And she came for a wilson from Barrytown.\"",
+			"set_flag": "ch05_beauvoir_lesson",
+			"options": [
+				{ "text": "\"What was that target really?\"", "next": "slab" },
+				{ "text": "\"Why me?\"", "next": "why_you" }
+			]
+		},
+		"why_you": {
+			"text": "\"That,\" says Beauvoir, \"is the most valuable question in the Sprawl right now, and you'd best hope we answer it before the people burning condos do.\" He straightens his glasses. \"Ask about the slab. It's time you knew whose horse you were riding.\"",
+			"options": [
+				{ "text": "\"What was that target really?\"", "next": "slab" }
+			]
+		},
+		"slab": {
+			"text": "\"The icebreaker you flew belongs to us — to the serious men we serve. Two-a-Day rented what he was told to rent, to a boy chosen to be expendable. The test flushed the target awake: something old and hungry stood up in that node and *noticed the world*.\" He crouches, eye level, quiet. \"You were bait, Bobby. The Virgin made you a survivor instead. Lucas will take you into the Sprawl — the loa have asked for you by name.\"",
+			"set_flag": "ch05_slab_truth",
+			"options": [
+				{ "text": "\"Asked for me — by *name*?\" (end)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"By handle,\" Beauvoir corrects, deadpan, standing. \"Count Zero. They have a sense of humor about these things. Kitchen's through there — eat something. Dead men negotiate badly.\"",
+			"options": []
+		}
+	}
+}

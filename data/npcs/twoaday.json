@@ -1,0 +1,38 @@
+{
+	"id": "twoaday",
+	"name": "Two-a-Day",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Two-a-Day — Barrytown's smoothest operator, the man who owned every room he ever walked into — is sweating through a very expensive shirt. \"Bobby! My man! You're looking—\" he abandons the sentence, sits down heavily among his fish tanks. \"You're looking alive, which puts you one up on my week.\"",
+			"options": [
+				{ "text": "\"You set me up.\"", "next": "setup" },
+				{ "text": "\"I want my deck back.\"", "next": "deck" }
+			]
+		},
+		"setup": {
+			"text": "\"I rented product to a customer! That's *commerce*!\" He hears himself, deflates. \"...Yeah. Okay. The men upstairs wanted a nobody to flight-test their slab, and I picked the hungriest kid on my list.\" He meets your eyes, which costs him something. \"For what it's worth — nobody knew the target would try to *keep* you. That part scared people who don't scare.\"",
+			"options": [
+				{ "text": "\"I want my deck back.\"", "next": "deck" },
+				{ "text": "\"Who blew up my mother's condo?\"", "next": "condo" }
+			]
+		},
+		"condo": {
+			"text": "\"Not us, not the men upstairs. Somebody with reach, watching that node, tying off the loose end that saw too much.\" He shivers, genuinely. \"You know what it costs to task a strike on a *residential block* in jurisdictional hours? That's not street money, Bobby. That's orbit money.\"",
+			"options": [
+				{ "text": "\"I want my deck back.\"", "next": "deck" }
+			]
+		},
+		"deck": {
+			"text": "He hauls your Ono-Sendai out from under the coffee table and pushes it at you like it's been biting him. \"Take it. Seriously. It's been *humming*, man. It hums when nothing's plugged in.\" He wipes his palms on his knees. \"Beauvoir's people want you working with Lucas in the Sprawl. My advice? Say yes. Ain't a hole in Barrytown deep enough for what's looking for you.\"",
+			"grant": "ono_sendai",
+			"options": [
+				{ "text": "\"Stay lucky, Two-a-Day.\" (leave)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"Luck's for wilsons,\" he says weakly, reflexively, and almost manages the old grin. \"Go on, Count. Don't keep gods waiting.\"",
+			"options": []
+		}
+	}
+}

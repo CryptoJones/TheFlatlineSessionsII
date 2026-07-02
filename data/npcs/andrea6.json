@@ -1,0 +1,25 @@
+{
+	"id": "andrea6",
+	"name": "Andrea",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Andrea watches you fasten the good earrings — armor, and you both know it. \"Alain,\" she says, making the name sound like a diagnosis. \"The man who let you take the fall for his fake, calling with a *lead*. Marly. Tell me you see it.\"",
+			"options": [
+				{ "text": "\"I see it. I'm going anyway.\"", "next": "going" },
+				{ "text": "\"He knows the boxes are real. That's worth the risk.\"", "next": "going" }
+			]
+		},
+		"going": {
+			"text": "\"Of course you are.\" She sighs, then does what she always does: gets practical. \"Then hear me. One — he'll have sold the same lead twice; assume an audience. Two — pay him with Virek's money, never touch your own. Three—\" she catches your hand \"—whatever he was to you, that man would trade you for a good table at lunch. Buy the lead. Don't buy *him*.\"",
+			"set_flag": "ch06_andrea_talk",
+			"options": [
+				{ "text": "\"One — assume an audience. I'll remember all three.\"", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"Come home after,\" she says, and it isn't a suggestion. \"Whatever you find. Come home and tell me over something decent from the cellar.\"",
+			"options": []
+		}
+	}
+}

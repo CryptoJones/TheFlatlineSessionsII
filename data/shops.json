@@ -1,0 +1,25 @@
+{
+	"shops": {
+		"leons": {
+			"name": "Leon's",
+			"buys": true,
+			"stock": [
+				"gothick_jacket",
+				"barrytown_soft",
+				"skill_biz",
+				"hitachi_prop"
+			]
+		},
+		"hyper_stall": {
+			"name": "Hypermart — Chip Stall",
+			"buys": true,
+			"stock": [
+				"skill_icebreaking",
+				"skill_biz",
+				"barrytown_soft",
+				"medkit",
+				"hosaka_deck"
+			]
+		}
+	}
+}

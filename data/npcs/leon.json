@@ -1,0 +1,41 @@
+{
+	"id": "leon",
+	"name": "Leon",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Leon looks up from a plate of something fried and regards you with the enthusiasm of a man being handed someone else's problem. \"Newmark. Two-a-Day said you'd be in.\" He wipes his fingers with ceremonial slowness. \"You actually gonna run tonight? Word is you've never once jacked anywhere that mattered.\"",
+			"options": [
+				{ "text": "\"Just give me the codes, Leon.\"", "next": "codes" },
+				{ "text": "\"Tonight I stop being a wilson.\"", "next": "wilson" },
+				{ "text": "Ask what he knows about the target.", "next": "target" }
+			]
+		},
+		"wilson": {
+			"text": "\"Kid, 'wilson' isn't a phase, it's a diagnosis.\" A couple of Gothicks at the rail snicker on cue. Leon leans in, marginally kinder. \"Free advice: hotdoggers who borrow ice they can't buy are called chalk outlines. But Two-a-Day pays my rent, so.\"",
+			"options": [
+				{ "text": "\"Just give me the codes.\"", "next": "codes" },
+				{ "text": "Ask what he knows about the target.", "next": "target" }
+			]
+		},
+		"target": {
+			"text": "Leon's eyes do a slow lap of the room before he answers. \"Nothing. That's the thing. Industrial node, no name, no traffic, ice rated way past what a nothing node needs.\" He shrugs. \"Two-a-Day says it's a soft test run. Two-a-Day says a lot of things.\"",
+			"options": [
+				{ "text": "\"Give me the codes.\"", "next": "codes" },
+				{ "text": "\"Later, Leon.\" (leave)", "next": "bye" }
+			]
+		},
+		"codes": {
+			"text": "He palms you a chip printed with a run vector and entry codes, greasy thumbprint included at no charge. \"Coordinates, entry string, and a time window that closes at three. After that the codes rot.\" He goes back to his plate. \"Try not to die, Newmark. Corpses are bad for the room.\"",
+			"grant": "run_codes",
+			"set_flag": "ch02_got_codes",
+			"options": [
+				{ "text": "\"See you around, Leon.\" (leave)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"Mm,\" says Leon, which is Barrytown for goodbye, good luck, and you're already forgotten, all in one syllable.",
+			"options": []
+		}
+	}
+}

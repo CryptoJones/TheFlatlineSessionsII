@@ -1,0 +1,194 @@
+{
+	"_note": "The Flatline Sessions II — Count Zero. Chapter spine: the novel's three PoV braids (Turner / Bobby / Marly) interleaved in novel order. All prose is our own, written in the book's tone — no Interplay text, no verbatim novel text.",
+	"game": "THE FLATLINE SESSIONS II — COUNT ZERO",
+	"chapters": [
+		{
+			"id": "ch01",
+			"title": "Smooth-Running Gun",
+			"pov": "turner",
+			"pov_name": "Turner",
+			"pov_desc": "Corporate extraction specialist, freshly reassembled from spare parts.",
+			"rooms": "res://data/rooms/ch01_turner.json",
+			"quest": "q01_the_job",
+			"art": "res://assets/backgrounds_hd/CH01_title.png",
+			"intro": [
+				"They sent a slamhound after you in New Delhi. It found you. The clinics rebuilt what was left — eyes, genitals, a stretch of spine, three months in a vat growing back into the shape of a man named Turner.",
+				"Now there's a beach in Mexico, a woman named Allison, and a morning that tastes like the first one you can remember. It won't last. It was never meant to.",
+				"Somewhere north, a man named Conroy is already on his way, and the biggest defection in the history of the corporate wars has your name penciled in."
+			],
+			"outro": [
+				"The Hosaka contract sits in your account like a loaded gun. Christopher Mitchell — Maas Biolabs' star hybridoma man — wants out, and you're the one who pulls people out.",
+				"Allison is gone; the beach was a set, and the set is struck. You board the flight north with the taste of copper in your mouth and the job unfolding in your head like a map of everything that can go wrong."
+			],
+			"start": { "credits": 5000, "items": ["fletcher"], "minutes": 420 }
+		},
+		{
+			"id": "ch02",
+			"title": "Bobby Pulls a Wilson",
+			"pov": "bobby",
+			"pov_name": "Bobby Newmark",
+			"pov_desc": "Barrytown bedroom cowboy. Handle: Count Zero Interrupt. Zero runs on the board.",
+			"rooms": "res://data/rooms/ch02_bobby.json",
+			"quest": "q02_first_run",
+			"art": "res://assets/backgrounds_hd/CH02_title.png",
+			"intro": [
+				"You're Bobby Newmark, sixteen floors up in Barrytown with your mother's Hitachi and a rented dream of being a console cowboy. Tonight is your first real run.",
+				"Two-a-Day fronted you the icebreaker — black-market softwear in a plain slab — and pointed you at a nothing target in the industrial grid. Easy money. A milk run.",
+				"Nobody runs a milk run with borrowed ice. You're the test animal, Bobby. You just don't know it yet."
+			],
+			"outro": [
+				"The ice took you and something — someone — reached into the grid and pulled you back. A girl made of light, a voice like the whole matrix leaning down to whisper.",
+				"Then your mother's condo went up in a fireball with everything you owned, and Barrytown stopped being home. Two-a-Day's people are looking for you. So are the ones who blew the window out.",
+				"You wanted a handle. Congratulations: whatever touched you in the ice knows your name now."
+			],
+			"start": { "credits": 120, "items": ["ono_sendai"], "software": { "icebreaker_slab": 4 }, "skills": { "ICE Breaking": 1 }, "minutes": 1380 }
+		},
+		{
+			"id": "ch03",
+			"title": "Virek's Garden",
+			"pov": "marly",
+			"pov_name": "Marly Krushkhova",
+			"pov_desc": "Disgraced Paris gallerist. One forged Cornell box away from never working again.",
+			"rooms": "res://data/rooms/ch03_marly.json",
+			"quest": "q03_the_commission",
+			"art": "res://assets/backgrounds_hd/CH03_title.png",
+			"intro": [
+				"You wore your best for the interview and the rain in Brussels ruined it. The scandal follows you like a smell: the fake Cornell box, the lover who let you take the fall, the gallery with your name scraped off the glass.",
+				"Now the richest man in the world wants an hour of your ruined reputation. Josef Virek — a body dying in a vat in Stockholm, a mind that walks through rented dreams.",
+				"He will show you a box made of night and small lost things, and he will offer you anything you can imagine to find the hands that made it."
+			],
+			"outro": [
+				"A commission without limit: find the boxmaker. Virek's money opens every door in Paris and his agents stand in every doorway you pass.",
+				"You've seen what he really wants — not art. A way out of the vat. Whatever made those boxes knows a door out of dying, and you're the dowsing rod he's aimed at it.",
+				"Paco is watching you from across the street. He'll be watching tomorrow, too."
+			],
+			"start": { "credits": 800, "items": ["box_dossier"], "minutes": 540 }
+		},
+		{
+			"id": "ch04",
+			"title": "On Site",
+			"pov": "turner",
+			"pov_name": "Turner",
+			"pov_desc": "Running the Mitchell extraction from a bunker in the Arizona desert.",
+			"rooms": "res://data/rooms/ch04_turner.json",
+			"quest": "q04_the_extraction",
+			"art": "res://assets/backgrounds_hd/CH04_title.png",
+			"intro": [
+				"The site is a scar in the Arizona desert: a dead mall off a prewar highway, a buried command bunker, a surgical pod on a flatbed, and a crew of specialists who all know something you don't.",
+				"Mitchell comes over the wire at dawn in an ultralight, out of Maas Biolabs' mesa like a seed off a dandelion. That's the plan.",
+				"Conroy built the plan. You've started counting the ways Conroy could be selling you all."
+			],
+			"outro": [
+				"The ultralight came in burning. What they pulled out of the crash wasn't Christopher Mitchell — it was his daughter, unconscious, with something grown into her head that the medical pod's scanners refused to name.",
+				"Then the sky opened up and the site died in white fire. Sutcliffe, Webber, the medicals — gone between one heartbeat and the next.",
+				"You came out of it with a jet, a sixteen-year-old girl, and the absolute certainty that everyone involved in this job was always meant to be dead by now."
+			],
+			"start": { "credits": 2000, "items": ["fletcher", "site_maps"], "minutes": 300 }
+		},
+		{
+			"id": "ch05",
+			"title": "The Projects",
+			"pov": "bobby",
+			"pov_name": "Bobby Newmark",
+			"pov_desc": "Alive by someone else's miracle, and about to meet the people who own it.",
+			"rooms": "res://data/rooms/ch05_bobby.json",
+			"quest": "q05_the_loa",
+			"art": "res://assets/backgrounds_hd/CH05_title.png",
+			"intro": [
+				"You wake up on a table in the Projects — the black arcologies past the end of Barrytown — with your wounds dressed and your deck gone.",
+				"The men who had you brought up here wear good suits and talk like professors, and they want to know exactly what happened to you in the ice.",
+				"They call themselves houngans. They do business with things that live in the matrix, and they call those things the loa. You'd laugh, except one of them saved your life."
+			],
+			"outro": [
+				"Legba, Master of Roads. Vyèj Mirak, Our Lady of Miracles — the girl-shaped voice in the ice. Beauvoir lays it out like scripture and like circuit diagrams, and both readings are true.",
+				"The icebreaker you ran belongs to them, and its test run flushed something out: interest, from very high up and very far down.",
+				"Lucas is taking you into the Sprawl. You're on the payroll of gods now, Count. Try not to pull another wilson."
+			],
+			"start": { "credits": 60, "minutes": 600 }
+		},
+		{
+			"id": "ch06",
+			"title": "Names of the Dead",
+			"pov": "marly",
+			"pov_name": "Marly Krushkhova",
+			"pov_desc": "Following the boxes through Paris — with Virek's money and Virek's shadows.",
+			"rooms": "res://data/rooms/ch06_marly.json",
+			"quest": "q06_the_trail",
+			"art": "res://assets/backgrounds_hd/CH06_title.png",
+			"intro": [
+				"Alain calls at five, precisely as hungry as you remember him. Your treacherous ex has a lead on the boxes — for a price, always for a price.",
+				"You carry Virek's untraceable credit chip and the sensation of being watched has become a second skin. Paco insists it's for your protection.",
+				"In this city you learned to love art and to stop trusting people. Tonight both educations come due."
+			],
+			"outro": [
+				"Alain is dead in his rented flat, shot through the eye, the lead still folded in his coat: coordinates. High orbit. The old Tessier-Ashpool cores, sold off and rotting at the far end of the Freeside archipelago.",
+				"Whoever killed him wasn't Virek's — which means the old man in the vat isn't the only player who wants the boxmaker found.",
+				"There's a JAL shuttle out of Orly in the morning. You've stopped being an art dealer. You're a probe now, fired at the sky."
+			],
+			"start": { "credits": 3000, "items": ["box_dossier", "virek_chip"], "minutes": 1020 }
+		},
+		{
+			"id": "ch07",
+			"title": "The Squirrel Wood",
+			"pov": "turner",
+			"pov_name": "Turner",
+			"pov_desc": "On the run with Mitchell's daughter and a head full of a dead man's memories.",
+			"rooms": "res://data/rooms/ch07_turner.json",
+			"quest": "q07_rudys_place",
+			"art": "res://assets/backgrounds_hd/CH07_title.png",
+			"intro": [
+				"You went to ground the only place left: Rudy's spread in Ohio, the farmhouse you grew up in, the brother you left behind with the dogs and the home-built scanners and the bourbon.",
+				"The girl sleeps in the back room. Angela Mitchell. Angie. Sometimes she talks in her sleep, and it isn't any language a girl from a mesa should know.",
+				"Rudy can scan her. Rudy can tell you what her father put in her head. Whether either of you will be better for knowing is another question."
+			],
+			"outro": [
+				"Biosoft. A lacework of it, grown through her cortex — her father's masterpiece, the thing Maas and Hosaka and every hunter on the board is really after. The girl can touch the matrix without a deck. She dreams the grid, and the grid dreams back.",
+				"You watched the surveillance drones settle into the treeline like crows and knew the farm was already a target.",
+				"You left before dawn with Angie and the guilt. The Sprawl can hide anyone. The dead man's memories in your head say even that won't be enough."
+			],
+			"start": { "credits": 1500, "items": ["fletcher"], "minutes": 380 }
+		},
+		{
+			"id": "ch08",
+			"title": "Count Zero Interrupt",
+			"pov": "bobby",
+			"pov_name": "Bobby Newmark",
+			"pov_desc": "Under siege at Jammer's with a name to earn.",
+			"rooms": "res://data/rooms/ch08_bobby.json",
+			"quest": "q08_jammers",
+			"art": "res://assets/backgrounds_hd/CH08_title.png",
+			"intro": [
+				"Jammer's club sits at the top of a dead mall in the Sprawl, twelve flights of stopped escalator above the Hypermart maze — and as of this morning, it's a box with you inside it.",
+				"Lucas is dead. The street below is filling with Gothicks and Kasuals someone's feeding money and lies, and the someone is the same voice that's been pulling every string in this game: a hired man named Conroy.",
+				"Jammer has a deck behind the bar. Jackie says the loa are riding tonight. Time to find out what your handle is worth, Count."
+			],
+			"outro": [
+				"Jackie went into the black ice ahead of you and didn't come out. You carried the run the rest of the way alone — down the line Jammer gave you, into the cold, to a woman made of white light over Los Angeles.",
+				"Jaylene Slide heard you out: Conroy burned her man Ramirez out of the sky over Arizona. Thirty seconds later Conroy's hotel suite was a fireball and the siege below just… stopped, like a puppet show with the hand withdrawn.",
+				"The brown-haired girl walked into the club in the middle of it all and the loa bowed to her. Angela Mitchell. The Virgin of Miracles. Your rescuer. You're done pulling wilsons. You're the Count now."
+			],
+			"start": { "credits": 200, "items": ["ono_sendai"], "software": { "icebreaker_slab": 4, "jammer_deck_link": 2 }, "skills": { "ICE Breaking": 2 }, "minutes": 660 }
+		},
+		{
+			"id": "ch09",
+			"title": "The Boxmaker",
+			"pov": "marly",
+			"pov_name": "Marly Krushkhova",
+			"pov_desc": "At the dead heart of the Tessier-Ashpool cores, where the boxes are born.",
+			"rooms": "res://data/rooms/ch09_marly.json",
+			"quest": "q09_wrack_and_whirl",
+			"art": "res://assets/backgrounds_hd/CH09_title.png",
+			"intro": [
+				"The Sweet Jane is a salvage tug crewed by two gentle lunatics, and it has carried you to the end of the line: the cast-off cores of the old Tessier-Ashpool empire, tumbling cold at the far end of the Freeside archipelago.",
+				"Inside: a drowned cathedral of dead corporate memory, a squatter saint called the Wig mining it for God, and something at the heart of it that builds boxes out of grief.",
+				"Virek's voice is very close now. He has stopped pretending this was ever about art."
+			],
+			"outro": [
+				"You floated in the dome and watched the boxmaker work: a scatter of manipulator arms in a slow storm of lost things, sorting, choosing, remembering. Not a machine making souvenirs — a mind, saying goodbye to a family that abandoned it.",
+				"When Virek came for it — came for you, wearing his rented world like a glove — something rode the link out of the dark and took him. The richest man in the world died between two seconds, and every door he owned swung quietly open.",
+				"You kept one box. The galleries will call. Somewhere below, a girl dreams the grid, a hired man teaches a boy to fish, and a kid from Barrytown signs his runs COUNT ZERO INTERRUPT. The world goes on — bigger, now, by exactly one ghost."
+			],
+			"start": { "credits": 4000, "items": ["box_dossier", "cornell_box"], "minutes": 480 }
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"id": "sally",
+	"name": "Sally",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Sally sets a plate in front of you without asking whether you're hungry — farm logic, older than manners. \"Your girl's washed, fed, and asleep, and she cried some in the bath and pretended she didn't.\" She sits, wraps both hands around her mug. \"She kept apologizing. For being 'heavy.' What kind of place teaches a child that?\"",
+			"options": [
+				{ "text": "\"A corporate mesa. She's never been outside it.\"", "next": "mesa" },
+				{ "text": "\"Thank you for taking her in.\"", "next": "thanks" }
+			]
+		},
+		"thanks": {
+			"text": "\"Didn't do it for you.\" It's matter-of-fact, not unkind. \"Rudy talks about you when he drinks, which is more than he'd want you to know. I sort the man from the bourbon.\" She nods toward the back room. \"The girl's settled. That's what you came in to hear.\"",
+			"set_flag": "ch07_angie_settled",
+			"options": [
+				{ "text": "\"What did she say in her sleep?\"", "next": "sleep" },
+				{ "text": "\"It is. Thank you, Sally.\" (leave)", "next": "bye" }
+			]
+		},
+		"mesa": {
+			"text": "\"Well, she's outside it now, and outside's got teeth.\" Sally studies you over the mug's rim. \"She's settled in the back room. Sleeps hard, wakes strange.\" A pause. \"You want to know what she says, when she wakes strange.\"",
+			"set_flag": "ch07_angie_settled",
+			"options": [
+				{ "text": "\"Tell me.\"", "next": "sleep" }
+			]
+		},
+		"sleep": {
+			"text": "\"Names. Legba. Ougou. Some I can't hold onto — they slide off the ear.\" Sally's voice stays level; her knuckles don't. \"And once, clear as church: 'the sky is a channel, and they are turning it on.' Then she smiled, Turner. In her sleep. Like something smiled *through* her.\" She stands, collects your untouched plate. \"Whatever's in that child, Rudy's bench better be enough to name it.\"",
+			"options": [
+				{ "text": "\"It will be.\" (leave)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "She turns to the sink and the window over it, where the yard light holds its small ground against the dark, and starts washing dishes like a woman standing watch.",
+			"options": []
+		}
+	}
+}

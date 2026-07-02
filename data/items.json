@@ -1,0 +1,149 @@
+{
+	"_note": "Count Zero item catalog. type: hardware = cyberdeck (enables Jack In), software = matrix warez, skill = chipped skill, misc/key = story items (key items can't be sold).",
+	"items": {
+		"fletcher": {
+			"name": "Fletcher",
+			"type": "misc",
+			"price": 900,
+			"desc": "Compressed-air needle gun. Quiet, deniable, very illegal."
+		},
+		"site_maps": {
+			"name": "Site maps",
+			"type": "misc",
+			"key": true,
+			"price": 0,
+			"desc": "Conroy's plans of the Arizona extraction site: bunker, pad, sightlines."
+		},
+		"mitchell_dossier": {
+			"name": "Mitchell dossier",
+			"type": "misc",
+			"key": true,
+			"price": 0,
+			"desc": "Hosaka's biosoft dossier on Christopher Mitchell — career, defection terms, and gaps somebody paid to keep blank."
+		},
+		"biosoft_dossier": {
+			"name": "Rudy's scan results",
+			"type": "misc",
+			"key": true,
+			"price": 0,
+			"desc": "Deep-scan imagery of the lacework grown through Angie Mitchell's cortex. Her father's masterpiece."
+		},
+		"ono_sendai": {
+			"name": "Ono-Sendai Cyberspace VII",
+			"type": "hardware",
+			"price": 3400,
+			"desc": "Bobby's deck. Barrytown-standard, lovingly abused."
+		},
+		"hosaka_deck": {
+			"name": "Hosaka portable",
+			"type": "hardware",
+			"price": 5200,
+			"desc": "Corporate field deck. Boring, reliable, faster than it looks."
+		},
+		"icebreaker_slab": {
+			"name": "Two-a-Day's icebreaker",
+			"type": "software",
+			"rating": 4,
+			"price": 8000,
+			"desc": "Black-market icebreaker in a plain slab. Origin: don't ask. Owner: not Two-a-Day, as it turns out."
+		},
+		"jammer_deck_link": {
+			"name": "Jammer's club deck",
+			"type": "software",
+			"rating": 2,
+			"price": 0,
+			"key": true,
+			"desc": "House deck patch — an old cowboy's rig, kept sharp out of pride."
+		},
+		"run_codes": {
+			"name": "Run codes",
+			"type": "misc",
+			"key": true,
+			"price": 0,
+			"desc": "Target coordinates and entry codes for the Barrytown run, hand-delivered through Leon's."
+		},
+		"box_dossier": {
+			"name": "Boxmaker dossier",
+			"type": "misc",
+			"key": true,
+			"price": 0,
+			"desc": "Virek's holos of seven boxes: driftwood, bone china, a doll's arm, night sky in a frame. No two alike. No maker known."
+		},
+		"virek_chip": {
+			"name": "Virek credit chip",
+			"type": "misc",
+			"key": true,
+			"price": 0,
+			"desc": "Untraceable draw on the Virek estate. The kind of money that watches you spend it."
+		},
+		"orbit_coords": {
+			"name": "Orbital coordinates",
+			"type": "misc",
+			"key": true,
+			"price": 0,
+			"desc": "A strip of paper from a dead man's coat: the cast-off Tessier-Ashpool cores, high orbit, end of the archipelago."
+		},
+		"cornell_box": {
+			"name": "Cornell box",
+			"type": "misc",
+			"key": true,
+			"price": 0,
+			"desc": "One of the boxmaker's works: velvet, brass, a hologram of a face you almost remember. It is worth more than the shuttle you rode up in."
+		},
+		"marly_box": {
+			"name": "The boxmaker's gift",
+			"type": "misc",
+			"key": true,
+			"price": 0,
+			"desc": "Made while you watched: a box with rain in it, and a gallery ticket stub, and a future."
+		},
+		"jal_ticket": {
+			"name": "JAL shuttle ticket",
+			"type": "misc",
+			"key": true,
+			"price": 2200,
+			"desc": "Orly to the Freeside archipelago, one seat, no return booked."
+		},
+		"medkit": {
+			"name": "Trauma kit",
+			"type": "misc",
+			"price": 350,
+			"desc": "Military-surplus trauma kit. Everything you need to keep somebody alive who shouldn't be."
+		},
+		"hitachi_prop": {
+			"name": "Hitachi holo-projector",
+			"type": "misc",
+			"price": 150,
+			"desc": "Consumer holo unit, Barrytown living-room standard. Your mother loved it."
+		},
+		"gothick_jacket": {
+			"name": "Gothick leathers",
+			"type": "misc",
+			"price": 280,
+			"desc": "Black, studded, smells of hairspray and menace. Passable street camouflage in Barrytown."
+		},
+		"skill_biz": {
+			"name": "Street Biz skillsoft",
+			"type": "skill",
+			"skill": "Street Biz",
+			"rating": 2,
+			"price": 600,
+			"desc": "Chipped streetwise: who's buying, who's lying, who's already sold you."
+		},
+		"skill_icebreaking": {
+			"name": "ICE Breaking skillsoft",
+			"type": "skill",
+			"skill": "ICE Breaking",
+			"rating": 2,
+			"price": 1800,
+			"desc": "Chipped intrusion technique. No substitute for talent, says everyone with talent."
+		},
+		"barrytown_soft": {
+			"name": "Barrytown utility suite",
+			"type": "software",
+			"rating": 1,
+			"price": 400,
+			"desc": "Bottom-shelf matrix utilities. Better than running naked. Barely."
+		}
+	}
+}

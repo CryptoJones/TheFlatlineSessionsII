@@ -1,0 +1,57 @@
+{
+	"_note": "Chapter 2 — Bobby's first run in Barrytown. Codes from Leon's -> the run -> the rescue -> the fire.",
+	"start": "c2_bedroom",
+	"rooms": {
+		"c2_bedroom": {
+			"name": "Your Room",
+			"bg": "C2_bedroom",
+			"desc": "A mattress, a poster of Tally Isham, and the Ono-Sendai you'd sell a kidney to upgrade. Handle: Count Zero Interrupt. Runs completed: zero. Tonight that number changes.",
+			"exits": { "east": "c2_living" }
+		},
+		"c2_living": {
+			"name": "Condo — Living Room",
+			"bg": "C2_living",
+			"desc": "Your mother's Hitachi projects a soap opera into the middle of the room; the couch remembers her shape. The phone jack by the window is where you'll fly from. Marsha next door has the volume up on the same show, half a beat behind.",
+			"matrix": true,
+			"exits": { "west": "c2_bedroom", "south": "c2_hall" }
+		},
+		"c2_hall": {
+			"name": "Covina Concourse Courts — Hallway",
+			"bg": "C2_hall",
+			"desc": "Piss-yellow light, doors the color of old teeth, the elevator that works on alternate Tuesdays. Sixteen floors of people pretending not to hear each other's lives.",
+			"exits": { "north": "c2_living", "south": "c2_street" }
+		},
+		"c2_street": {
+			"name": "Barrytown Street",
+			"bg": "C2_street",
+			"desc": "Big Playground glows off to the east; the Projects stack black against the sky beyond it, lightless and vast, like the future deciding whether to notice you. Gothicks drift past in twos and threes, all hair and attitude.",
+			"exits": { "north": "c2_hall", "west": "c2_leons", "east": "c2_alley" }
+		},
+		"c2_leons": {
+			"name": "Leon's",
+			"bg": "C2_leons",
+			"desc": "Nominally a bar, actually a switchboard: everything in Barrytown that's for sale but shouldn't be moves through Leon's back room. Leon owes Two-a-Day a favor, and tonight the favor is you.",
+			"npcs": ["leon"],
+			"shop": "leons",
+			"net": true,
+			"exits": { "east": "c2_street" }
+		},
+		"c2_alley": {
+			"name": "Service Alley",
+			"bg": "C2_alley",
+			"desc": "You're two blocks gone when the sixteenth floor of the Covina Courts blows out in a rose of flame and glass. Your floor. Your window. Everything you own is burning confetti, and whoever did it thinks you were inside.",
+			"requires_flag": "cracked_barrytown_target",
+			"locked_text": "The run comes first. Two-a-Day's slab, your mother's condo, tonight — that was the deal.",
+			"on_enter_flag": "ch02_condo_burned",
+			"exits": { "west": "c2_street", "east": "c2_playground" }
+		},
+		"c2_playground": {
+			"name": "Big Playground",
+			"bg": "C2_playground",
+			"desc": "The concrete park under the arc lights, empty at this hour except for the wind and one girl with a mohawk watching you from the swings like she was sent to. Nowhere left to go but forward.",
+			"on_enter_flag": "ch02_reached_playground",
+			"npcs": ["rhea_playground"],
+			"exits": { "west": "c2_alley" }
+		}
+	}
+}

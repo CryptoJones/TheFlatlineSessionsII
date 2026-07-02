@@ -1,0 +1,31 @@
+{
+	"id": "jackie8",
+	"name": "Jackie",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Jackie has the dust cover folded and the old deck warming, trode sets laid out like surgical steel. She's in her working scarves, and the kitchen calm has become something deeper and stranger — deep water with a current in it. \"Two seats tonight, Count. Jammer's rig will carry us both.\"",
+			"options": [
+				{ "text": "\"What's riding with us?\"", "next": "riding" },
+				{ "text": "\"Ready when you are.\"", "next": "jackin", "require_flag": "ch08_jammer_briefed" },
+				{ "text": "\"Let me get Jammer's read first.\"", "next": "wait", "hide_flag": "ch08_jammer_briefed" }
+			]
+		},
+		"wait": {
+			"text": "\"Smart. Never fly a stranger's grid blind.\" She goes back to the trodes, humming something with a rhythm older than the mall. \"He's at the bar pretending it's a slow Tuesday. Get the picture, then come strap in.\"",
+			"options": []
+		},
+		"riding": {
+			"text": "\"Danbala flashed through the hounfor at dusk — the serpent, the current under everything. He'll shadow the run.\" She checks a trode contact with a thumbnail. \"But hear me, Bobby: out past the club's grid it's all hired ice and worse, and the loa don't *carry* you. They open doors. Walking through them is meat business. Ours.\"",
+			"options": [
+				{ "text": "\"Ready when you are.\"", "next": "jackin", "require_flag": "ch08_jammer_briefed" },
+				{ "text": "\"Jammer first.\"", "next": "wait", "hide_flag": "ch08_jammer_briefed" }
+			]
+		},
+		"jackin": {
+			"text": "She hands you the trodes like a chalice. \"Line's the club feed out through the jamming — narrow as a prayer, but it's there. We hit the hired ice together; past it, you carry the message to the lady in Los Angeles.\" Her hand closes on your shoulder, warm and final. \"Whatever happens in there, Count — *finish the run*. That's the whole of the law tonight.\" The deck swallows you both.",
+			"set_flag": "ch08_jacked_in",
+			"options": []
+		}
+	}
+}

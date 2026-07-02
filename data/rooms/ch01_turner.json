@@ -1,0 +1,54 @@
+{
+	"_note": "Chapter 1 — Turner in Mexico. Beach idyll -> Conroy -> the job.",
+	"start": "c1_bedroom",
+	"rooms": {
+		"c1_bedroom": {
+			"name": "Beach House — Bedroom",
+			"bg": "C1_bedroom",
+			"desc": "White walls, a ceiling fan turning slow, salt on the sea wind through the shutters. Three months of surgical reconstruction ended in this bed, and for once the dreams were only dreams.",
+			"exits": { "east": "c1_veranda" }
+		},
+		"c1_veranda": {
+			"name": "Beach House — Veranda",
+			"bg": "C1_veranda",
+			"desc": "Bleached boards, two chairs, a table with yesterday's glasses. Below, the Pacific rolls in the way it has since before anyone owned anything.",
+			"exits": { "west": "c1_bedroom", "south": "c1_beach", "north": "c1_road" }
+		},
+		"c1_beach": {
+			"name": "The Beach",
+			"bg": "C1_beach",
+			"desc": "A long white curve of sand with nobody on it but the gulls — and Allison, walking the tideline with her sandals in one hand, exactly as if this were a life either of you got to keep.",
+			"npcs": ["allison"],
+			"exits": { "north": "c1_veranda", "east": "c1_tidepools" }
+		},
+		"c1_tidepools": {
+			"name": "Tide Pools",
+			"bg": "C1_tidepools",
+			"desc": "Black volcanic rock full of small green worlds. Anemones, brittle stars, a crab working its patient trade. Simple machines, honestly employed. It won't stay this quiet.",
+			"exits": { "west": "c1_beach" }
+		},
+		"c1_road": {
+			"name": "Coast Road",
+			"bg": "C1_road",
+			"desc": "A cracked two-lane running north into haze. A rusted sign promises a town that mostly isn't there anymore. Something in you is already reading the road for ambush sites. That reflex never healed shut.",
+			"exits": { "south": "c1_veranda", "east": "c1_cantina", "north": "c1_airstrip" }
+		},
+		"c1_cantina": {
+			"name": "Cantina",
+			"bg": "C1_cantina",
+			"desc": "Tin roof, warm beer, a dead jukebox. The man waiting at the corner table has a new face since you saw him last, but the smile underneath it hasn't improved: Conroy, who finds people for money, and has found you.",
+			"npcs": ["conroy"],
+			"net": true,
+			"exits": { "west": "c1_road" }
+		},
+		"c1_airstrip": {
+			"name": "Airstrip",
+			"bg": "C1_airstrip",
+			"desc": "A strip of oiled dirt and a chartered turboprop with its door hanging open like a question you've already answered. North is the border, the Sprawl, the site, the job.",
+			"requires_flag": "ch01_accepted_job",
+			"locked_text": "There's no reason to be out here. Not yet. The beach is still yours for a few more hours.",
+			"on_enter_flag": "ch01_at_airstrip",
+			"exits": { "south": "c1_road" }
+		}
+	}
+}

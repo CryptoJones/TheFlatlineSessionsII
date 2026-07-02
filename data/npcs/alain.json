@@ -1,0 +1,40 @@
+{
+	"id": "alain",
+	"name": "Alain",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Alain has ordered champagne he intends you to pay for, and greets you with the wounded tenderness of a man who has rehearsed being forgiven. \"Marly. You look — prosperous.\" The word does several jobs at once. \"Sit. We were good together once, before everything became so... contractual.\"",
+			"set_flag": "ch06_met_alain",
+			"options": [
+				{ "text": "\"You have a lead. Name your price.\"", "next": "price" },
+				{ "text": "\"We were never good together. You had a good audience.\"", "next": "sting" }
+			]
+		},
+		"sting": {
+			"text": "He absorbs it with a practiced flinch, pivots instantly. \"You're angry. That's fair. Anger is fair.\" He leans in, drops the performance by half. \"But I *know* what you're chasing, chérie, and I know where the market first smelled them. That's worth more than an apology. Apologies are free, which is why mine were never any good.\"",
+			"options": [
+				{ "text": "\"Name your price.\"", "next": "price" }
+			]
+		},
+		"price": {
+			"text": "\"Eighteen hundred. New yen, not paper.\" He says it too quickly, a man with debts standing behind him. \"For that: where the first box surfaced, who moved it, and a set of coordinates I was *not* supposed to see. Old money. High ground.\" His eyes flick to the mirror, to the door, back. \"Tonight, Marly. The number is good tonight.\"",
+			"options": [
+				{ "text": "Pay him from Virek's chip.", "next": "pay" },
+				{ "text": "\"Coordinates to what, Alain?\"", "next": "tease" }
+			]
+		},
+		"tease": {
+			"text": "\"To the place the boxes are *born*.\" For one unguarded second he looks almost like the boy who once talked you through the Louvre at closing time, drunk on cornices. \"It's over our heads, chérie. Literally.\" The waiter refills his glass; his hand isn't steady. \"Pay me and go home. I'll send the details to your flat by nine.\"",
+			"options": [
+				{ "text": "Pay him from Virek's chip.", "next": "pay" }
+			]
+		},
+		"pay": {
+			"text": "The chip settles it in one silent transaction — Virek's bottomless account, Alain's bottomless need. He pockets the transfer with relief he can't quite hide. \"By nine,\" he promises, standing, kissing your cheek with dry lips. \"Marly. Whatever you think of me — don't come to my flat before nine.\" It is the only honest thing he says all evening, and later you will understand it was a warning.",
+			"credits": -1800,
+			"set_flag": "ch06_paid_alain",
+			"options": []
+		}
+	}
+}

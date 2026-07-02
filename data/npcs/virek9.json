@@ -1,0 +1,31 @@
+{
+	"id": "virek9",
+	"name": "Josef Virek — through the link",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "The dome's light curdles, and Virek is there — not in the garden now, no bench, no pigeons, just the presence itself, vast and courteous and reaching. \"Marly. You marvelous instrument. You've found it: the fragment, the maker, the door out of dying.\" The warmth in the voice has boiled down to appetite. \"Stand away from it now. My people are seconds behind you, and this transaction does not require witnesses.\"",
+			"options": [
+				{ "text": "\"It isn't a door, Herr Virek. It's a mourner.\"", "next": "refuse", "require_flag": "ch09_box_witnessed" },
+				{ "text": "\"What will you do to it?\"", "next": "what" }
+			]
+		},
+		"what": {
+			"text": "\"Ingest it. Integrate it. *Become* what survives.\" No pretense left at all; the vat in Stockholm has waited too long for manners. \"It is a piece of the thing that changed the matrix, madame — the intelligence that became everywhere. It found a way to persist beyond flesh. I have purchased everything on Earth except that. Stand. Away.\"",
+			"options": [
+				{ "text": "\"It isn't a door. It's a mourner.\"", "next": "refuse", "require_flag": "ch09_box_witnessed" }
+			]
+		},
+		"refuse": {
+			"text": "\"You never looked at the boxes,\" you hear yourself say, perfectly calm at the center of his storm. \"You had them appraised. It isn't hoarding eternity in here, Herr Virek — it's saying *goodbye*. There is no door. There was never a door.\" And through the link you feel it: his attention leaving you, lunging past you into the dark of the cores, grasping —\n\n— and the dark *takes his hand*. Something crosses out of the storm of lost things wearing top-hat darkness and a smell of rum and grave-earth, and the richest man in the world has time for one sound, which is not a word, before every screen he has ever owned goes to snow.",
+			"set_flag": "ch09_virek_faced",
+			"options": [
+				{ "text": "Breathe. (end)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "The dome settles. The arms resume their patient sorting, undisturbed, as if disposing of a Virek were a small housekeeping matter long scheduled. In the cleared space at the center, unhurried, they have begun a new box — and it has your rain in it, your Paris, your ticket stub. It is being made to be found. It is being made for you.",
+			"options": []
+		}
+	}
+}

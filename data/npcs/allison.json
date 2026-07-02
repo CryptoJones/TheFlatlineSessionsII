@@ -1,0 +1,55 @@
+{
+	"id": "allison",
+	"name": "Allison",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "She turns at the sound of your feet in the sand, hair pushed back by the wind, and smiles like the morning is a thing you built together. \"You were up before the gulls. Bad dreams, or good ones?\"",
+			"options": [
+				{ "text": "\"Walk with me a while.\"", "next": "walk" },
+				{ "text": "Ask her how long this can last.", "next": "how_long" },
+				{ "text": "\"Later.\" (leave)", "next": "bye" }
+			]
+		},
+		"walk": {
+			"text": "You walk the tideline south, not talking much, her shoulder warm against your arm. She finds a blue glass float, holds it to the sun, gives it to you like a medal. For an hour there is no job, no Conroy, no wire. Just this.",
+			"set_flag": "ch01_walked_beach",
+			"options": [
+				{ "text": "Ask her how long this can last.", "next": "how_long" },
+				{ "text": "Say nothing. Keep the hour.", "next": "keep_hour" }
+			]
+		},
+		"keep_hour": {
+			"text": "\"You do that,\" she says quietly, watching the water. \"Go somewhere behind your eyes. I never ask where.\" She skips a stone, badly. \"Ask me something true, Turner. Before you can't.\"",
+			"options": [
+				{ "text": "\"Who's paying you, Allison?\"", "next": "truth" },
+				{ "text": "\"What do you mean, before I can't?\"", "next": "truth" }
+			]
+		},
+		"how_long": {
+			"text": "Something goes still in her face, the professional stillness of someone hearing a question a week early. \"That depends,\" she says carefully, \"on people who aren't on this beach.\"",
+			"options": [
+				{ "text": "\"Who's paying you, Allison?\"", "next": "truth" },
+				{ "text": "Let it go. (leave)", "next": "bye" }
+			]
+		},
+		"truth": {
+			"text": "\"Hosaka,\" she says, and the word lands like a stone in a still pool. \"Psych team, rehabilitation contract. You were coming apart, Turner. They wanted their asset load-bearing again.\" She looks at the sea, not at you. \"The beach was in the brief. I wasn't supposed to be.\"",
+			"set_flag": "ch01_allison_truth",
+			"options": [
+				{ "text": "\"Was any of it real?\"", "next": "real" },
+				{ "text": "Walk away. (leave)", "next": "bye" }
+			]
+		},
+		"real": {
+			"text": "\"The parts that matter weren't in the brief.\" She finally looks at you, and lets you see the tiredness under the tan. \"There's a man at the cantina asking for you by your working name. Go hear him out. And Turner — when it goes wrong out there, and it will — remember somebody put you back together once. It can be done again.\"",
+			"options": [
+				{ "text": "\"Goodbye, Allison.\" (leave)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "She lifts the blue glass float in a small salute and goes back to walking the tideline, alone, the way she'll walk out of the contract and out of your file. The gulls wheel over the break like torn paper.",
+			"options": []
+		}
+	}
+}

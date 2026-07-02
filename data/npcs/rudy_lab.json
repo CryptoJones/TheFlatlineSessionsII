@@ -1,0 +1,39 @@
+{
+	"id": "rudy_lab",
+	"name": "Rudy — at the bench",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "The workshop hums around him and Rudy is transformed — hands steady, voice clipped, the bourbon somewhere else. Angie sits in the rebuilt imaging chair, brave and small. \"Scanners are warm,\" Rudy says. \"Non-invasive, kiddo, you'll feel nothing but bored.\" To you, quieter: \"Ready when you are.\"",
+			"options": [
+				{ "text": "\"Run it.\"", "next": "scan" }
+			]
+		},
+		"scan": {
+			"text": "The rig ticks through its passes while Angie counts ceiling knots and the screens fill, slice by slice, with her skull's interior weather. Rudy goes still in stages. \"That's not an implant,\" he says at last, very quietly. \"Implants have *edges*.\" On the display: lacework, dense and branching, grown through the cortex like frost across a window — beautiful, deliberate, and everywhere.",
+			"set_flag": "ch07_scan_done",
+			"options": [
+				{ "text": "\"Plain words, Rudy. What is it?\"", "next": "truth" }
+			]
+		},
+		"truth": {
+			"text": "\"Biosoft. Mitchell's real masterwork — not grown *for* her, grown *into* her, years of it, since she was small.\" He pulls up a subsystem trace with a hand that's stopped being steady. \"It's a matrix interface, Turner. No deck, no trodes. The grid isn't somewhere she visits — it's a *sense*, like hearing.\" He kills the display like it might hear its name. \"Every lab and every hunter on this continent would burn a city for what's in that girl's head. Including, I'd guess, whoever burned your site.\"",
+			"set_flag": "ch07_biosoft_truth",
+			"grant": "biosoft_dossier",
+			"options": [
+				{ "text": "\"And the names she says in her sleep?\"", "next": "names" },
+				{ "text": "\"Then we're gone before dawn.\" (end)", "next": "bye" }
+			]
+		},
+		"names": {
+			"text": "Rudy rubs his eyes. \"There's traffic on that lace, Turner. Inbound. Structured. It talks to her in her sleep, and whatever's talking has been at it *longer than we've had her*.\" He looks at Angie, gentle now. \"She's not carrying a product. She's carrying a *relationship*. God help you both, because I can't.\"",
+			"options": [
+				{ "text": "\"Then we're gone before dawn.\" (end)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"Check my treeline before you load the hover,\" Rudy says, already copying the scans to a chip and wiping his own buffers, a man tidying the crime scene his bench just became. \"I've been hearing rotors that aren't crop-dusters.\"",
+			"options": []
+		}
+	}
+}

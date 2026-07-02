@@ -1,0 +1,37 @@
+{
+	"id": "rudy",
+	"name": "Rudy",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Rudy quiets the dogs with a word and looks at you for a long moment across the yard — heavier, greyer, eyes still quicker than anyone's. \"Well,\" he says finally. \"The prodigal weapon.\" He takes in the hover, the girl asleep in the cab, the way you're standing. \"How much trouble, and how close behind?\"",
+			"options": [
+				{ "text": "\"Corporate. And I don't know. Days, maybe.\"", "next": "trouble" },
+				{ "text": "\"Hello to you too, Rudy.\"", "next": "hello" }
+			]
+		},
+		"hello": {
+			"text": "\"Don't.\" He says it without heat, an old door closing on an old hinge. \"You left me the farm, the dogs, and Mom's last two years. We're square, but we're not *social*.\" He jerks his chin at the hover. \"Who's the kid?\"",
+			"options": [
+				{ "text": "\"Corporate trouble. Days behind, maybe.\"", "next": "trouble" }
+			]
+		},
+		"trouble": {
+			"text": "\"Days.\" He chews on it, then nods at the house the way their mother used to — hospitality as reflex, deeper than grievance. \"Sally's got the kitchen. Girl goes in the back room.\" As you pass he catches your arm, brotherly and hard. \"You brought it here because of my bench, so say it plain: what do you need scanned?\"",
+			"set_flag": "ch07_rudy_greeting",
+			"options": [
+				{ "text": "\"Her head, Rudy. Something's grown into it.\"", "next": "scan_ask" }
+			]
+		},
+		"scan_ask": {
+			"text": "\"Grown.\" The word wakes the other Rudy, the one who reads journals till dawn — hunger and dread in the same look. \"Maas Biolabs' runaway daughter, in my back room.\" He exhales. \"Get her fed and rested. When she's steady, bring her to the workshop. And Turner — if I find what I think I'll find, we are *all* going to wish I hadn't.\"",
+			"options": [
+				{ "text": "\"Understood.\" (end)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "He whistles the dogs in and walks ahead of you to the porch, favoring the knee he wrecked the summer you both still believed you'd grow old here.",
+			"options": []
+		}
+	}
+}

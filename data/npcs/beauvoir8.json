@@ -1,0 +1,31 @@
+{
+	"id": "beauvoir8",
+	"name": "Beauvoir",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Beauvoir has traded the fatigues for street armor and lost none of the professor. \"Lucas is dead, Bobby.\" He says it straight, the way you'd want it. \"Ahmed limo, Madison Avenue, shaped charge. Whoever's running this cleaned the board of everyone who could move the pieces — and now the same money is standing in our street.\"",
+			"options": [
+				{ "text": "\"Who's paying them?\"", "next": "read" },
+				{ "text": "\"What were you all moving me *toward*?\"", "next": "toward" }
+			]
+		},
+		"toward": {
+			"text": "\"A meeting.\" He watches the barricaded windows. \"The loa have been herding all of us — you, the girl who dreams, the hired man driving her east — toward one room, and this club is it. Legba's crossroads, Bobby. Tonight the roads *cross*.\" He almost smiles. \"The other side knows it too. Hence the leather convention downstairs.\"",
+			"options": [
+				{ "text": "\"Who's paying them?\"", "next": "read" }
+			]
+		},
+		"read": {
+			"text": "\"Follow the shape of it. Money that can task orbital strikes, buy gangs wholesale, and burn its own hirelings the moment they've served.\" Beauvoir's glasses catch the light. \"There's a hired man named Conroy standing where all those wires meet — and *behind* him, something with very old money and no pulse, sitting in a vat on the far side of the ocean, trying to buy its way into the matrix's new weather.\" He turns from the window. \"Jack in with Jackie. Cut the paymaster's wire. The rest collapses on its own — hired hate always does.\"",
+			"set_flag": "ch08_beauvoir_read",
+			"options": [
+				{ "text": "\"Consider it cut.\" (leave)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"Bobby.\" Beauvoir's voice follows you, quieter. \"Jackie rides tonight with Danbala's blessing, but blessings are not armor. Bring her back or don't come back easy. We've buried enough this week.\"",
+			"options": []
+		}
+	}
+}

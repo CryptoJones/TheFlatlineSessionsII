@@ -1,0 +1,32 @@
+{
+	"id": "sutcliffe",
+	"name": "Sutcliffe",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Sutcliffe walks the wire with his rifle slung and an Australian drawl he wears like camouflage. \"Boss man. Come to check my garden?\" He gestures at the sensor stakes marching off into scrub. \"Monofilament and eyes out to the highway. Nothing bigger than a coyote gets in without an invitation.\"",
+			"options": [
+				{ "text": "Walk the full perimeter with him.", "next": "walk" },
+				{ "text": "Ask what he thinks of the plan.", "next": "plan" }
+			]
+		},
+		"walk": {
+			"text": "You do the whole loop, stake by stake, arc by arc. His work is clean — kill zones layered like a wedding cake, fallbacks marked with paint only site personnel would read. \"Learned it in three armies,\" he says. \"Fourth one pays best.\" You've seen a hundred perimeters. This one is good. That's not the thing that's bothering you.",
+			"set_flag": "ch04_perimeter_walked",
+			"options": [
+				{ "text": "Ask what he thinks of the plan.", "next": "plan" },
+				{ "text": "\"Carry on.\" (leave)", "next": "bye" }
+			]
+		},
+		"plan": {
+			"text": "He spits, considers. \"Plan's fine. Plans are always fine.\" A beat. \"You want my honest read, boss? Too many of us know too little, and the man on the phone knows too much. I've been on jobs shaped like that before.\" He resettles the rifle. \"Most of the survivors agree with me.\"",
+			"options": [
+				{ "text": "\"Stay sharp at dawn.\" (leave)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"Always am.\" He turns back to the wire and the empty desert beyond it, a man professionally at peace with being surrounded.",
+			"options": []
+		}
+	}
+}

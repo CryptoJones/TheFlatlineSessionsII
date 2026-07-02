@@ -1,0 +1,21 @@
+{
+	"_note": "Count Zero matrix targets, gated per chapter. 'chapter' hides a db outside its chapter; 'requires' needs another db cracked first; 'requires_flag' needs a story flag; 'set_flag' fires on crack.",
+	"databases": [
+		{
+			"id": "barrytown_target", "name": "Unmarked Industrial Node", "chapter": "ch02",
+			"ice": 100, "bg": "CYBER_target", "requires_flag": "ch02_got_codes",
+			"set_flag": "ch02_saved_by_girl",
+			"content": "The ice wasn't ice. It folded around you like a wet sheet and your heart stopped — and then a girl made of light leaned out of the grid and peeled it off you, and a voice like a cathedral said LIVE. You're on your mother's carpet, nose bleeding, eight hours gone. The deck is still warm. Whatever that target really was, somebody built it to kill the first cowboy who touched it."
+		},
+		{
+			"id": "hired_ice", "name": "Hired Ice — Perimeter", "chapter": "ch08",
+			"ice": 200, "bg": "CYBER_hired", "requires_flag": "ch08_jacked_in",
+			"content": "Mercenary countermeasures wrapped around the club's grid presence like razor wire. Military surplus, recently bought, no badge. Somebody with deep credit wants everyone in Jammer's to stay put — or stop breathing. Jackie's horse went down in the first pass. You finish the run alone, cold to the bone."
+		},
+		{
+			"id": "jaylene_slide", "name": "Slide Construct — Los Angeles", "chapter": "ch08",
+			"ice": 150, "requires": "hired_ice", "bg": "CYBER_slide",
+			"content": "White light over a chrome sea: Jaylene Slide's icon, burning with grief and looking for a target. You give her the name — Conroy. The word drops into her construct like a stone down a well. Somewhere in a Sprawl hotel, a suite stops existing. The hired muscle around the mall loses its paymaster between one breath and the next."
+		}
+	]
+}

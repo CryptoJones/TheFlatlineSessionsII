@@ -1,0 +1,109 @@
+{
+	"_note": "One main quest per chapter. Each step completes when its flag lands; flags are set by dialog nodes (set_flag), room entry (on_enter_flag), item grants/pickups (granted_/took_), and cracked databases (cracked_<id>).",
+	"quests": {
+		"q01_the_job": {
+			"name": "The Job",
+			"desc": "Say goodbye to the beach. Hear Conroy out. Take the Mitchell contract — or admit you have nothing else.",
+			"steps": [
+				{ "text": "Walk the beach with Allison one more time.", "flag": "ch01_walked_beach" },
+				{ "text": "Learn what Allison isn't telling you.", "flag": "ch01_allison_truth" },
+				{ "text": "Meet Conroy at the cantina.", "flag": "ch01_met_conroy" },
+				{ "text": "Review the Mitchell dossier.", "flag": "granted_mitchell_dossier" },
+				{ "text": "Accept the extraction contract.", "flag": "ch01_accepted_job" }
+			]
+		},
+		"q02_first_run": {
+			"name": "First Run",
+			"desc": "Run the target Two-a-Day sold you. Survive what's waiting in the ice. Get out of Barrytown alive.",
+			"steps": [
+				{ "text": "Pick up the icebreaker slab's run codes from Leon's.", "flag": "ch02_got_codes" },
+				{ "text": "Jack in from your mother's condo and run the target.", "flag": "cracked_barrytown_target" },
+				{ "text": "Come to on the floor — and understand what saved you.", "flag": "ch02_saved_by_girl" },
+				{ "text": "Get out before the condo goes up.", "flag": "ch02_condo_burned" },
+				{ "text": "Reach Big Playground and lie low.", "flag": "ch02_reached_playground" }
+			]
+		},
+		"q03_the_commission": {
+			"name": "The Commission",
+			"desc": "The richest man alive wants to hire the most disgraced gallerist in Paris. Hear the offer. See the box. Decide.",
+			"steps": [
+				{ "text": "Survive the interview at Galerie Duperey.", "flag": "ch03_interviewed" },
+				{ "text": "Walk in Virek's garden — the Güell Park construct.", "flag": "ch03_met_virek" },
+				{ "text": "Study the Cornell box he keeps in the dark.", "flag": "ch03_saw_box" },
+				{ "text": "Accept the commission.", "flag": "ch03_accepted" },
+				{ "text": "Set up operations at Andrea's flat in Paris.", "flag": "ch03_paris_base" }
+			]
+		},
+		"q04_the_extraction": {
+			"name": "The Extraction",
+			"desc": "Mitchell comes over the wire at dawn. Have the site, the surgeons, and the exit ready when he does.",
+			"steps": [
+				{ "text": "Inspect the perimeter with Sutcliffe.", "flag": "ch04_perimeter_walked" },
+				{ "text": "Check the medical pod and its surgical team.", "flag": "ch04_medpod_checked" },
+				{ "text": "Take Webber's read on the crew — and on Conroy.", "flag": "ch04_webber_talk" },
+				{ "text": "Man the bunker for the dawn signal.", "flag": "ch04_signal_received" },
+				{ "text": "Get to the crash site.", "flag": "ch04_crash_reached" },
+				{ "text": "Get the girl to the jet before the sky falls.", "flag": "ch04_escaped" }
+			]
+		},
+		"q05_the_loa": {
+			"name": "The Loa",
+			"desc": "The men who saved you deal with things that live in the matrix. Find out what touched you in the ice — and what it wants.",
+			"steps": [
+				{ "text": "Hear Beauvoir's explanation of the loa.", "flag": "ch05_beauvoir_lesson" },
+				{ "text": "Learn who really owns the icebreaker you ran.", "flag": "ch05_slab_truth" },
+				{ "text": "Ask Jackie about the girl in the ice — Vyèj Mirak.", "flag": "ch05_vyej_named" },
+				{ "text": "Get your deck back from Two-a-Day.", "flag": "granted_ono_sendai" },
+				{ "text": "Agree to go into the Sprawl with Lucas.", "flag": "ch05_joined_lucas" }
+			]
+		},
+		"q06_the_trail": {
+			"name": "Names of the Dead",
+			"desc": "Alain has a lead on the boxes and a price. Pay it. Then deal with what paying it uncovers.",
+			"steps": [
+				{ "text": "Meet Alain at the brasserie.", "flag": "ch06_met_alain" },
+				{ "text": "Raise his price from Virek's chip.", "flag": "ch06_paid_alain" },
+				{ "text": "Confide in Andrea — someone has to know.", "flag": "ch06_andrea_talk" },
+				{ "text": "Return to Alain's flat for the coordinates.", "flag": "ch06_found_alain" },
+				{ "text": "Take the coordinates from his coat.", "flag": "took_orbit_coords" },
+				{ "text": "Board the JAL shuttle at Orly.", "flag": "ch06_boarded_shuttle" }
+			]
+		},
+		"q07_rudys_place": {
+			"name": "The Squirrel Wood",
+			"desc": "Rudy can scan what Mitchell grew in his daughter's head. Stay long enough to learn it. Leave before it kills your brother.",
+			"steps": [
+				{ "text": "Talk your way past Rudy's dogs and Rudy.", "flag": "ch07_rudy_greeting" },
+				{ "text": "Let Sally settle Angie in.", "flag": "ch07_angie_settled" },
+				{ "text": "Help Rudy run the scan.", "flag": "ch07_scan_done" },
+				{ "text": "Hear what the biosoft really is.", "flag": "ch07_biosoft_truth" },
+				{ "text": "Check the treeline — count the drones.", "flag": "ch07_drones_spotted" },
+				{ "text": "Leave for the Sprawl before dawn.", "flag": "ch07_left_farm" }
+			]
+		},
+		"q08_jammers": {
+			"name": "Count Zero Interrupt",
+			"desc": "The club is a box with you inside it. Break the siege the only way a cowboy can — from the inside of the matrix.",
+			"steps": [
+				{ "text": "Take stock of the siege with Jammer.", "flag": "ch08_jammer_briefed" },
+				{ "text": "Hear Beauvoir's read on who's paying the street.", "flag": "ch08_beauvoir_read" },
+				{ "text": "Jack in from Jammer's deck with Jackie.", "flag": "ch08_jacked_in" },
+				{ "text": "Survive the hired ice.", "flag": "cracked_hired_ice" },
+				{ "text": "Reach Jaylene Slide and give her Conroy's name.", "flag": "cracked_jaylene_slide" },
+				{ "text": "Watch the siege break.", "flag": "ch08_siege_broken" }
+			]
+		},
+		"q09_wrack_and_whirl": {
+			"name": "Wrack and Whirl",
+			"desc": "Dock at the dead cores. Find the hands that make the boxes. Be standing somewhere survivable when Virek reaches for them.",
+			"steps": [
+				{ "text": "Dock the Sweet Jane at the cores.", "flag": "ch09_docked" },
+				{ "text": "Follow Jones through the dark to the Wig.", "flag": "ch09_met_wig" },
+				{ "text": "Reach the boxmaker's dome.", "flag": "ch09_found_boxmaker" },
+				{ "text": "Witness a box being born.", "flag": "ch09_box_witnessed" },
+				{ "text": "Face Virek when he comes through.", "flag": "ch09_virek_faced" },
+				{ "text": "Leave with the one box that's yours.", "flag": "took_marly_box" }
+			]
+		}
+	}
+}

@@ -1,0 +1,47 @@
+{
+	"id": "virek",
+	"name": "Josef Virek",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "\"Marly. Forgive the theater.\" The most famous invalid on Earth sits on Gaudí's serpentine bench, feeding pigeons that were dust before you were born. His smile is kind, worn, infinitely rehearsed. \"My body lies in a vat in an industrial suburb of Stockholm. I have not seen it in years, and it has never seen this park. Sit. I want to show you something no one else has understood.\"",
+			"set_flag": "ch03_met_virek",
+			"options": [
+				{ "text": "Sit. Look at what he offers.", "next": "box" },
+				{ "text": "\"Why me, Herr Virek?\"", "next": "why" }
+			]
+		},
+		"why": {
+			"text": "\"Because you were destroyed by a beautiful fake.\" He says it without cruelty, like a diagnosis. \"Everyone in your world can price authenticity. You are the only one I've found who was made to *bleed* for it. That is the instrument this search requires.\"",
+			"options": [
+				{ "text": "Look at what he offers.", "next": "box" }
+			]
+		},
+		"box": {
+			"text": "It sits on the bench between you: a box of aged wood and glass, holding night. Bone, lace, a dead wasp, a circuit fragment, the stub of a ticket to somewhere drowned — arranged with a rightness that closes your throat. It is grief, made spatial. It is the truest thing you have ever seen, and nobody on Earth knows who made it.",
+			"set_flag": "ch03_saw_box",
+			"options": [
+				{ "text": "\"Who made this?\"", "next": "commission" },
+				{ "text": "Say nothing. Keep looking.", "next": "commission" }
+			]
+		},
+		"commission": {
+			"text": "\"Seven have surfaced. No two alike, no maker, no provenance — objects from nowhere, perfect as fossils of a feeling.\" The dead sun warms the tiles. \"Find the maker, Marly. My agents open every door; my accounts have no floor. I am dying at a rate current medicine finds embarrassing, and whoever makes these boxes...\" the smile flickers, \"...knows something about continuing that I need to learn.\"",
+			"options": [
+				{ "text": "\"I accept.\"", "next": "accept" },
+				{ "text": "\"And if what it knows can't be bought?\"", "next": "warning" }
+			]
+		},
+		"warning": {
+			"text": "For an instant the park stutters — one frame of something vast and hungry behind the kindly eyes — and then the afternoon resumes. \"Everything can be bought,\" Virek says gently. \"The interesting questions are only ever about currency. Do you accept?\"",
+			"options": [
+				{ "text": "\"I accept.\"", "next": "accept" }
+			]
+		},
+		"accept": {
+			"text": "\"Then it is done, and you are the best-funded woman in Europe.\" He stands, and the pigeons scatter through a sky that has been dead for decades. \"Paco will handle logistics. Begin in Paris — the boxes touched the market there first. And Marly: when you find it, you will call me before anyone. That clause,\" the warmth cools by one degree exactly, \"is not negotiable.\"",
+			"set_flag": "ch03_accepted",
+			"options": []
+		}
+	}
+}

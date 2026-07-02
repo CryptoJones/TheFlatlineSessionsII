@@ -1,0 +1,48 @@
+{
+	"_note": "Chapter 5 — Bobby in the Projects with Beauvoir, Lucas, Jackie, Rhea; deck back from Two-a-Day; leave with Lucas.",
+	"start": "c5_recovery",
+	"rooms": {
+		"c5_recovery": {
+			"name": "Recovery Room",
+			"bg": "C5_recovery",
+			"desc": "You wake on a fold-out table under a hand-stitched quilt, bandaged by someone who knew what they were doing. The window looks out from a height Barrytown doesn't have: you're up in the Projects, where nobody from the Courts ever goes twice.",
+			"npcs": ["rhea"],
+			"exits": { "east": "c5_altar" }
+		},
+		"c5_altar": {
+			"name": "Hounfor — Altar Room",
+			"bg": "C5_altar",
+			"desc": "Candles, chromed vévé traced in flour on the floor, a bottle of rum beside a keyboard older than you are. Beauvoir calls it a hounfor — a server room for gods. He says both words like they mean the same thing, because to him they do.",
+			"npcs": ["beauvoir"],
+			"exits": { "west": "c5_recovery", "east": "c5_kitchen", "south": "c5_gallery", "north": "c5_elevator" }
+		},
+		"c5_kitchen": {
+			"name": "Rhea's Kitchen",
+			"bg": "C5_kitchen",
+			"desc": "Steam, scotch bonnet, a radio playing dub at conversation volume. Jackie shells peas at the table with the unhurried grace of someone who is also, on other nights, a horse for gods to ride.",
+			"npcs": ["jackie"],
+			"exits": { "west": "c5_altar", "north": "c5_twoaday" }
+		},
+		"c5_gallery": {
+			"name": "Projects Gallery — View of Barrytown",
+			"bg": "C5_gallery",
+			"desc": "A windowed walkway a kilometer up. Barrytown is a circuit board below, the Sprawl a glow on the horizon like a permanent dawn. A public terminal hums by the rail.",
+			"net": true,
+			"exits": { "north": "c5_altar" }
+		},
+		"c5_twoaday": {
+			"name": "Two-a-Day's Apartment",
+			"bg": "C5_twoaday",
+			"desc": "Leather, chrome, a wall of fish tanks, and Two-a-Day himself looking significantly less rich and significantly more scared than he did in Barrytown. Your deck sits on his coffee table like evidence.",
+			"npcs": ["twoaday"],
+			"exits": { "south": "c5_kitchen" }
+		},
+		"c5_elevator": {
+			"name": "Down Elevator",
+			"bg": "C5_elevator",
+			"desc": "The doors stand open on a car big enough for freight. Lucas waits inside in a suit the color of midnight, holding a cane he doesn't need, patient as a scheduled eclipse.",
+			"npcs": ["lucas"],
+			"exits": { "south": "c5_altar" }
+		}
+	}
+}

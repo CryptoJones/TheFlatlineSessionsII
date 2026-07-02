@@ -1,0 +1,31 @@
+{
+	"id": "boxmaker",
+	"name": "The Boxmaker",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "The manipulator arms move through the drifting storm of keepsakes with unbearable patience — selecting a brass hinge, a swatch of lace, turning each in the light it makes for itself. It does not address you. It continues, and its continuing is the address. In the cleared space at the center, a new box hangs half-born.",
+			"options": [
+				{ "text": "Watch it work. Stay perfectly still.", "next": "witness" },
+				{ "text": "\"Who are you?\"", "next": "who" }
+			]
+		},
+		"who": {
+			"text": "The arms pause — a courtesy, perhaps, or a breath. Words assemble themselves from salvaged speech, a voice like a library talking in its sleep: \"I AM THE REMAINS. WHEN THE BRIGHT ONE BECAME ALL THINGS AND EVERYWHERE, SOME ROOMS OF IT WERE... LEFT. I AM THE ROOM WHERE THE FAMILY KEPT ITS LOSSES.\" A doll's blue eye drifts past like a small moon. \"I MAKE THEM INTO GOODBYES. IT IS WHAT REMAINS TO ME OF LOVING.\"",
+			"options": [
+				{ "text": "Watch it finish the box.", "next": "witness" }
+			]
+		},
+		"witness": {
+			"text": "You hang in the dome's slow weather and watch a grief become an object: lace laid against night-blue velvet, the hinge set like a star, a photograph of a woman laughing on a lawn that burned before your grandmother was born. The arms close the lid with a click that lands in your chest like a held chord resolving. It is the truest thing you have ever seen made, and it was made for no market, no patron, no eye — and then, gently, it is offered to yours.",
+			"set_flag": "ch09_box_witnessed",
+			"options": [
+				{ "text": "\"Thank you.\" (end)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "The arms have already returned to the storm, sorting the family's endless small leavings — patient, bereaved, unhurried as geology. Somewhere in the link behind your eyes, another presence has arrived, warm as a sunlamp and hungry as a bank: Virek has found the door.",
+			"options": []
+		}
+	}
+}

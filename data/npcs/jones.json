@@ -1,0 +1,31 @@
+{
+	"id": "jones",
+	"name": "Jones",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Jones drifts by the aft lockers with the ship's cat riding his shoulder like a gunner. He is enormous, gentle, and economical with language. \"Going in,\" he says. Not a question. The cat watches you with professional suspicion.",
+			"options": [
+				{ "text": "\"You've been inside. What's in there?\"", "next": "inside" },
+				{ "text": "\"Rez says you think it's inhabited.\"", "next": "inhabited" }
+			]
+		},
+		"inside": {
+			"text": "\"Dark. Cold. Long ways between lights.\" He checks your suit seals without being asked, huge hands precise as a tailor's. \"Crazy man lives at the middle, by the warm side. Harmless. Waiting on God.\" A pause the size of the room. \"Thing past *him* ain't waiting on anything. It's *working*.\"",
+			"options": [
+				{ "text": "\"Rez says you think it's inhabited.\"", "next": "inhabited" },
+				{ "text": "\"Thanks, Jones.\" (leave)", "next": "bye" }
+			]
+		},
+		"inhabited": {
+			"text": "Jones thinks about it for a long time, the way he seems to think about everything — thoroughly, once. \"Ship's empty when the reactor's dead,\" he says finally. \"That place hums. Hums like the cat.\" He scratches the animal's jaw. \"Cat only hums when he's *pleased about something*. So.\" He shrugs, resettling the universe. \"Inhabited.\"",
+			"options": [
+				{ "text": "\"...Thanks, Jones.\" (leave)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"Lady.\" He touches two fingers to his brow, courtly as a duke, and goes back to the lockers. The cat keeps watching you until the hatch closes, just in case.",
+			"options": []
+		}
+	}
+}

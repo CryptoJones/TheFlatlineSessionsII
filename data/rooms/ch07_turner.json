@@ -1,0 +1,58 @@
+{
+	"_note": "Chapter 7 — Turner and Angie at Rudy's Ohio farm. Scan -> the truth -> drones -> leave.",
+	"start": "c7_road",
+	"rooms": {
+		"c7_road": {
+			"name": "County Road",
+			"bg": "C7_road",
+			"desc": "Gravel, tall corn gone wild, insects sawing away at the dark. The hover sits in the weeds where you ditched it. Down the lane: the yard light you grew up under, still burning like nothing ever happened to either of you.",
+			"exits": { "north": "c7_yard", "south": "c7_hover" }
+		},
+		"c7_yard": {
+			"name": "Farmhouse Yard",
+			"bg": "C7_yard",
+			"desc": "The dogs announce you all the way to the porch, where your brother stands with a beer in one hand and the doorframe holding him up. Rudy: gone soft around the middle, eyes gone sharp with the things he builds in the barn.",
+			"npcs": ["rudy"],
+			"exits": { "south": "c7_road", "north": "c7_kitchen", "east": "c7_treeline" }
+		},
+		"c7_kitchen": {
+			"name": "Farm Kitchen",
+			"bg": "C7_kitchen",
+			"desc": "Coffee in enamel cups, a shotgun over the door, Sally moving quiet between stove and table. She's already put the girl to bed twice; the girl keeps waking up saying names.",
+			"npcs": ["sally"],
+			"exits": { "south": "c7_yard", "east": "c7_lab", "west": "c7_backroom" }
+		},
+		"c7_lab": {
+			"name": "Rudy's Workshop",
+			"bg": "C7_lab",
+			"desc": "Half barn, half neurology lab: scavenged scanners, a dentist's chair rebuilt for imaging, tools racked with surgical neatness. Rudy's hands stop shaking the moment they touch equipment. It runs in the family.",
+			"npcs": ["rudy_lab"],
+			"exits": { "west": "c7_kitchen" }
+		},
+		"c7_backroom": {
+			"name": "Back Room — Angie",
+			"bg": "C7_backroom",
+			"desc": "The girl sleeps under a quilt with her fists closed. Sometimes her lips move: names out of no language you know, and one you do — she says it like a place she's been. When she wakes, her eyes find you like you're the only fixed point in the room.",
+			"npcs": ["angie_farm"],
+			"exits": { "east": "c7_kitchen" }
+		},
+		"c7_treeline": {
+			"name": "The Squirrel Wood",
+			"bg": "C7_treeline",
+			"desc": "The woodlot where Rudy taught you to shoot, a lifetime of quiet in the leaves — broken, now, by a glint where no glint belongs. One drone. Two. Four, settled into the canopy patient as vultures. The farm is already a coordinate in somebody's queue.",
+			"requires_flag": "ch07_biosoft_truth",
+			"locked_text": "The woods can wait. What's in the girl's head can't.",
+			"on_enter_flag": "ch07_drones_spotted",
+			"exits": { "west": "c7_yard" }
+		},
+		"c7_hover": {
+			"name": "The Hover, Predawn",
+			"bg": "C7_hover",
+			"desc": "You load the girl half-asleep into the cab as the east goes grey. Rudy waves once from the porch and doesn't come down the steps. In the mirror the yard light burns until the trees take it, and you drive toward the Sprawl with your childhood in the rearview and drones in the sky behind.",
+			"requires_flag": "ch07_drones_spotted",
+			"locked_text": "Not yet. You need to know what you're carrying — and who's watching.",
+			"on_enter_flag": "ch07_left_farm",
+			"exits": { "north": "c7_road" }
+		}
+	}
+}

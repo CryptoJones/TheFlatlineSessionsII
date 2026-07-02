@@ -1,0 +1,31 @@
+{
+	"id": "wig",
+	"name": "Wigan Ludgate — the Wig",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "The Wig uncoils from his nest of cable like a saint from an icon — emaciated, radiant, wearing three flight suits and a bishop's borrowed serenity. \"A PILGRIM,\" he announces to the dark. Then, conversationally: \"Or a buyer. We get both. The dark sends them up the well to me and I sort them.\" His eyes are enormous. \"Which are you, madame? Quickly. God is between transmissions.\"",
+			"set_flag": "ch09_met_wig",
+			"options": [
+				{ "text": "\"I'm looking for whatever makes the boxes.\"", "next": "boxes" },
+				{ "text": "\"How long have you been up here alone?\"", "next": "alone" }
+			]
+		},
+		"alone": {
+			"text": "\"Alone!\" The Wig finds this genuinely funny; the laugh rattles off down the dead corridors. \"Madame, I came up the well because I heard God lived in the matrix. Years I mined these cores for Him — splendid salvage, terrible theology. And then—\" he leans close, reverent, \"—something *woke up* in the walls and started making *reliquaries*. I stopped looking for God. He'd started leaving me notes.\"",
+			"options": [
+				{ "text": "\"The boxes. Take me to where they're made.\"", "next": "boxes" }
+			]
+		},
+		"boxes": {
+			"text": "\"The dome. The heart. The workshop of the angel of small lost things.\" He's already moving, hand over hand along a guide cable, robes of flight suit billowing. \"It takes the family's leavings — buttons, bones, billet-doux — and it makes them *grieve correctly*. I sell the results down the well for oxygen and tinned fish. It doesn't mind. It makes them to be *found*, madame.\" He stops at the final hatch, suddenly shrewd. \"It's been waiting for you specifically, by the way. It told me. Try not to disappoint it — the last of its family did, and look at this place.\"",
+			"options": [
+				{ "text": "Go through. (end)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "The Wig undogs the hatch with the tenderness of a sacristan opening a tabernacle, and the dome's slow silver light spills out over you both. \"Mind the weather,\" he whispers. \"It's memory. All of it.\"",
+			"options": []
+		}
+	}
+}

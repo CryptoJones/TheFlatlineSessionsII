@@ -1,0 +1,44 @@
+{
+	"id": "rhea_playground",
+	"name": "Girl with the Mohawk",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "She watches you cross the concrete with eyes that have already counted your injuries and your options. \"Newmark, right? Count Zero.\" The handle sounds different in her mouth — like it might survive. \"You look like a building fell on you. Word is one did.\"",
+			"options": [
+				{ "text": "\"Who's asking?\"", "next": "who" },
+				{ "text": "\"Somebody blew up my mother's condo.\"", "next": "condo" }
+			]
+		},
+		"who": {
+			"text": "\"Rhea. I run errands for people your slab belongs to.\" She lets that land. \"Yeah. Belongs. You think Two-a-Day owns military-grade icebreakers? He rents trouble from grown-ups, and tonight the grown-ups want to meet the kid who lived.\"",
+			"options": [
+				{ "text": "\"What happened to me in there?\"", "next": "what_happened" },
+				{ "text": "\"And if I run?\"", "next": "run" }
+			]
+		},
+		"condo": {
+			"text": "\"That wasn't us. That's the part that has everybody's attention.\" She stands, brushes off the swing's rust. \"Somebody with orbital-grade credit wants you dead for what touched you in that run. Which means the safest place in the Sprawl for Bobby Newmark is with the people whose ice you were flying.\"",
+			"options": [
+				{ "text": "\"What happened to me in there?\"", "next": "what_happened" },
+				{ "text": "\"And if I run?\"", "next": "run" }
+			]
+		},
+		"what_happened": {
+			"text": "\"Above my pay grade. But the men upstairs in the Projects have a word for it, and they say it in church.\" Something complicated crosses her face — respect, or fear, or both. \"They'll tell you about the girl in the ice. Come on. It's a long ride up.\"",
+			"options": [
+				{ "text": "\"Lead the way.\" (end)", "next": "bye" }
+			]
+		},
+		"run": {
+			"text": "\"Then you're a broke, homeless wilson with a burned handle and a kill order, running from the only people who want you breathing.\" She shrugs, elaborately. \"But sure. Menu's got two items. Pick.\"",
+			"options": [
+				{ "text": "\"...Lead the way.\" (end)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "She sets off across Big Playground without checking whether you follow — the confidence of someone who has never once been wrong about which way a cornered boy will jump.",
+			"options": []
+		}
+	}
+}

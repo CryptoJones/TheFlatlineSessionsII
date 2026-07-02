@@ -1,0 +1,30 @@
+{
+	"id": "angie_club",
+	"name": "The Brown-Haired Girl",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "She stands in the middle of the dead dance floor as if she'd always been there — travel-worn, steady-eyed, younger than her tiredness. When she sees you her face does something you'll remember the rest of your life: recognition, though you've never met. \"You're the one,\" she says. \"From the ice. You were drowning and I— I *reached*.\"",
+			"options": [
+				{ "text": "\"That was YOU? You saved my life.\"", "next": "saved" },
+				{ "text": "\"Who are you?\"", "next": "who" }
+			]
+		},
+		"who": {
+			"text": "\"Angie. Angie Mitchell.\" She says the surname carefully, like setting down something heavy. \"I dream the bright lines. My father built it into me. Lately the dreams have names, and the names have *wants*, and every road I take ends in this club.\" She looks around the empty floor. \"The ones the others call the loa — they wanted us all in one room. Here we are.\"",
+			"options": [
+				{ "text": "\"That night in the ice — that was you.\"", "next": "saved" }
+			]
+		},
+		"saved": {
+			"text": "\"I didn't decide it. I was asleep in Arizona and something *took my hands* and used them kindly for once.\" She steps closer; the air hums faintly, the way it does near the hounfor's altar. \"You were the first person I ever touched through the lines, Bobby Newmark. Whatever's beginning tonight — the war or the wedding — it started with you not dying. I'm glad you didn't.\" A tired, real smile. \"The Count. They say it right, now.\"",
+			"options": [
+				{ "text": "\"Stick around after. I owe you a drink and a life.\" (end)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "Somewhere below, the street noise is changing key — thinning, breaking up. Angie tilts her head as if listening to a report no one else receives. \"It's ending,\" she says. \"The man with the money just left the world.\" And the mirror ball, dead for years, turns one slow revolution with no hand touching it.",
+			"options": []
+		}
+	}
+}

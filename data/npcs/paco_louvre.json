@@ -1,0 +1,37 @@
+{
+	"id": "paco_louvre",
+	"name": "Paco",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "\"You walk quickly when you're frightened,\" Paco observes, matching your pace along the embankment without apparent effort. \"That is not a criticism. It is in the file now, of course. Everything is.\" He offers a paper bag. \"Chestnut?\"",
+			"options": [
+				{ "text": "\"Were your people following Alain too?\"", "next": "alain" },
+				{ "text": "\"How much of my life is in that file?\"", "next": "file" }
+			]
+		},
+		"file": {
+			"text": "\"All of it that occurred within sight of anything with a lens, which in this century is a philosophical distinction only.\" He eats a chestnut with real pleasure — the first uncalculated thing you've seen him do. \"Señora. The file protects you. Herr Virek's interest is the most dangerous safe-conduct in Europe, but it *is* a safe-conduct.\"",
+			"options": [
+				{ "text": "\"Were your people following Alain too?\"", "next": "alain" }
+			]
+		},
+		"alain": {
+			"text": "The pleasure leaves his face on schedule. \"We were. So, we believe, was someone else — a team we did not place and could not hold. Quiet, expensive, patient.\" He stops walking. \"Whatever your Alain is selling you, señora, another buyer already knows he has it. Conclude your business with him quickly. And afterward — do not linger in stairwells.\"",
+			"options": [
+				{ "text": "\"Who else is looking for the boxmaker?\"", "next": "who" },
+				{ "text": "\"Thank you for the warning.\" (leave)", "next": "bye" }
+			]
+		},
+		"who": {
+			"text": "\"If we knew, they would not be worth fearing.\" He resumes walking, hands clasped behind him. \"Herr Virek has rivals the way weather has fronts. Something moves against this search that even his money cannot see into. That is rare. He finds it invigorating.\" A pause. \"He is the only one who does.\"",
+			"options": [
+				{ "text": "\"Thank you for the warning.\" (leave)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"Señora.\" He inclines his head and is gone into the riverside crowd with insulting ease, leaving you the chestnuts, the grey water, and the certainty of being watched from at least two directions.",
+			"options": []
+		}
+	}
+}

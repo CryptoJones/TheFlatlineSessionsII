@@ -1,0 +1,38 @@
+{
+	"id": "andrea",
+	"name": "Andrea",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Andrea takes one look at you in her doorway — rain-ruined coat, Virek's dossier under your arm — and steps aside. \"So the rumor's true. The dead man hired you.\" She fills the good cups. \"Sit down and tell me everything, in order, before you start believing your own press release.\"",
+			"options": [
+				{ "text": "Tell her about Virek and the garden.", "next": "virek_talk" },
+				{ "text": "Show her the box holos.", "next": "boxes" }
+			]
+		},
+		"virek_talk": {
+			"text": "She listens with her editor's face on. \"A man who hasn't had a body in a decade, offering you infinite money to find an artist nobody's met.\" She stirs her coffee. \"Marly. People like Virek don't collect art. They collect *directions*. You're not a curator on this job, you're a compass needle. Just remember which of you gets read, and which gets *used*.\"",
+			"options": [
+				{ "text": "Show her the box holos.", "next": "boxes" },
+				{ "text": "\"I need a base. Can I work from here?\"", "next": "base" }
+			]
+		},
+		"boxes": {
+			"text": "She turns the holos slowly under the lamp, and her professional cool cracks by a centimeter. \"Oh,\" she says softly. \"Oh, these are *real*.\" She looks up. \"Whatever made these lost something, Marly. You don't compose grief like this from reference. Find it if you can — but don't you dare hand it to that man in the vat without knowing what he'll do with it.\"",
+			"options": [
+				{ "text": "\"I need a base. Can I work from here?\"", "next": "base" }
+			]
+		},
+		"base": {
+			"text": "\"The spare room's yours, same as when the gallery fell down.\" She's already clearing the desk by the window, making space the way other people make speeches. \"House rules: you eat dinner like a human being, you tell me the truth, and if Virek's pretty knife-boy comes to the door, *I* answer it.\"",
+			"set_flag": "ch03_paris_base",
+			"options": [
+				{ "text": "\"Thank you, Andrea.\" (end)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"Go to work,\" she says, in exactly the voice she used the first time your world ended, which is how you know you'll survive this one too.",
+			"options": []
+		}
+	}
+}

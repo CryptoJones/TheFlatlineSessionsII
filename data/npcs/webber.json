@@ -1,0 +1,36 @@
+{
+	"id": "webber",
+	"name": "Webber",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Webber doesn't lower the scope when you climb the ridge. \"Site looks like a diagram from up here,\" she says, chewing her match down a millimeter. \"Bunker, pod, pad, wire. Real tidy.\" Now she looks at you. \"You want the weather report or the truth?\"",
+			"options": [
+				{ "text": "\"The truth.\"", "next": "truth" },
+				{ "text": "\"Start with the crew.\"", "next": "crew" }
+			]
+		},
+		"crew": {
+			"text": "\"Crew's solid. Sutcliffe's the real thing, medicals are the best I've seen outside a war, jockeys are dull and careful, which is what you want.\" The match travels to the other corner of her mouth. \"It ain't the crew, boss.\"",
+			"options": [
+				{ "text": "\"Then say it.\"", "next": "truth" }
+			]
+		},
+		"truth": {
+			"text": "\"Somebody's going to burn this site.\" She says it the way other people report wind speed. \"Medical package is too heavy for a defector with a briefcase — that pod's built for *neurosurgery*. And Conroy sited us with three exits for him and one for us.\" She goes back to the scope. \"I got a kid and a partner in New Mexico. When it drops, I'm shooting my way out the gap he left himself. No offense.\"",
+			"set_flag": "ch04_webber_talk",
+			"options": [
+				{ "text": "\"If you're right, I'll be right behind you.\"", "next": "respect" },
+				{ "text": "\"Watch the mesa at dawn.\" (leave)", "next": "bye" }
+			]
+		},
+		"respect": {
+			"text": "Something almost like a smile. \"No you won't. You'll be hauling whatever comes over that wire, because that's the shape of you.\" She resettles against the rock. \"Dawn, then. Watch the sky, boss. Not the mesa. The *sky*.\"",
+			"options": []
+		},
+		"bye": {
+			"text": "She's already gone back to the glass, sweeping the horizon in slow, patient arcs — a woman keeping her own private count of the exits.",
+			"options": []
+		}
+	}
+}

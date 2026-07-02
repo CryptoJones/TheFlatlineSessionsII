@@ -1,0 +1,33 @@
+{
+	"id": "site_console",
+	"name": "Site Command Console",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "The console runs the whole site from one buried desk: perimeter feeds, medical telemetry, the encrypted channel Conroy uses when he wants something. A status board glows amber: AWAITING WINDOW.",
+			"options": [
+				{ "text": "Run the final checks and open the dawn window.", "next": "checks", "require_flag": "ch04_perimeter_walked" },
+				{ "text": "Review Conroy's site plan again.", "next": "plan" },
+				{ "text": "Step away. (leave)", "next": "bye" }
+			]
+		},
+		"plan": {
+			"text": "Extraction plan MITCHELL, revision nine: defector departs the mesa by ultralight in the predawn window, tracks the highway beacon, lands inside the wire. Surgical assessment in the pod, then the jet north. Three contingency exits are marked. You notice, again, whose exits they are.",
+			"options": [
+				{ "text": "Run the final checks and open the dawn window.", "next": "checks", "require_flag": "ch04_perimeter_walked" },
+				{ "text": "Step away. (leave)", "next": "bye" }
+			]
+		},
+		"checks": {
+			"text": "Perimeter green. Medical green. Pad green. The board counts down the window and then — earlier than anyone briefed — the mesa's direction lights up: a heat bloom, a mayday squawk on Mitchell's frequency, and one small radar return coming over the wire low and wrong, trailing smoke. It's happening. Now.",
+			"set_flag": "ch04_signal_received",
+			"options": [
+				{ "text": "Move. (end)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "The console keeps its amber vigil, telemetry scrolling like the pulse of something asleep.",
+			"options": []
+		}
+	}
+}

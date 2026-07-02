@@ -1,0 +1,65 @@
+{
+	"_note": "Chapter 4 — the Mitchell extraction, Arizona. Site prep -> dawn signal -> crash -> escape.",
+	"start": "c4_bunker",
+	"rooms": {
+		"c4_bunker": {
+			"name": "Command Bunker",
+			"bg": "C4_bunker",
+			"desc": "A buried room lit by console glow: site schematics, comm gear, Conroy's voice on a secure line whenever it suits him. The air tastes of concrete and old fear. Everything is planned. That's what worries you.",
+			"npcs": ["site_console"],
+			"exits": { "north": "c4_mall" }
+		},
+		"c4_mall": {
+			"name": "Dead Mall Concourse",
+			"bg": "C4_mall",
+			"desc": "A shopping mall the desert has been eating for fifty years. Sand drifts through shattered skylights across the food court. Your team moves through the ruins like ghosts with clipboards.",
+			"exits": { "south": "c4_bunker", "west": "c4_perimeter", "east": "c4_medpod", "north": "c4_pad" }
+		},
+		"c4_perimeter": {
+			"name": "Perimeter — The Wire",
+			"bg": "C4_perimeter",
+			"desc": "Sensor stakes and monofilament out to the highway, the mesa a black wall on the horizon. Sutcliffe walks the line with his rifle slung, pointing out arcs of fire like a man showing you his garden.",
+			"npcs": ["sutcliffe"],
+			"exits": { "east": "c4_mall", "north": "c4_ridge" }
+		},
+		"c4_ridge": {
+			"name": "Ridge Lookout",
+			"bg": "C4_ridge",
+			"desc": "From up here the site is a diagram of itself: bunker, pad, pod, wire. Webber sits against a rock with her scope, chewing a match, watching the team more than the desert.",
+			"npcs": ["webber"],
+			"exits": { "south": "c4_perimeter" }
+		},
+		"c4_medpod": {
+			"name": "Surgical Pod",
+			"bg": "C4_medpod",
+			"desc": "A mobile neurosurgery riding on a flatbed: white light, chrome, the smell of iodine and cold. The medicals check their instruments in silence. Whatever comes over the wire at dawn lands on this table first.",
+			"on_enter_flag": "ch04_medpod_checked",
+			"exits": { "west": "c4_mall" }
+		},
+		"c4_pad": {
+			"name": "Landing Pad",
+			"bg": "C4_pad",
+			"desc": "The jet crouches under camo netting, fueled, preflighted, pointed at the sky like a held breath. The exit. You've never trusted a plan whose exit you didn't pick yourself.",
+			"exits": { "south": "c4_mall", "north": "c4_crash" }
+		},
+		"c4_crash": {
+			"name": "Crash Site",
+			"bg": "C4_crash",
+			"desc": "The ultralight is a torn kite burning in the scrub. In the wreckage: not Christopher Mitchell. A girl — sixteen, unconscious, pulse thready, blood at her hairline. Behind you, over the mesa, the sky is starting to turn the wrong color.",
+			"requires_flag": "ch04_signal_received",
+			"locked_text": "Nothing out there yet but desert and dark. The signal comes at dawn.",
+			"on_enter_flag": "ch04_crash_reached",
+			"npcs": ["angie_crash"],
+			"exits": { "south": "c4_pad", "east": "c4_jet" }
+		},
+		"c4_jet": {
+			"name": "The Jet",
+			"bg": "C4_jet",
+			"desc": "You strap the girl into the copilot couch as the first strike comes down on the site behind you — a white flower with a stem of smoke, your whole team inside it. The jet's AI asks, politely, where you would like to go.",
+			"requires_flag": "ch04_crash_reached",
+			"locked_text": "Not without what came over the wire.",
+			"on_enter_flag": "ch04_escaped",
+			"exits": { "west": "c4_crash" }
+		}
+	}
+}

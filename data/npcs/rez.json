@@ -1,0 +1,30 @@
+{
+	"id": "rez",
+	"name": "Rez",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Rez hangs upside down in the pilot's webbing, eating soup from a bulb with complete contentment. \"Strictly no refunds past this point,\" she says cheerfully. \"That out there is the graveyard of the single richest family that ever went crazy in orbit, and my tug is the only warm thing for a thousand klicks. Still want the tour?\"",
+			"options": [
+				{ "text": "\"Tell me about the cores.\"", "next": "cores" },
+				{ "text": "\"How do you two make a living out here?\"", "next": "living" }
+			]
+		},
+		"living": {
+			"text": "\"Salvage rights, mostly. Dead comsats, burned boosters, the occasional very haunted mansion.\" She spins lazily right side up. \"The cores pay double 'cause nobody else will dock there. Jones says the place is *inhabited*. Jones talks to his cat, mind. But—\" she taps her ear \"—out here you learn the difference between empty and *quiet*, and that place ain't empty.\"",
+			"options": [
+				{ "text": "\"Tell me about the cores.\"", "next": "cores" }
+			]
+		},
+		"cores": {
+			"text": "\"Tessier-Ashpool. Old-money clan, owned half the archipelago once — then the family went strange, the empire got sold off wing by wing, and the mainframe cores got cut loose to tumble.\" She nods at the port, where the dark mass turns slow against the stars. \"Everything they were is still in there, lady. Memories, money, ghosts. And for the last couple years... somebody's been *making things* inside.\"",
+			"options": [
+				{ "text": "\"Take me to the collar.\" (leave)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"Collar's aft, suits are racked, don't touch the cat — he bites gentry.\" She flips back into the webbing. \"We hold station twenty hours. After that, art or no art, this taxi's got a meter.\"",
+			"options": []
+		}
+	}
+}

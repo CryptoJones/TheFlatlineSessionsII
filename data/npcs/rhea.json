@@ -1,0 +1,31 @@
+{
+	"id": "rhea",
+	"name": "Rhea",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Rhea changes your dressing with hands that are gentler than her face. \"Don't thank me. I voted to leave you in the alley.\" She ties off the bandage with a small, precise tug. \"Jackie hauled you up here herself. Beauvoir's been waiting two days for you to stop drooling. Try to be worth it.\"",
+			"options": [
+				{ "text": "\"Where's my deck?\"", "next": "deck" },
+				{ "text": "\"Why would you leave me in an alley?\"", "next": "why" }
+			]
+		},
+		"deck": {
+			"text": "\"Two-a-Day's got it, up top, sweating over what you did to his consignment ice.\" A grim little smile. \"Man borrowed god-money to rent that slab and lent it to a wilson for a field test. You want the deck, take it up with him. Bring a mop for the flop sweat.\"",
+			"options": [
+				{ "text": "\"Why would you leave me in an alley?\"", "next": "why" },
+				{ "text": "\"Thanks anyway, Rhea.\" (leave)", "next": "bye" }
+			]
+		},
+		"why": {
+			"text": "\"Because whatever looked at you in that ice looked *back up the wire*, little man. People who get noticed like that are lightning rods, and I live in this building.\" She packs her kit. \"But Jackie says the Virgin covered you with her own hands, and Jackie would know. So. Altar room. Walk soft.\"",
+			"options": [
+				{ "text": "\"...The Virgin?\" (leave, unsettled)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "\"Go on,\" she says, already stripping the table, done with you in the way of medics everywhere: alive is alive, next.",
+			"options": []
+		}
+	}
+}

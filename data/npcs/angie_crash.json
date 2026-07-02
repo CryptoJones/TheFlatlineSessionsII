@@ -1,0 +1,31 @@
+{
+	"id": "angie_crash",
+	"name": "The Girl",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "She's half-conscious in the wreck's shadow, blood at her hairline, pupils uneven. Not Mitchell. A teenager in a Maas flight suit two sizes too big. Her hand closes on your wrist with surprising strength. \"He said—\" she coughs, \"—he said Turner would come. You're Turner. He put everything he had left into the message.\"",
+			"options": [
+				{ "text": "\"Where is your father?\"", "next": "father" },
+				{ "text": "Check her injuries first.", "next": "injuries" }
+			]
+		},
+		"injuries": {
+			"text": "Concussion, cracked ribs maybe, shock certainly — survivable, if the next hour cooperates. As you check her pupils she watches you with an odd, sliding focus, as if reading text scrolling somewhere behind your head. \"They're coming,\" she says, quite calmly. \"The sky is going to open. He told me to be somewhere else when it does.\"",
+			"options": [
+				{ "text": "\"Where is your father?\"", "next": "father" },
+				{ "text": "\"Then let's be somewhere else.\" (end)", "next": "bye" }
+			]
+		},
+		"father": {
+			"text": "Her face does something complicated and lands on grief. \"He's not coming. He was never coming. It was always me.\" Her eyes slide again, tracking nothing. \"He put it in my head when I was little. He said it would sing to me someday, and it does, it *sings*—\" She stops herself with visible effort. \"Angie. My name's Angie. Please. The sky.\"",
+			"options": [
+				{ "text": "\"I've got you. Let's move.\" (end)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "You get her arm over your shoulder. She weighs nothing. Behind you, over the mesa, the stars have started going out in a line — something big, coming down through them, on its way to erase this place.",
+			"options": []
+		}
+	}
+}

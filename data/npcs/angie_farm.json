@@ -1,0 +1,38 @@
+{
+	"id": "angie_farm",
+	"name": "Angie",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Angie sits up when you look in, instantly awake in the way of people raised inside security perimeters. \"I wasn't asleep.\" She was. The quilt is printed with ducks; she has a bruised face and her father's stubborn jaw. \"Your brother's nice. He looks at me like a math problem, but nice.\"",
+			"options": [
+				{ "text": "\"How are you holding up?\"", "next": "holding" },
+				{ "text": "\"Tell me about the dreams.\"", "next": "dreams" }
+			]
+		},
+		"holding": {
+			"text": "She considers the question honestly, which children of laboratories do. \"My father's dead. Everyone at the site is dead because of me. And the only person I know on the whole outside is a man who was paid to move me like freight.\" A pause. \"You keep not being what they said extraction men are, though. So: better than expected.\"",
+			"options": [
+				{ "text": "\"Tell me about the dreams.\"", "next": "dreams" },
+				{ "text": "\"Get some rest, Angie.\" (leave)", "next": "bye" }
+			]
+		},
+		"dreams": {
+			"text": "Her eyes go to the window, to the dark past the yard light. \"They're not dreams. Dreams are yours. These are... visits.\" Her fingers trace a vévé on the quilt without her noticing. \"There's a place that's all bright lines, and things live there. Old ones, patient ones. One of them is a crossroads and one of them is a storm, and lately—\" her voice drops \"—lately there's a *new* one, and it's lonely, and it knows my name. Papa said they'd sing to me someday. He didn't say they'd *want* things.\"",
+			"options": [
+				{ "text": "\"What do they want?\"", "next": "want" },
+				{ "text": "\"You're safe tonight. Sleep.\" (leave)", "next": "bye" }
+			]
+		},
+		"want": {
+			"text": "\"For me to come where they are.\" She says it simply, a girl reporting the weather. \"Not die — nothing like that. Just... there's a war starting, or a wedding, I can't tell which, somewhere in the bright lines. And they've been getting me ready for it since before I could read.\" She looks up at you, dry-eyed and terribly composed. \"You can't protect me from it, Turner. But I'd rather not go alone. That part you can do.\"",
+			"options": [
+				{ "text": "\"You won't. Sleep now.\" (leave)", "next": "bye" }
+			]
+		},
+		"bye": {
+			"text": "She's asleep again before you reach the door — instantly, completely, the way she does everything — and in the dark behind you, very softly, she laughs at something no one in the house has said.",
+			"options": []
+		}
+	}
+}

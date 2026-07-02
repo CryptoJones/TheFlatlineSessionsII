@@ -1,0 +1,55 @@
+{
+	"id": "conroy",
+	"name": "Conroy",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "\"Turner.\" Conroy doesn't get up. New face, same voice — flat, patient, salaried. \"You look rebuilt. The Dutchman does good work.\" He nudges a chair out with his boot. \"Sit. I'm here about the biggest defection since the war, and you're here because you're the best extraction man alive. Currently.\"",
+			"set_flag": "ch01_met_conroy",
+			"options": [
+				{ "text": "\"Whose defection?\"", "next": "mitchell" },
+				{ "text": "\"I'm retired, Conroy.\"", "next": "retired" },
+				{ "text": "Walk out. (leave)", "next": "bye" }
+			]
+		},
+		"retired": {
+			"text": "\"You're recuperated. Different thing.\" He turns his glass a quarter turn, like a man moving a piece. \"Hosaka's been paying for your beach, your clinic, your girl. You think that stops if you say no?\" The smile arrives, technically. \"Hear the name at least.\"",
+			"options": [
+				{ "text": "\"Whose defection?\"", "next": "mitchell" },
+				{ "text": "Walk out. (leave)", "next": "bye" }
+			]
+		},
+		"mitchell": {
+			"text": "\"Christopher Mitchell. Maas Biolabs' hybridoma king — the man who made silicon obsolete. He wants to come over to Hosaka, and Maas would sooner burn him than lose him.\" Conroy slides a black chip across the table. \"Full dossier. Site's already building in Arizona. Medicals, surgeons, jockeys — my people.\"",
+			"grant": "mitchell_dossier",
+			"options": [
+				{ "text": "\"Why me?\"", "next": "why_you" },
+				{ "text": "\"What's wrong with the dossier?\" (there's always something)", "next": "gaps" },
+				{ "text": "\"I'm in.\"", "next": "accept" }
+			]
+		},
+		"why_you": {
+			"text": "\"Because Mitchell asked for you by name.\" Conroy lets that sit. \"Man's been underground on a mesa for nine years and he knows your name. I'd find that flattering, personally. Or I'd find it interesting. You get paid either way.\"",
+			"options": [
+				{ "text": "\"What's wrong with the dossier?\"", "next": "gaps" },
+				{ "text": "\"I'm in.\"", "next": "accept" }
+			]
+		},
+		"gaps": {
+			"text": "For half a second the new face forgets which smile it was doing. \"Sharp as ever. There are gaps. Medical section's thin — Maas security is biology, not code. Nobody's ever cracked it, nobody knows what he's carrying out.\" He shrugs. \"That's site-level detail. Above both our gradients.\"",
+			"options": [
+				{ "text": "\"I'm in.\"", "next": "accept" },
+				{ "text": "\"I want the gaps filled before dawn.\" (then take the job)", "next": "accept" }
+			]
+		},
+		"accept": {
+			"text": "\"Of course you are.\" Conroy stands, drops real paper money on the table like an antique gesture. \"Charter leaves from the strip north of here. Don't bring the girl — she's Hosaka's, she stays with the set.\" At the door he pauses. \"Good to have you back, Turner. Try to stay assembled.\"",
+			"set_flag": "ch01_accepted_job",
+			"options": []
+		},
+		"bye": {
+			"text": "\"Sleep on it,\" Conroy says to your back, unbothered, certain. \"The beach was always a rental, Turner. You knew that going in.\" The worst part is that you did.",
+			"options": []
+		}
+	}
+}

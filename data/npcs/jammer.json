@@ -1,0 +1,43 @@
+{
+	"id": "jammer",
+	"name": "Jammer",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Jammer polishes a glass that's already clean, watching the door with the flat calm of a man who's been besieged before. \"Kid, in my day we called this a *box job*. Somebody wants everyone in this club to stay put while something happens somewhere else.\" He sets the glass down. \"You want the tactical picture or a drink? Drink's faster.\"",
+			"options": [
+				{ "text": "\"The picture.\"", "next": "brief" },
+				{ "text": "\"Who'd want to box a nightclub?\"", "next": "why" }
+			]
+		},
+		"why": {
+			"text": "\"Nightclub, nothing. They want the people *in* it — the hoodoo men, the girl if she surfaces, and maybe one skinny cowboy with a famous new handle.\" His eyes measure you, not unkindly. \"Word's moved, Count. You're inventory now. Get used to it.\"",
+			"options": [
+				{ "text": "\"Give me the picture.\"", "next": "brief" }
+			]
+		},
+		"brief": {
+			"text": "\"Street's filling since noon — Gothicks mostly, some Kasuals, gangs that hate each other holding hands. That means outside money and a lot of it.\" He ticks points on scarred fingers. \"Power's cut to the block, freight elevator's dead, and there's a jamming van on the corner dressed like a taco truck. Phones are dirt. Only clean line out of this club—\" he nods toward the office \"—is my deck. Old, but it's got teeth.\"",
+			"set_flag": "ch08_jammer_briefed",
+			"options": [
+				{ "text": "\"Then somebody flies your deck.\"", "next": "deck" },
+				{ "text": "\"The street's emptying out. It's over.\"", "next": "over", "require_flag": "cracked_jaylene_slide" }
+			]
+		},
+		"deck": {
+			"text": "\"Somebody does.\" He looks at you a long moment, then reaches under the bar and tosses Jackie the office keys. \"I flew that rig when your mother was in school, kid. Hip's gone; hands ain't. But this run wants young reflexes and old luck, and Jackie says the loa like you.\" A grim smile. \"Try to be likable.\"",
+			"options": [
+				{ "text": "\"I'll bring it back warm.\" (leave)", "next": "bye" }
+			]
+		},
+		"over": {
+			"text": "Jammer stands at the slats a long time, watching leather and hairspray drain out of the plaza like water finding a broken main. \"No paymaster, no siege,\" he says softly. \"Somebody reached out and unplugged the money.\" He turns, and gives you the nod cowboys give each other in his stories — the real ones. \"Whatever you did in there, Count — that was a *run*. First drink's free for the rest of your life. Second one, I know you're good for.\"",
+			"set_flag": "ch08_siege_broken",
+			"options": []
+		},
+		"bye": {
+			"text": "\"Office is east side,\" Jammer says, back to watching his door. \"And kid — Jackie goes in with you, but the ice out there tonight is *hungry*. You hear me? You jack out the second it goes wrong. Heroes make lousy regulars.\"",
+			"options": []
+		}
+	}
+}

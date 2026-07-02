@@ -1,0 +1,31 @@
+{
+	"id": "lucas",
+	"name": "Lucas",
+	"start": "greet",
+	"nodes": {
+		"greet": {
+			"text": "Lucas fills the elevator doorway in a midnight suit, leaning on a cane that is furniture, not need. \"Mr. Newmark.\" His voice is a cathedral organ doing business. \"Beauvoir instructs. I *transport*. There is a car below with cold drinks and bad traffic ahead, and in the Sprawl, work that wants doing.\"",
+			"options": [
+				{ "text": "\"Where exactly are we going?\"", "next": "where" },
+				{ "text": "\"I'm ready. Let's go.\"", "next": "join", "require_flag": "granted_ono_sendai" },
+				{ "text": "\"Give me a minute — my deck's still upstairs.\"", "next": "wait", "hide_flag": "granted_ono_sendai" }
+			]
+		},
+		"where": {
+			"text": "\"To see a man named the Finn about a matter of provenance, and after that to a nightclub with unusually good ice.\" A gold tooth glints. \"The loa move on roads, Mr. Newmark, and Legba — Master of Roads — has taken a shine to yours. Try to be flattered. The alternatives are worse.\"",
+			"options": [
+				{ "text": "\"I'm ready. Let's go.\"", "next": "join", "require_flag": "granted_ono_sendai" },
+				{ "text": "\"My deck first.\"", "next": "wait", "hide_flag": "granted_ono_sendai" }
+			]
+		},
+		"wait": {
+			"text": "\"A cowboy and his deck.\" Lucas consults a pocket watch the size of a biscuit. \"Retrieve it from Mr. Two-a-Day. I shall practice patience, which my doctor recommends and my schedule despises.\"",
+			"options": []
+		},
+		"join": {
+			"text": "\"Excellent.\" The doors close on the hounfor's candlelight, and the car drops toward street level and the whole glittering sickness of the Sprawl beyond. \"A word of professional counsel, Count,\" Lucas says, watching the floors count down. \"When gods offer you a job, the interview is already over. You had it in the ice. You passed.\"",
+			"set_flag": "ch05_joined_lucas",
+			"options": []
+		}
+	}
+}
