@@ -5,7 +5,7 @@
 		"c2_bedroom": {
 			"name": "Your Room",
 			"bg": "C2_bedroom",
-			"desc": "A mattress, a poster of Tally Isham, and the Ono-Sendai you'd sell a kidney to upgrade. Handle: Count Zero Interrupt. Runs completed: zero. Tonight that number changes.",
+			"desc": "A mattress, a poster of Tally Isham, and the Ono-Sendai you'd sell a kidney to upgrade. Handle: Count Binary Interrupt. Runs completed: zero. Tonight that number changes.",
 			"exits": { "east": "c2_living" }
 		},
 		"c2_living": {

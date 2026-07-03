@@ -1,5 +1,5 @@
 {
-	"_note": "The Flatline Sessions II — Count Zero. Chapter spine: the novel's three PoV braids (Turner / Bobby / Marly) interleaved in novel order. All prose is our own, written in the book's tone — no Interplay text, no verbatim novel text.",
+	"_note": "The Flatline Sessions II — Count Binary. Chapter spine: three PoV campaign braids (Turner / Bobby / Marly) interleaved in story order. All prose is our own original in-world writing.",
 	"game": "THE FLATLINE SESSIONS II — COUNT ZERO",
 	"chapters": [
 		{
@@ -27,7 +27,7 @@
 			"title": "Bobby Pulls a Wilson",
 			"pov": "bobby",
 			"pov_name": "Bobby Newmark",
-			"pov_desc": "Barrytown bedroom cowboy. Handle: Count Zero Interrupt. Zero runs on the board.",
+			"pov_desc": "Barrytown bedroom cowboy. Handle: Count Binary Interrupt. Zero runs on the board.",
 			"rooms": "res://data/rooms/ch02_bobby.json",
 			"quest": "q02_first_run",
 			"art": "res://assets/backgrounds_hd/CH02_title.png",
@@ -150,7 +150,7 @@
 		},
 		{
 			"id": "ch08",
-			"title": "Count Zero Interrupt",
+			"title": "Count Binary Interrupt",
 			"pov": "bobby",
 			"pov_name": "Bobby Newmark",
 			"pov_desc": "Under siege at Jammer's with a name to earn.",

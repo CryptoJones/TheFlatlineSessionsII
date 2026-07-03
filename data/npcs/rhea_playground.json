@@ -4,7 +4,7 @@
 	"start": "greet",
 	"nodes": {
 		"greet": {
-			"text": "She watches you cross the concrete with eyes that have already counted your injuries and your options. \"Newmark, right? Count Zero.\" The handle sounds different in her mouth — like it might survive. \"You look like a building fell on you. Word is one did.\"",
+			"text": "She watches you cross the concrete with eyes that have already counted your injuries and your options. \"Newmark, right? Count Binary.\" The handle sounds different in her mouth — like it might survive. \"You look like a building fell on you. Word is one did.\"",
 			"options": [
 				{ "text": "\"Who's asking?\"", "next": "who" },
 				{ "text": "\"Somebody blew up my mother's condo.\"", "next": "condo" }

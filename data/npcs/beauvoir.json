@@ -4,7 +4,7 @@
 	"start": "greet",
 	"nodes": {
 		"greet": {
-			"text": "Beauvoir wears fatigues cut like a good suit and glasses with fashion-house frames, and he studies you across the vévé chalked on the floor like a man reading a lab result. \"Bobby Newmark. Count Zero Interrupt.\" No mockery in it — that's new. \"Tell me exactly what happened when the ice took you. Leave nothing out. It matters more than you know.\"",
+			"text": "Beauvoir wears fatigues cut like a good suit and glasses with fashion-house frames, and he studies you across the vévé chalked on the floor like a man reading a lab result. \"Bobby Newmark. Count Binary Interrupt.\" No mockery in it — that's new. \"Tell me exactly what happened when the ice took you. Leave nothing out. It matters more than you know.\"",
 			"options": [
 				{ "text": "Tell him about the girl made of light.", "next": "girl" },
 				{ "text": "\"First tell me who you people are.\"", "next": "who" }
@@ -38,7 +38,7 @@
 			]
 		},
 		"bye": {
-			"text": "\"By handle,\" Beauvoir corrects, deadpan, standing. \"Count Zero. They have a sense of humor about these things. Kitchen's through there — eat something. Dead men negotiate badly.\"",
+			"text": "\"By handle,\" Beauvoir corrects, deadpan, standing. \"Count Binary. They have a sense of humor about these things. Kitchen's through there — eat something. Dead men negotiate badly.\"",
 			"options": []
 		}
 	}

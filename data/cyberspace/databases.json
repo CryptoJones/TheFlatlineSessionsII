@@ -1,5 +1,5 @@
 {
-	"_note": "Count Zero matrix targets, gated per chapter. 'chapter' hides a db outside its chapter; 'requires' needs another db cracked first; 'requires_flag' needs a story flag; 'set_flag' fires on crack.",
+	"_note": "Count Binary matrix targets, gated per chapter. 'chapter' hides a db outside its chapter; 'requires' needs another db cracked first; 'requires_flag' needs a story flag; 'set_flag' fires on crack.",
 	"databases": [
 		{
 			"id": "barrytown_target", "name": "Unmarked Industrial Node", "chapter": "ch02",
