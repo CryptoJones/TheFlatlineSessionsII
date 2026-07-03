@@ -1,6 +1,6 @@
 {
 	"_note": "The Flatline Sessions II — Count Binary. Chapter spine: three PoV campaign braids (Turner / Bobby / Marly) interleaved in story order. All prose is our own original in-world writing.",
-	"game": "THE FLATLINE SESSIONS II — COUNT ZERO",
+	"game": "THE FLATLINE SESSIONS II — COUNT BINARY",
 	"chapters": [
 		{
 			"id": "ch01",
@@ -186,7 +186,7 @@
 			"outro": [
 				"You floated in the dome and watched the boxmaker work: a scatter of manipulator arms in a slow storm of lost things, sorting, choosing, remembering. Not a machine making souvenirs — a mind, saying goodbye to a family that abandoned it.",
 				"When Virek came for it — came for you, wearing his rented world like a glove — something rode the link out of the dark and took him. The richest man in the world died between two seconds, and every door he owned swung quietly open.",
-				"You kept one box. The galleries will call. Somewhere below, a girl dreams the grid, a hired man teaches a boy to fish, and a kid from Barrytown signs his runs COUNT ZERO INTERRUPT. The world goes on — bigger, now, by exactly one ghost."
+				"You kept one box. The galleries will call. Somewhere below, a girl dreams the grid, a hired man teaches a boy to fish, and a kid from Barrytown signs his runs COUNT BINARY INTERRUPT. The world goes on — bigger, now, by exactly one ghost."
 			],
 			"start": { "credits": 4000, "items": ["box_dossier", "cornell_box"], "minutes": 480 }
 		}
