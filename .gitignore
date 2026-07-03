@@ -1,6 +1,7 @@
 # Godot build/import cache
 .godot/
 *.uid
+*.import
 
 # Novel source + extracted text (copyrighted; local reference only — never commit)
 *.epub
