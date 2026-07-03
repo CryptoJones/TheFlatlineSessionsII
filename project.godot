@@ -1,5 +1,5 @@
 ; Engine configuration file.
-; The Flatline Sessions II — Count Zero
+; The Flatline Sessions II — Count Binary
 ;
 ; Modern-look sequel built on the Flatline Sessions engine (neuromancer-godot).
 ; Open in Godot 4.x.
@@ -8,9 +8,9 @@ config_version=5
 
 [application]
 
-config/name="The Flatline Sessions II — Count Zero"
-config/version="0.1.0"
-config/description="The Flatline Sessions II — a fan-made modern adventure after William Gibson's Count Zero. Chapter-based, playable from every point of view: Turner, Marly, and Bobby Newmark."
+config/name="The Flatline Sessions II — Count Binary"
+config/version="1.0.0"
+config/description="The Flatline Sessions II — Count Binary, a fan-made modern adventure after a famous cyberpunk trilogy. Chapter-based, playable from every point of view: Turner, Marly, and Bobby Newmark."
 run/main_scene="res://scenes/Boot.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"

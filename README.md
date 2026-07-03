@@ -1,15 +1,14 @@
-# The Flatline Sessions II — Count Zero
+# The Flatline Sessions II — Count Binary
 
-A fan-made, modern-look adventure after William Gibson's **Count Zero** — the second game in
+A fan-made, modern-look cyberpunk adventure after a famous cyberpunk trilogy — the second game in
 the Flatline Sessions trilogy, built on the engine from
-[The Flatline Sessions](../neuromancer-godot) (the 2026 remaster of Interplay's 1988
-*Neuromancer*). Where the first game was deliberately retro, this one renders clean at a
+[The Flatline Sessions](../neuromancer-godot). Where the first game was deliberately retro, this one renders clean at a
 **native 1920×1080 canvas in full 32-bit color**: flat panels, one neon accent, full-res art.
 
 ## The shape of the game
 
-*Count Zero* braids three viewpoint characters, so the game does too. Nine chapters,
-played in novel order, each locking you to one PoV:
+*Count Binary* runs through three viewpoint characters. Nine chapters
+play in campaign order, each locking you to one PoV:
 
 | # | Chapter | You play |
 |---|---------|----------|
@@ -20,7 +19,7 @@ played in novel order, each locking you to one PoV:
 | 05 | The Projects | Bobby Newmark |
 | 06 | Names of the Dead | Marly Krushkhova |
 | 07 | The Squirrel Wood | Turner |
-| 08 | Count Zero Interrupt | Bobby Newmark |
+| 08 | Count Binary Interrupt | Bobby Newmark |
 | 09 | The Boxmaker | Marly Krushkhova |
 
 Each chapter has its own room graph, main quest, NPCs, and starting kit. Finishing a
@@ -30,13 +29,18 @@ and Marly's stay in the meat.
 ## Status
 
 **Playable scaffold with generated art pass.** The whole story is playable end to end.
-All dialog, quests, items, shops, and matrix targets are in place, written in the novel's
-tone — our own prose throughout.
+All dialog, quests, items, shops, and matrix targets are in place, written as original in-world
+prose throughout.
 
 The first full art pass is in `assets/backgrounds_hd/` and `assets/cyberspace/`: heavily
 rotoscoped, painted-over-live-action plates with graphic-novel realism, flattened color
 planes, visible ink contours, warm 35mm grain, and teal cyberpunk accents. See
 [`docs/art-style-prompt.md`](docs/art-style-prompt.md) for the locked style prompt.
+
+The first soundtrack pass is in `assets/audio/music/`, with chapter cues plus title,
+shops, cyberspace, and ICE-combat loops. See [`docs/soundtrack.md`](docs/soundtrack.md).
+Album-cover art is stored in [`assets/album_art/`](assets/album_art/) and mirrored in
+[`docs/album_art/`](docs/album_art/) for review/export workflows.
 
 For review from a tablet/phone, see
 [`docs/The_Art_of_The_Flatline_Sessions_II.pdf`](docs/The_Art_of_The_Flatline_Sessions_II.pdf).
@@ -75,6 +79,6 @@ src/                      engine (see src/core/Game.gd)
 
 ## Credits
 
-Fan project after the novel *Count Zero* by William Gibson. Game code and all in-game
+Fan project after a famous cyberpunk trilogy. Game code and all in-game
 prose are original to this project. Copyright **CryptoJones** <cryptojones@owasp.org>;
 engine shared with The Flatline Sessions.

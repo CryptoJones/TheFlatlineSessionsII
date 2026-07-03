@@ -1,5 +1,5 @@
 {
-	"_note": "Count Zero item catalog. type: hardware = cyberdeck (enables Jack In), software = matrix warez, skill = chipped skill, misc/key = story items (key items can't be sold).",
+	"_note": "Count Binary item catalog. type: hardware = cyberdeck (enables Jack In), software = matrix warez, skill = chipped skill, misc/key = story items (key items can't be sold).",
 	"items": {
 		"fletcher": {
 			"name": "Fletcher",

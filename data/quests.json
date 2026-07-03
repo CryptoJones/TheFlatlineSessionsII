@@ -82,7 +82,7 @@
 			]
 		},
 		"q08_jammers": {
-			"name": "Count Zero Interrupt",
+			"name": "Count Binary Interrupt",
 			"desc": "The club is a box with you inside it. Break the siege the only way a cowboy can — from the inside of the matrix.",
 			"steps": [
 				{ "text": "Take stock of the siege with Jammer.", "flag": "ch08_jammer_briefed" },
