@@ -1021,7 +1021,7 @@ func _build_endgame_layer() -> void:
 	_fsize(theend, 52)
 	_endgame_layer.add_child(theend)
 	var coda := Label.new()
-	coda.text = "Count Zero interrupt. The matrix dreams itself, and somewhere the dead still ride."
+	coda.text = "\"The future is already here. It's just not evenly distributed.\""
 	coda.position = Vector2(360, 636)
 	coda.size = Vector2(1200, 120)
 	coda.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -1030,7 +1030,7 @@ func _build_endgame_layer() -> void:
 	_fsize(coda, 28)
 	_endgame_layer.add_child(coda)
 	var credit := Label.new()
-	credit.text = "— after William Gibson's Count Zero"
+	credit.text = "— William Gibson"
 	credit.position = Vector2(0, 776)
 	credit.size = Vector2(1920, 48)
 	credit.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
