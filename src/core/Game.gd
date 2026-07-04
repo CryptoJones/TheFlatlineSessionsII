@@ -186,7 +186,7 @@ func _build_title_layer() -> void:
 	bg.color = UITheme.BG
 	bg.size = Vector2(1920, 1080)
 	_title_layer.add_child(bg)
-	# Cover art renders clean and full-res when present (art comes later).
+	# Cover art fills behind the title (clean, full-res).
 	var tex: Texture2D = Assets.load_texture(TITLE_COVER)
 	if tex != null:
 		var tr := TextureRect.new()
@@ -196,28 +196,43 @@ func _build_title_layer() -> void:
 		tr.clip_contents = true
 		tr.size = Vector2(1920, 1080)
 		_title_layer.add_child(tr)
-	else:
-		var series := Label.new()
-		series.text = "THE FLATLINE SESSIONS"
-		series.position = Vector2(0, 288)
-		series.size = Vector2(1920, 72)
-		series.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		series.add_theme_color_override("font_color", UITheme.TEXT_DIM)
-		_fsize(series, 30)
-		_title_layer.add_child(series)
+	# The title ALWAYS renders on top of the cover — the cover art carries no
+	# lettering, so the game name lives here, outlined to read over any plate.
+	# game_title is the full "THE FLATLINE SESSIONS II — COUNT BINARY"; split it
+	# on the em dash into a main line + accent subtitle so it fits and reads big.
+	var full := _chapters.game_title if _chapters.game_title != "" else "THE FLATLINE SESSIONS II"
+	var main_line := full
+	var sub_line := ""
+	var dash := full.find("—")
+	if dash != -1:
+		main_line = full.substr(0, dash).strip_edges()
+		sub_line = full.substr(dash + 1).strip_edges()
+	var series := Label.new()
+	series.text = main_line
+	series.position = Vector2(0, 132)
+	series.size = Vector2(1920, 72)
+	series.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	series.add_theme_color_override("font_color", UITheme.TEXT)
+	series.add_theme_color_override("font_outline_color", UITheme.BG)
+	series.add_theme_constant_override("outline_size", 10)
+	_fsize(series, 44)
+	_title_layer.add_child(series)
+	if sub_line != "":
 		var t := Label.new()
-		t.text = _chapters.game_title if _chapters.game_title != "" else "II"
-		t.position = Vector2(0, 384)
-		t.size = Vector2(1920, 180)
+		t.text = sub_line
+		t.position = Vector2(0, 210)
+		t.size = Vector2(1920, 110)
 		t.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		t.add_theme_color_override("font_color", UITheme.ACCENT)
-		_fsize(t, 64)
+		t.add_theme_color_override("font_outline_color", UITheme.BG)
+		t.add_theme_constant_override("outline_size", 12)
+		_fsize(t, 72)
 		_title_layer.add_child(t)
-		var rule := ColorRect.new()
-		rule.color = UITheme.ACCENT_DIM
-		rule.position = Vector2(600, 588)
-		rule.size = Vector2(720, 6)
-		_title_layer.add_child(rule)
+	var rule := ColorRect.new()
+	rule.color = UITheme.ACCENT
+	rule.position = Vector2(660, 338)
+	rule.size = Vector2(600, 4)
+	_title_layer.add_child(rule)
 	var prompt := Label.new()
 	prompt.text = "PRESS ANY KEY"
 	prompt.position = Vector2(0, 876)
