@@ -11,7 +11,9 @@ here. This project adheres to [Semantic Versioning](https://semver.org).
   present, and future." — that holds, fades out, and hands off to the title.
   Any key or click skips it straight to the title.
 - **Console-cowboy title cover.** The title screen now full-bleeds the baked
-  cover art (`assets/ui/cover.png`) instead of falling back to plain text.
+  cover art (`assets/ui/cover.png`), with the game title — *THE FLATLINE
+  SESSIONS II* / *COUNT BINARY* — overlaid and outlined so it reads cleanly
+  over the plate (the cover carries no lettering of its own).
 
 ### Changed
 - **Fixed compass.** The W/N/S/E direction controls are now shown in every room;
