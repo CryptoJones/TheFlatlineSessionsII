@@ -14,6 +14,12 @@ here. This project adheres to [Semantic Versioning](https://semver.org).
   cover art (`assets/ui/cover.png`), with the game title — *THE FLATLINE
   SESSIONS II* / *COUNT BINARY* — overlaid and outlined so it reads cleanly
   over the plate (the cover carries no lettering of its own).
+- **Autosave (on by default).** The game now keeps a rolling `Autosave` slot,
+  refreshed at every room entry and on chapter completion, so progress survives
+  without ever opening the Save menu. Toggle it in Settings; it's remembered
+  between runs and appears in the Load menu like any save.
+- **Chapter-select atmosphere.** The chapter-select screen now carries the title
+  cover as a faint background wash behind the list.
 
 ### Changed
 - **Fixed compass.** The W/N/S/E direction controls are now shown in every room;
