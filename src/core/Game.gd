@@ -8,7 +8,7 @@ extends Control
 ## Each chapter locks the player to one of the novel's PoV characters and ends
 ## when its main quest completes (outro pages, next chapter unlocks).
 
-enum State { TITLE, CHAPTERS, EXPLORE, DIALOG, MENU }
+enum State { TITLE, CHAPTERS, EXPLORE, DIALOG, MENU, DEDICATION }
 
 # Preloaded (not class_name globals) so the game runs without a prebuilt
 # .godot global-class cache — i.e. on a fresh checkout before any editor open.
@@ -23,6 +23,8 @@ const UITheme = preload("res://src/ui/UITheme.gd")
 
 const NPC_DIR := "res://data/npcs/"
 const TITLE_COVER := "res://assets/ui/cover.png"
+## Shown as a quiet fade-in card before the title, every boot.
+const DEDICATION_TEXT := "Dedicated to William Gibson and all other Science Fiction authors; past, present, and future."
 const VIEW_X := 36
 const VIEW_Y := 30
 const VIEW_W := 1848
@@ -73,6 +75,8 @@ var _catalog: Catalog
 var _matrix: Matrix
 
 # Layers
+var _dedication_layer: Control
+var _dedication_tween: Tween
 var _title_layer: Control
 var _chapters_layer: Control
 var _explore_layer: Control
@@ -131,12 +135,13 @@ func _ready() -> void:
 	_matrix = Matrix.new()
 	_matrix.load_data()
 	AudioManager.track_changed.connect(_on_track_changed)
+	_build_dedication_layer()
 	_build_title_layer()
 	_build_chapters_layer()
 	_build_explore_layer()
 	_build_dialog_layer()
 	_build_menu_layer()
-	_go_title()
+	_go_dedication()
 
 
 # ---------------------------------------------------------------- layer builders
@@ -151,6 +156,29 @@ func _full_control(name: String) -> Control:
 
 func _fsize(node: Control, size: int) -> void:
 	node.add_theme_font_size_override("font_size", size)
+
+func _build_dedication_layer() -> void:
+	_dedication_layer = _full_control("Dedication")
+	var bg := ColorRect.new()
+	bg.color = UITheme.BG
+	bg.size = Vector2(1920, 1080)
+	_dedication_layer.add_child(bg)
+	# A short accent tick sits just above the dedication line.
+	var rule := ColorRect.new()
+	rule.color = UITheme.ACCENT_DIM
+	rule.position = Vector2(860, 456)
+	rule.size = Vector2(200, 4)
+	_dedication_layer.add_child(rule)
+	var ded := Label.new()
+	ded.text = DEDICATION_TEXT
+	ded.position = Vector2(360, 492)
+	ded.size = Vector2(1200, 240)
+	ded.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	ded.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+	ded.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	ded.add_theme_color_override("font_color", UITheme.TEXT)
+	_fsize(ded, 40)
+	_dedication_layer.add_child(ded)
 
 func _build_title_layer() -> void:
 	_title_layer = _full_control("Title")
@@ -770,10 +798,26 @@ func _conclude_chapter() -> void:
 # ---------------------------------------------------------------- state switches
 
 func _show_only(active: Control) -> void:
-	for layer in [_title_layer, _chapters_layer, _explore_layer, _dialog_layer, _menu_layer]:
+	for layer in [_dedication_layer, _title_layer, _chapters_layer, _explore_layer, _dialog_layer, _menu_layer]:
 		layer.visible = (layer == active)
 
+## Boot card: fade the Gibson dedication up, hold, fade out, then hand off to the
+## title. Any key/click during it skips straight to the title (see _unhandled_input).
+func _go_dedication() -> void:
+	_state = State.DEDICATION
+	_show_only(_dedication_layer)
+	_dedication_layer.modulate.a = 0.0
+	if _dedication_tween != null and _dedication_tween.is_valid():
+		_dedication_tween.kill()
+	_dedication_tween = create_tween()
+	_dedication_tween.tween_property(_dedication_layer, "modulate:a", 1.0, 1.0)
+	_dedication_tween.tween_interval(2.4)
+	_dedication_tween.tween_property(_dedication_layer, "modulate:a", 0.0, 0.8)
+	_dedication_tween.tween_callback(_go_title)
+
 func _go_title() -> void:
+	if _dedication_tween != null and _dedication_tween.is_valid():
+		_dedication_tween.kill()
 	_state = State.TITLE
 	_show_only(_title_layer)
 	AudioManager.play("title")
@@ -905,16 +949,20 @@ func _placeholder_color(room_id: String) -> Color:
 func _rebuild_buttons(r: Dictionary) -> void:
 	for c in _button_bar.get_children():
 		c.queue_free()
+	# Compass stays fixed every room: all four directions always show, but only
+	# the room's real exits are live — the rest sit visibly dimmed and unclickable.
 	var dir_abbr := { "north": "N", "south": "S", "east": "E", "west": "W" }
 	var exits: Dictionary = r.get("exits", {})
 	for dir in ["west", "north", "south", "east"]:
-		if not exits.has(dir):
-			continue
-		var dest: String = exits[dir]
 		var b := Button.new()
 		b.text = dir_abbr.get(dir, dir)
-		b.tooltip_text = "Go %s to %s" % [dir, _world.room(dest).get("name", dest)]
-		b.pressed.connect(_try_move.bind(dir))
+		if exits.has(dir):
+			var dest: String = exits[dir]
+			b.tooltip_text = "Go %s to %s" % [dir, _world.room(dest).get("name", dest)]
+			b.pressed.connect(_try_move.bind(dir))
+		else:
+			b.disabled = true
+			b.tooltip_text = "No exit %s" % dir
 		_button_bar.add_child(b)
 	# Talk actions for NPCs in the room.
 	for npc in r.get("npcs", []):
@@ -1244,6 +1292,11 @@ func _end_dialog() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	match _state:
+		State.DEDICATION:
+			if (event is InputEventKey and event.pressed) \
+					or (event is InputEventMouseButton and event.pressed):
+				_go_title()
+				get_viewport().set_input_as_handled()
 		State.TITLE:
 			if (event is InputEventKey and event.pressed) \
 					or (event is InputEventMouseButton and event.pressed):
