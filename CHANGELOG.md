@@ -3,6 +3,12 @@
 All notable changes to **The Flatline Sessions II — Count Binary** are documented
 here. This project adheres to [Semantic Versioning](https://semver.org).
 
+## [1.0.5] — 2026-07-03
+
+### Changed
+- **Endgame quote.** The finale now closes on William Gibson's line —
+  *"The future is already here. It's just not evenly distributed."*
+
 ## [1.0.4] — 2026-07-03
 
 ### Added
