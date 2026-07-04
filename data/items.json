@@ -50,6 +50,7 @@
 		"jammer_deck_link": {
 			"name": "Jammer's club deck",
 			"type": "software",
+			"deck": true,
 			"rating": 2,
 			"price": 0,
 			"key": true,

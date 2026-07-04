@@ -3,6 +3,24 @@
 All notable changes to **The Flatline Sessions II — Count Binary** are documented
 here. This project adheres to [Semantic Versioning](https://semver.org).
 
+## [1.0.4] — 2026-07-03
+
+### Added
+- **Give Hint.** A "? Give Hint" button (and the `H` key) in every room maps the
+  compass route to your current objective and names the action to take — e.g.
+  *"E, N, E → Talk to Conroy"*. Still-locked doors are routed around.
+- **Endgame.** Finishing the final chapter now plays a proper finale card
+  (THE END + a closing coda) before returning to the title, instead of dropping
+  to chapter select.
+
+### Fixed
+- **Chapter 8 soft-lock.** Bobby's borrowed rig — Jammer's club deck, a software
+  item — now enables the Jack In button, so the siege chapter's matrix runs are
+  reachable. A software item flagged as a deck now counts as a deck.
+- **Action-bar clutter.** A conversation you've finished drops its Talk button
+  (kept only when the current objective still needs that NPC), so crowded rooms
+  no longer overflow the button bar.
+
 ## [1.0.3] — 2026-07-03
 
 ### Added
