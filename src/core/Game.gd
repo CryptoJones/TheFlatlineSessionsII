@@ -25,6 +25,8 @@ const NPC_DIR := "res://data/npcs/"
 const TITLE_COVER := "res://assets/ui/cover.png"
 ## Shown as a quiet fade-in card before the title, every boot.
 const DEDICATION_TEXT := "Dedicated to William Gibson and all other Science Fiction authors; past, present, and future."
+## Player preferences (autosave flag) — same file AudioManager keeps music in.
+const SETTINGS_PATH := "user://settings.cfg"
 const VIEW_X := 36
 const VIEW_Y := 30
 const VIEW_W := 1848
@@ -66,6 +68,7 @@ const TRACK_TITLES := {
 }
 
 var _state: int = State.TITLE
+var _autosave := true                 # rolling autosave, on by default
 var _world: World
 var _dialog: DialogEngine
 var _dialog_npc: String = ""
@@ -135,6 +138,7 @@ func _ready() -> void:
 	_matrix = Matrix.new()
 	_matrix.load_data()
 	AudioManager.track_changed.connect(_on_track_changed)
+	_load_prefs()
 	_build_dedication_layer()
 	_build_title_layer()
 	_build_chapters_layer()
@@ -263,6 +267,18 @@ func _build_chapters_layer() -> void:
 	bg.color = UITheme.BG
 	bg.size = Vector2(1920, 1080)
 	_chapters_layer.add_child(bg)
+	# The title cover sits behind the list as a faint wash — atmosphere, not a
+	# focal point, so it never competes with the chapter text.
+	var cover: Texture2D = Assets.load_texture(TITLE_COVER)
+	if cover != null:
+		var cr := TextureRect.new()
+		cr.texture = cover
+		cr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		cr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+		cr.clip_contents = true
+		cr.size = Vector2(1920, 1080)
+		cr.modulate = Color(1, 1, 1, 0.18)
+		_chapters_layer.add_child(cr)
 	var head := Label.new()
 	head.text = _chapters.game_title
 	head.position = Vector2(72, 42)
@@ -803,6 +819,7 @@ func _conclude_chapter() -> void:
 	var id := str(ch.get("id", ""))
 	GameState.set_flag("concluded_" + id)
 	_chapters.finish(GameState, id)
+	_autosave_now()
 	var outro: Array = ch.get("outro", [])
 	var outro_art = ch.get("outro_art", ch.get("art", ""))
 	_begin_story("Chapter %02d — %s" % [_chapters.index_of(id) + 1, str(ch.get("title", ""))],
@@ -889,6 +906,10 @@ func _refresh_room() -> void:
 	_rebuild_buttons(r)
 	_refresh_status()
 	AudioManager.play(AudioManager.for_room(r))
+	# Every room entry is a natural checkpoint — roll the autosave here so moves,
+	# pickups, and dialog exits (all of which funnel back through _refresh_room)
+	# are captured without the player ever opening the Save menu.
+	_autosave_now()
 
 func _show_void_room() -> void:
 	_room_name_lbl.text = "1337"
@@ -1163,6 +1184,12 @@ func _open_settings() -> void:
 	cb.toggled.connect(_set_music_enabled)
 	_fsize(cb, 22)
 	_menu_list.add_child(cb)
+	var ab := CheckButton.new()
+	ab.text = "Autosave"
+	ab.button_pressed = _autosave
+	ab.toggled.connect(_set_autosave_enabled)
+	_fsize(ab, 22)
+	_menu_list.add_child(ab)
 	_menu_button("« Back (Esc)", _cancel_menu)
 
 func _set_music_enabled(on: bool) -> void:
@@ -1170,6 +1197,30 @@ func _set_music_enabled(on: bool) -> void:
 	if on and _state == State.MENU and _world.has_room(GameState.current_room):
 		# resume the room's cue right away rather than waiting for a room change
 		AudioManager.play(AudioManager.for_room(_world.room(GameState.current_room)))
+
+func _set_autosave_enabled(on: bool) -> void:
+	_autosave = on
+	_save_prefs()
+	if on:
+		_autosave_now()   # capture the current spot the moment it's switched on
+
+## Roll the autosave when enabled and we're actually inside a chapter (never on
+## the title, and never in the hidden room 1337).
+func _autosave_now() -> void:
+	if not _autosave or GameState.current_chapter == "" or GameState.current_room == HIDDEN_ROOM:
+		return
+	SaveSystem.autosave()
+
+func _load_prefs() -> void:
+	var cf := ConfigFile.new()
+	if cf.load(SETTINGS_PATH) == OK:
+		_autosave = bool(cf.get_value("game", "autosave", true))
+
+func _save_prefs() -> void:
+	var cf := ConfigFile.new()
+	cf.load(SETTINGS_PATH)
+	cf.set_value("game", "autosave", _autosave)
+	cf.save(SETTINGS_PATH)
 
 func _do_load_slug(slug: String) -> void:
 	if SaveSystem.load_slug(slug) and _restore_loaded_state():
