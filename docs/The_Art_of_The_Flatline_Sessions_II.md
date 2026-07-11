@@ -4,6 +4,10 @@
 
 The Flatline Sessions II moves through tactile and virtual worlds: coastlines, rain-dark streets, compromised safe houses, dead commercial spaces, rural refuges, luminous data architecture, and orbital ruins. The 100 photographs selected for the game are recontextualized as 16:9 environmental and story plates.
 
+## Title Art
+
+The title-screen cover — a circuit-board brain — is [a computer circuit board with a brain in the middle of it](https://unsplash.com/photos/a-computer-circuit-board-with-a-brain-in-the-middle-of-it-b3SXZlCYJ7c?utm_source=the_flatline_sessions_ii&utm_medium=referral) by [Sumaid pal Singh Bakshi (@sumaidsingh)](https://unsplash.com/@sumaidsingh?utm_source=the_flatline_sessions_ii&utm_medium=referral).
+
 ## Unsplash Contributors
 
 - [A. C. (@3tnik)](https://unsplash.com/@3tnik?utm_source=the_flatline_sessions_ii&utm_medium=referral) — 1 plate

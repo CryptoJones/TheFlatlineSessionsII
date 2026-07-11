@@ -8,7 +8,7 @@ extends Control
 ## Each chapter locks the player to one of the novel's PoV characters and ends
 ## when its main quest completes (outro pages, next chapter unlocks).
 
-enum State { TITLE, CHAPTERS, EXPLORE, DIALOG, MENU, DEDICATION, ENDGAME }
+enum State { LOGO, TITLE, CHAPTERS, EXPLORE, DIALOG, MENU, DEDICATION, ENDGAME }
 
 # Preloaded (not class_name globals) so the game runs without a prebuilt
 # .godot global-class cache — i.e. on a fresh checkout before any editor open.
@@ -23,6 +23,8 @@ const UITheme = preload("res://src/ui/UITheme.gd")
 
 const NPC_DIR := "res://data/npcs/"
 const TITLE_COVER := "res://assets/ui/cover.png"
+## Ronin 48 Games Studio ident, shown before the dedication + title, every boot.
+const STUDIO_LOGO := "res://assets/ui/logo_with_text.png"
 ## Shown as a quiet fade-in card before the title, every boot.
 const DEDICATION_TEXT := "Dedicated to William Gibson and all other Science Fiction authors; past, present, and future."
 ## Player preferences (autosave flag) — same file AudioManager keeps music in.
@@ -78,6 +80,8 @@ var _catalog: Catalog
 var _matrix: Matrix
 
 # Layers
+var _logo_layer: Control
+var _logo_tween: Tween
 var _dedication_layer: Control
 var _dedication_tween: Tween
 var _title_layer: Control
@@ -140,6 +144,7 @@ func _ready() -> void:
 	_matrix.load_data()
 	AudioManager.track_changed.connect(_on_track_changed)
 	_load_prefs()
+	_build_logo_layer()
 	_build_dedication_layer()
 	_build_title_layer()
 	_build_chapters_layer()
@@ -147,7 +152,7 @@ func _ready() -> void:
 	_build_dialog_layer()
 	_build_menu_layer()
 	_build_endgame_layer()
-	_go_dedication()
+	_go_logo()
 
 
 # ---------------------------------------------------------------- layer builders
@@ -162,6 +167,23 @@ func _full_control(name: String) -> Control:
 
 func _fsize(node: Control, size: int) -> void:
 	node.add_theme_font_size_override("font_size", size)
+
+func _build_logo_layer() -> void:
+	_logo_layer = _full_control("StudioLogo")
+	var bg := ColorRect.new()
+	bg.color = UITheme.BG
+	bg.size = Vector2(1920, 1080)
+	_logo_layer.add_child(bg)
+	# Ronin 48 Games Studio ident fills the frame (cover art carries its own field).
+	var tex: Texture2D = Assets.load_texture(STUDIO_LOGO)
+	if tex != null:
+		var tr := TextureRect.new()
+		tr.texture = tex
+		tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		tr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+		tr.clip_contents = true
+		tr.size = Vector2(1920, 1080)
+		_logo_layer.add_child(tr)
 
 func _build_dedication_layer() -> void:
 	_dedication_layer = _full_control("Dedication")
@@ -960,12 +982,28 @@ func _conclude_chapter() -> void:
 # ---------------------------------------------------------------- state switches
 
 func _show_only(active: Control) -> void:
-	for layer in [_dedication_layer, _title_layer, _chapters_layer, _explore_layer, _dialog_layer, _menu_layer, _endgame_layer]:
+	for layer in [_logo_layer, _dedication_layer, _title_layer, _chapters_layer, _explore_layer, _dialog_layer, _menu_layer, _endgame_layer]:
 		layer.visible = (layer == active)
+
+## Studio ident: fade the Ronin 48 logo up, hold, fade out, then hand off to the
+## Gibson dedication. Any key/click skips straight ahead (see _unhandled_input).
+func _go_logo() -> void:
+	_state = State.LOGO
+	_show_only(_logo_layer)
+	_logo_layer.modulate.a = 0.0
+	if _logo_tween != null and _logo_tween.is_valid():
+		_logo_tween.kill()
+	_logo_tween = create_tween()
+	_logo_tween.tween_property(_logo_layer, "modulate:a", 1.0, 1.0)
+	_logo_tween.tween_interval(2.0)
+	_logo_tween.tween_property(_logo_layer, "modulate:a", 0.0, 0.8)
+	_logo_tween.tween_callback(_go_dedication)
 
 ## Boot card: fade the Gibson dedication up, hold, fade out, then hand off to the
 ## title. Any key/click during it skips straight to the title (see _unhandled_input).
 func _go_dedication() -> void:
+	if _logo_tween != null and _logo_tween.is_valid():
+		_logo_tween.kill()
 	_state = State.DEDICATION
 	_show_only(_dedication_layer)
 	_dedication_layer.modulate.a = 0.0
@@ -1569,6 +1607,11 @@ func _end_dialog() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	match _state:
+		State.LOGO:
+			if (event is InputEventKey and event.pressed) \
+					or (event is InputEventMouseButton and event.pressed):
+				_go_dedication()
+				get_viewport().set_input_as_handled()
 		State.DEDICATION:
 			if (event is InputEventKey and event.pressed) \
 					or (event is InputEventMouseButton and event.pressed):
