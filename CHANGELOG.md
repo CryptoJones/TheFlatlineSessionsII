@@ -3,6 +3,22 @@
 All notable changes to **The Flatline Sessions II — Count Binary** are documented
 here. This project adheres to [Semantic Versioning](https://semver.org).
 
+## [1.0.7] — 2026-07-11
+
+### Added
+- **Approved Unsplash art book.** A 109-page edition of *The Art of The
+  Flatline Sessions II* presents all 100 production plates with their in-game
+  room or story descriptions, contributor display names, clickable Unsplash
+  usernames, profile links, and original-photo links.
+- **Complete image attribution.** Human-readable and machine-readable credit
+  manifests record the contributor, profile, source photograph, destination,
+  and license for every plate.
+
+### Changed
+- **Final photographic art pass.** Replaced the 100 generated room,
+  cyberspace, and story placeholders with the officially approved Unsplash and
+  Unsplash+ selections, cropped consistently to 1344×768.
+
 ## [1.0.6] — 2026-07-10
 
 ### Fixed
