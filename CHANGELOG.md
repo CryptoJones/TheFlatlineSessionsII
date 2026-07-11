@@ -3,6 +3,27 @@
 All notable changes to **The Flatline Sessions II — Count Binary** are documented
 here. This project adheres to [Semantic Versioning](https://semver.org).
 
+## [1.1.0] — 2026-07-11
+
+### Added
+- **Music volume slider.** Settings gains a **Music Volume** control (applied live to
+  the playing cue and remembered between sessions).
+- **"Spanish Language microsoft" — Chapter 1.** A language chip now auto-starts in
+  your inventory; slot it into your skull socket to understand **Allison** on the
+  beach. Until it's slotted she speaks only Spanish, one random line per talk. This
+  introduces a general **slottable chip** mechanic (`slot` items) plus flag-gated and
+  random-line dialogue in the engine.
+- **Ronin 48 Games Studio logo.** A studio ident now plays on boot, before the
+  dedication card and title.
+- **New title cover.** The title screen is now a circuit-board brain (Unsplash+,
+  photograph by Sumaid pal Singh Bakshi), credited in `data/image_credits.json`,
+  `docs/IMAGE_CREDITS.md`, and a new **Title Art** page in the art book.
+- **New game button.** Chapter select gains a **New game** button beside **Load game**
+  (left of it when no save exists yet, right of it once a save exists).
+
+### Changed
+- **README** now leads with the title cover as a hero image.
+
 ## [1.0.7] — 2026-07-11
 
 ### Added
