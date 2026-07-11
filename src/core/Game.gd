@@ -126,6 +126,7 @@ var _story_final: Array = []   # [[label, Callable], ...] shown on the last page
 
 
 func _ready() -> void:
+	randomize()   # vary random dialog lines (e.g. Allison's Spanish) across launches
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	theme = UITheme.build()
 	_chapters = Chapters.new()
@@ -1064,7 +1065,7 @@ func _go_explore() -> void:
 
 func _go_dialog(npc_id: String) -> void:
 	_dialog = DialogEngine.new()
-	if not _dialog.load_file(NPC_DIR + npc_id + ".json"):
+	if not _dialog.load_file(NPC_DIR + npc_id + ".json", GameState):
 		return
 	_dialog_npc = npc_id
 	_state = State.DIALOG
@@ -1233,6 +1234,19 @@ func _rebuild_buttons(r: Dictionary) -> void:
 		jb.text = "Jack In"
 		jb.pressed.connect(_go_matrix)
 		_button_bar.add_child(jb)
+	# Skull-socket actions: any slottable chip (item "slot": true) you're carrying
+	# and haven't slotted yet. Available in any room until it's in, then it's gone.
+	for iid in GameState.inventory:
+		if not _catalog.item(iid).get("slot", false):
+			continue
+		if GameState.has_flag("slotted_" + iid):
+			continue
+		var sm := Button.new()
+		sm.text = "Insert %s" % _catalog.item_name(iid)
+		sm.tooltip_text = "Slot the chip into your skull socket"
+		sm.add_theme_color_override("font_color", UITheme.ACCENT)
+		sm.pressed.connect(_slot_chip.bind(iid))
+		_button_bar.add_child(sm)
 	var qb2 := Button.new()
 	qb2.text = "Quest"
 	qb2.pressed.connect(_open_quest_log)
@@ -1288,6 +1302,20 @@ func _do_pickup(iid: String) -> void:
 	GameState.set_flag("took_" + iid)
 	GameState.set_flag("granted_" + iid)
 	_toast("Taken: %s" % _catalog.item_name(iid))
+	_check_quest()
+	_refresh_room()
+
+## Slot a chip (item "slot": true) into the skull socket: consume the chip, set
+## slotted_<id>, and chip in its skill if it names one (e.g. the Spanish
+## microsoft grants "Spanish", making Allison intelligible).
+func _slot_chip(iid: String) -> void:
+	var it := _catalog.item(iid)
+	GameState.set_flag("slotted_" + iid)
+	var skill := str(it.get("slot_skill", ""))
+	if skill != "":
+		GameState.skills[skill] = maxi(int(GameState.skills.get(skill, 0)), 3)
+	GameState.inventory.erase(iid)
+	_toast("%s slotted. The socket warms; the world sharpens into meaning." % _catalog.item_name(iid), 2.0)
 	_check_quest()
 	_refresh_room()
 
@@ -1393,6 +1421,15 @@ func _open_settings() -> void:
 	cb.toggled.connect(_set_music_enabled)
 	_fsize(cb, 22)
 	_menu_list.add_child(cb)
+	_menu_label("Music Volume", true)
+	var vs := HSlider.new()
+	vs.min_value = 0.0
+	vs.max_value = 1.0
+	vs.step = 0.05
+	vs.value = AudioManager.music_volume
+	vs.custom_minimum_size = Vector2(1758, 40)
+	vs.value_changed.connect(_set_music_volume)
+	_menu_list.add_child(vs)
 	var ab := CheckButton.new()
 	ab.text = "Autosave"
 	ab.button_pressed = _autosave
@@ -1406,6 +1443,9 @@ func _set_music_enabled(on: bool) -> void:
 	if on and _state == State.MENU and _world.has_room(GameState.current_room):
 		# resume the room's cue right away rather than waiting for a room change
 		AudioManager.play(AudioManager.for_room(_world.room(GameState.current_room)))
+
+func _set_music_volume(v: float) -> void:
+	AudioManager.set_music_volume(v)
 
 func _set_autosave_enabled(on: bool) -> void:
 	_autosave = on
@@ -1560,7 +1600,9 @@ func _on_dialog_option(raw_index: int) -> void:
 		_refresh_dialog()
 
 func _end_dialog() -> void:
-	if _dialog_npc != "":
+	# A repeatable node (e.g. Allison's random Spanish loop) never burns the Talk
+	# button, so the player can keep talking until the gating condition changes.
+	if _dialog_npc != "" and not _dialog.current_repeatable():
 		GameState.set_flag("spoke_" + _dialog_npc)
 	_go_explore()
 

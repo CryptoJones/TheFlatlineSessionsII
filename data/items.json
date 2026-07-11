@@ -7,6 +7,15 @@
 			"price": 900,
 			"desc": "Compressed-air needle gun. Quiet, deniable, very illegal."
 		},
+		"spanish_microsoft": {
+			"name": "Spanish Language microsoft",
+			"type": "misc",
+			"key": true,
+			"price": 0,
+			"slot": true,
+			"slot_skill": "Spanish",
+			"desc": "A gray hardwired language chip — Castilian Spanish. Meant for the socket behind your ear. Slot it and the world starts speaking a language you'll understand."
+		},
 		"site_maps": {
 			"name": "Site maps",
 			"type": "misc",

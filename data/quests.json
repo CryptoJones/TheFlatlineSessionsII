@@ -5,6 +5,7 @@
 			"name": "The Job",
 			"desc": "Say goodbye to the beach. Hear Conroy out. Take the Mitchell contract — or admit you have nothing else.",
 			"steps": [
+				{ "text": "Insert the Spanish Language microsoft into your skull socket", "flag": "slotted_spanish_microsoft" },
 				{ "text": "Walk the beach with Allison one more time.", "flag": "ch01_walked_beach" },
 				{ "text": "Learn what Allison isn't telling you.", "flag": "ch01_allison_truth" },
 				{ "text": "Meet Conroy at the cantina.", "flag": "ch01_met_conroy" },
