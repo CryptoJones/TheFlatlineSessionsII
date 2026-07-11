@@ -90,6 +90,7 @@ var _endgame_layer: Control
 # Chapter-select widgets
 var _chapters_list: VBoxContainer
 var _chapters_scroll: ScrollContainer
+var _chapters_foot: HBoxContainer
 
 # Menu (shop / net / cyberspace / saves / quest log) widgets
 var _menu_title: Label
@@ -304,21 +305,43 @@ func _build_chapters_layer() -> void:
 	_chapters_list.custom_minimum_size = Vector2(1722, 0)
 	_chapters_list.add_theme_constant_override("separation", 10)
 	_chapters_scroll.add_child(_chapters_list)
-	var foot := HBoxContainer.new()
-	foot.position = Vector2(72, 984)
-	foot.size = Vector2(1776, 72)
-	foot.add_theme_constant_override("separation", 16)
-	_chapters_layer.add_child(foot)
+	_chapters_foot = HBoxContainer.new()
+	_chapters_foot.position = Vector2(72, 984)
+	_chapters_foot.size = Vector2(1776, 72)
+	_chapters_foot.add_theme_constant_override("separation", 16)
+	_chapters_layer.add_child(_chapters_foot)
+	_rebuild_chapters_footer()
+
+## Footer buttons. "New game" sits to the LEFT of "Load game" until a save
+## exists, then moves to its RIGHT (Load/Continue becomes the primary action).
+func _rebuild_chapters_footer() -> void:
+	if _chapters_foot == null:
+		return
+	for c in _chapters_foot.get_children():
+		c.queue_free()
+	var newb := Button.new()
+	newb.text = "New game"
+	newb.pressed.connect(_new_game)
 	var loadb := Button.new()
 	loadb.text = "Load game"
 	loadb.pressed.connect(_open_load_menu)
-	foot.add_child(loadb)
+	if SaveSystem.has_any():
+		_chapters_foot.add_child(loadb)
+		_chapters_foot.add_child(newb)
+	else:
+		_chapters_foot.add_child(newb)
+		_chapters_foot.add_child(loadb)
 	var quitb := Button.new()
 	quitb.text = "Quit"
 	quitb.pressed.connect(_do_quit)
-	foot.add_child(quitb)
+	_chapters_foot.add_child(quitb)
+
+## Begin a fresh playthrough from the first chapter (full state reset).
+func _new_game() -> void:
+	_start_chapter(str(_chapters.at(0).get("id", "")))
 
 func _refresh_chapters_list() -> void:
+	_rebuild_chapters_footer()   # save state may have changed → reposition New game
 	for c in _chapters_list.get_children():
 		c.queue_free()
 	for i in _chapters.count():
