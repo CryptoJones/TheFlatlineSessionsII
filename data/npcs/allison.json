@@ -2,7 +2,22 @@
 	"id": "allison",
 	"name": "Allison",
 	"start": "greet",
+	"start_gates": [
+		{ "unless_flag": "slotted_spanish_microsoft", "start": "spanish" }
+	],
 	"nodes": {
+		"spanish": {
+			"repeatable": true,
+			"random_text": [
+				"Eres muy bueno en la cama, pero necesitas aprender español.",
+				"Tienes talento con la boca, pero tu boca necesita hablar español.",
+				"Afortunadamente, no necesitas a microsoft para entender los gemidos.",
+				"Si no sabes qué hacer, consulta las pistas.",
+				"La definición de locura es hacer lo mismo una y otra vez y esperar un resultado diferente cada vez.",
+				"Si no te metes el microsoft en la cuenca del ojo, esta noche te voy a meter mi arnés con consolador por el culo."
+			],
+			"options": []
+		},
 		"greet": {
 			"text": "She turns at the sound of your feet in the sand, hair pushed back by the wind, and smiles like the morning is a thing you built together. \"You were up before the gulls. Bad dreams, or good ones?\"",
 			"options": [

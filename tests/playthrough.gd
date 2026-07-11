@@ -67,7 +67,7 @@ func _check_chapter(ch: Dictionary, quest_defs: Dictionary, item_defs: Dictionar
 	if qid == "" or not quest_defs.has(qid):
 		_err("%s: quest '%s' missing from data/quests.json" % [cid, qid])
 	else:
-		_check_quest(cid, qid, quest_defs[qid], rooms, dbs)
+		_check_quest(cid, qid, quest_defs[qid], rooms, dbs, item_defs)
 
 
 func _walk_rooms(start: String, rooms: Dictionary) -> Dictionary:
@@ -123,7 +123,9 @@ func _check_dialog(npc: String, nd: Dictionary) -> void:
 		_err("npc %s: start node '%s' missing" % [npc, start])
 	for nid in nodes:
 		var n: Dictionary = nodes[nid]
-		if str(n.get("text", "")).strip_edges() == "":
+		# A node needs displayable content: either "text" or a non-empty
+		# "random_text" pool (one line is picked per visit).
+		if str(n.get("text", "")).strip_edges() == "" and (n.get("random_text", []) as Array).is_empty():
 			_err("npc %s: node %s has no text" % [npc, nid])
 		for o in n.get("options", []):
 			var nxt := str(o.get("next", ""))
@@ -131,8 +133,12 @@ func _check_dialog(npc: String, nd: Dictionary) -> void:
 				_err("npc %s: node %s option -> missing node '%s'" % [npc, nid, nxt])
 
 
-func _check_quest(cid: String, qid: String, q: Dictionary, rooms: Dictionary, dbs) -> void:
+func _check_quest(cid: String, qid: String, q: Dictionary, rooms: Dictionary, dbs, item_defs: Dictionary) -> void:
 	var setters := {}
+	# Slottable chips (item "slot": true) set slotted_<id> via the skull-socket action.
+	for iid in item_defs:
+		if item_defs[iid].get("slot", false):
+			setters["slotted_" + str(iid)] = true
 	for rid in rooms:
 		var r: Dictionary = rooms[rid]
 		if r.has("on_enter_flag"):

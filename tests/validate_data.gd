@@ -20,7 +20,7 @@ func _initialize() -> void:
 	var quest_defs: Dictionary = quests.get("quests", {}) if quests != null else {}
 	var item_defs: Dictionary = items.get("items", {}) if items != null else {}
 	var shop_defs: Dictionary = shops.get("shops", {}) if shops != null else {}
-	var setters := _collect_flag_setters(chapters, dbs)
+	var setters := _collect_flag_setters(chapters, dbs, item_defs)
 
 	for ch in chapters["chapters"]:
 		var cid := str(ch.get("id", "?"))
@@ -71,8 +71,13 @@ func _initialize() -> void:
 	_finish()
 
 ## Every flag anything in the data can set.
-func _collect_flag_setters(chapters: Dictionary, dbs) -> Dictionary:
+func _collect_flag_setters(chapters: Dictionary, dbs, item_defs: Dictionary) -> Dictionary:
 	var setters := {}
+	# Slottable chips (item "slot": true) set slotted_<id> when inserted into the
+	# skull socket (engine action _slot_chip).
+	for iid in item_defs:
+		if item_defs[iid].get("slot", false):
+			setters["slotted_" + str(iid)] = true
 	# Dialog nodes: set_flag + grant (granted_<item>). Walk every npc file.
 	var dir := DirAccess.open("res://data/npcs")
 	if dir != null:

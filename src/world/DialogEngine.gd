@@ -8,13 +8,17 @@ extends RefCounted
 ##           "credits": <int>          credit delta on arrival (once per node+npc)
 ##   option: "require_flag": "<flag>"  only shown once the flag is set
 ##           "hide_flag": "<flag>"     hidden once the flag is set
+## Top-level "start_gates": [{require_flag|unless_flag, start}] override the start
+##   node based on story flags (first match wins) — e.g. gate a whole tree behind
+##   an item being slotted. Node "random_text": [..] shows one random line per
+##   visit; node "repeatable": true tells the UI not to burn the Talk button.
 ## Pure logic, no display — the UI reads current_* and calls choose().
 
 var npc_name: String = ""
 var _nodes: Dictionary = {}
 var _current: String = ""
 
-func load_file(path: String) -> bool:
+func load_file(path: String, state = null) -> bool:
 	if not FileAccess.file_exists(path):
 		push_warning("DialogEngine: missing dialog file '%s'" % path)
 		return false
@@ -25,15 +29,40 @@ func load_file(path: String) -> bool:
 	npc_name = parsed.get("name", "")
 	_nodes = parsed["nodes"]
 	_current = parsed.get("start", "")
+	# Flag-gated start: the first gate whose condition holds redirects the opening
+	# node (e.g. speak-only-Spanish until the language chip is slotted).
+	if state != null:
+		for g in parsed.get("start_gates", []):
+			var req := str(g.get("require_flag", ""))
+			if req != "" and not state.has_flag(req):
+				continue
+			var unless := str(g.get("unless_flag", ""))
+			if unless != "" and state.has_flag(unless):
+				continue
+			var s := str(g.get("start", ""))
+			if _nodes.has(s):
+				_current = s
+				break
 	return _nodes.has(_current)
 
 func current_id() -> String:
 	return _current
 
 func current_text() -> String:
+	if not _nodes.has(_current):
+		return ""
+	var node: Dictionary = _nodes[_current]
+	var rt: Array = node.get("random_text", [])
+	if not rt.is_empty():
+		return str(rt[randi() % rt.size()])
+	return node.get("text", "")
+
+## True when the current node is flagged repeatable — the UI uses this to keep the
+## NPC talkable (never marks them "spoken") so a random-line loop can continue.
+func current_repeatable() -> bool:
 	if _nodes.has(_current):
-		return _nodes[_current].get("text", "")
-	return ""
+		return bool(_nodes[_current].get("repeatable", false))
+	return false
 
 ## Options visible at the current node given the story flags in `state`.
 ## Each is the raw option Dictionary plus its original index in "_idx".
