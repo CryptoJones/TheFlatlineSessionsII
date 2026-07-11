@@ -1200,6 +1200,18 @@
       "sourceUrl": "https://unsplash.com/photos/neon-abstract-background-of-lines-3d-rendering-CDIMEZTgyac?utm_source=the_flatline_sessions_ii&utm_medium=referral",
       "license": "Unsplash+ License",
       "acquiredAt": "2026-07-11T05:40:48.586Z"
+    },
+    {
+      "destination": "assets/ui/cover.png",
+      "scene": "Title cover — Count Binary",
+      "query": "computer circuit board brain",
+      "assetSlug": "a-computer-circuit-board-with-a-brain-in-the-middle-of-it-b3SXZlCYJ7c",
+      "description": "a computer circuit board with a brain in the middle of it",
+      "contributor": "Sumaid pal Singh Bakshi",
+      "contributorProfile": "https://unsplash.com/@sumaidsingh?utm_source=the_flatline_sessions_ii&utm_medium=referral",
+      "sourceUrl": "https://unsplash.com/photos/a-computer-circuit-board-with-a-brain-in-the-middle-of-it-b3SXZlCYJ7c?utm_source=the_flatline_sessions_ii&utm_medium=referral",
+      "license": "Unsplash+ License",
+      "acquiredAt": "2026-07-11T19:38:00.000Z"
     }
   ]
 }
