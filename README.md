@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/ui/cover.png" alt="The Flatline Sessions II — Count Binary" width="880">
+</p>
+
 # The Flatline Sessions II — Count Binary
 
 A fan-made, modern-look cyberpunk adventure after a famous cyberpunk trilogy — the second game in
