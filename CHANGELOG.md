@@ -3,6 +3,12 @@
 All notable changes to **The Flatline Sessions II — Count Binary** are documented
 here. This project adheres to [Semantic Versioning](https://semver.org).
 
+## [1.0.6] — 2026-07-10
+
+### Fixed
+- **Reused canonical outro art.** Chapter-outro pages that depicted existing
+  room scenes now reuse those room plates instead of carrying duplicate renders.
+
 ## [1.0.5] — 2026-07-03
 
 ### Changed

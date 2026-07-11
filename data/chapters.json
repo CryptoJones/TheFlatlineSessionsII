@@ -34,7 +34,7 @@
 			],
 			"outro_art": [
 				"res://assets/backgrounds_hd/CH01_outro_01.png",
-				"res://assets/backgrounds_hd/CH01_outro_02.png"
+				"res://assets/backgrounds_hd/C1_airstrip.png"
 			]
 		},
 		{
@@ -76,8 +76,8 @@
 			],
 			"outro_art": [
 				"res://assets/backgrounds_hd/CH02_outro_01.png",
-				"res://assets/backgrounds_hd/CH02_outro_02.png",
-				"res://assets/backgrounds_hd/CH02_outro_03.png"
+				"res://assets/backgrounds_hd/C2_hall.png",
+				"res://assets/backgrounds_hd/C2_living.png"
 			]
 		},
 		{
@@ -112,9 +112,9 @@
 				"res://assets/backgrounds_hd/CH03_intro_03.png"
 			],
 			"outro_art": [
-				"res://assets/backgrounds_hd/CH03_outro_01.png",
+				"res://assets/backgrounds_hd/C3_gallery.png",
 				"res://assets/backgrounds_hd/CH03_outro_02.png",
-				"res://assets/backgrounds_hd/CH03_outro_03.png"
+				"res://assets/backgrounds_hd/C3_street.png"
 			]
 		},
 		{
@@ -150,9 +150,9 @@
 				"res://assets/backgrounds_hd/CH04_intro_03.png"
 			],
 			"outro_art": [
-				"res://assets/backgrounds_hd/CH04_outro_01.png",
+				"res://assets/backgrounds_hd/C4_crash.png",
 				"res://assets/backgrounds_hd/CH04_outro_02.png",
-				"res://assets/backgrounds_hd/CH04_outro_03.png"
+				"res://assets/backgrounds_hd/C4_jet.png"
 			]
 		},
 		{
@@ -186,7 +186,7 @@
 			"outro_art": [
 				"res://assets/backgrounds_hd/CH05_outro_01.png",
 				"res://assets/backgrounds_hd/CH05_outro_02.png",
-				"res://assets/backgrounds_hd/CH05_outro_03.png"
+				"res://assets/backgrounds_hd/C5_recovery.png"
 			]
 		},
 		{
@@ -222,9 +222,9 @@
 				"res://assets/backgrounds_hd/CH06_intro_03.png"
 			],
 			"outro_art": [
-				"res://assets/backgrounds_hd/CH06_outro_01.png",
+				"res://assets/backgrounds_hd/C6_alain.png",
 				"res://assets/backgrounds_hd/CH06_outro_02.png",
-				"res://assets/backgrounds_hd/CH06_outro_03.png"
+				"res://assets/backgrounds_hd/C6_orly.png"
 			]
 		},
 		{
@@ -259,9 +259,9 @@
 				"res://assets/backgrounds_hd/CH07_intro_03.png"
 			],
 			"outro_art": [
-				"res://assets/backgrounds_hd/CH07_outro_01.png",
-				"res://assets/backgrounds_hd/CH07_outro_02.png",
-				"res://assets/backgrounds_hd/CH07_outro_03.png"
+				"res://assets/backgrounds_hd/C7_lab.png",
+				"res://assets/backgrounds_hd/C7_treeline.png",
+				"res://assets/backgrounds_hd/C7_road.png"
 			]
 		},
 		{
@@ -305,7 +305,7 @@
 			"outro_art": [
 				"res://assets/backgrounds_hd/CH08_outro_01.png",
 				"res://assets/backgrounds_hd/CH08_outro_02.png",
-				"res://assets/backgrounds_hd/CH08_outro_03.png"
+				"res://assets/backgrounds_hd/C8_club.png"
 			]
 		},
 		{
@@ -341,8 +341,8 @@
 				"res://assets/backgrounds_hd/CH09_intro_03.png"
 			],
 			"outro_art": [
-				"res://assets/backgrounds_hd/CH09_outro_01.png",
-				"res://assets/backgrounds_hd/CH09_outro_02.png",
+				"res://assets/backgrounds_hd/C9_dome.png",
+				"res://assets/backgrounds_hd/C9_tunnel.png",
 				"res://assets/backgrounds_hd/CH09_outro_03.png"
 			]
 		}
