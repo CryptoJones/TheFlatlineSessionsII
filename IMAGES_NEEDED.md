@@ -1,8 +1,14 @@
-# Images Needed
+# Approved Image Inventory
 
-Current image inventory for **The Flatline Sessions II — Count Binary**.
+Completed image inventory for **The Flatline Sessions II — Count Binary**.
 
-The game currently references **100 unique image files**:
+**Status: complete and officially approved as of v1.0.7.** All 100 production
+plates have been replaced with the selected Unsplash and Unsplash+ artwork at
+1344×768. See [`docs/The_Art_of_The_Flatline_Sessions_II.pdf`](docs/The_Art_of_The_Flatline_Sessions_II.pdf)
+for the art book and [`docs/IMAGE_CREDITS.md`](docs/IMAGE_CREDITS.md) for complete
+contributor attribution.
+
+The game references **100 unique image files**:
 
 - 60 room/location plates
 - 3 cyberspace plates
