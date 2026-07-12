@@ -8,6 +8,7 @@
 	"nodes": {
 		"spanish": {
 			"repeatable": true,
+			"set_flag": "ch01_heard_allison",
 			"random_text": [
 				"Eres muy bueno en la cama, pero necesitas aprender español.",
 				"Tienes talento con la boca, pero tu boca necesita hablar español.",

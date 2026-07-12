@@ -748,6 +748,21 @@ func _current_step_npc() -> String:
 	var flag := str(ss[_quests.current_step(GameState, qid)].get("flag", ""))
 	return str(_resolve_flag_target(flag).get("npc", ""))
 
+## NPCs that a LATER quest step needs (any step after the current one). Their Talk
+## buttons stay hidden until it's their turn, so conversations happen in quest order.
+func _future_objective_npcs() -> Dictionary:
+	var out := {}
+	var ch := _current_chapter()
+	var qid := str(ch.get("quest", ""))
+	if qid == "" or _quests.is_complete(GameState, qid):
+		return out
+	var ss := _quests.steps(qid)
+	for i in range(_quests.current_step(GameState, qid) + 1, ss.size()):
+		var npc := str(_resolve_flag_target(str(ss[i].get("flag", ""))).get("npc", ""))
+		if npc != "":
+			out[npc] = true
+	return out
+
 func _first_matrix_room() -> String:
 	for rid in _world.rooms:
 		if _world.rooms[rid].get("matrix", false):
@@ -1261,15 +1276,18 @@ func _rebuild_buttons(r: Dictionary) -> void:
 			b.tooltip_text = "No exit %s" % dir
 		_button_bar.add_child(b)
 	# Talk actions for NPCs in the room. A conversation you have already finished
-	# drops its button to save space — unless it is the NPC the current quest step
-	# needs, which always stays reachable.
+	# drops its button to save space; and an NPC that a LATER quest step needs stays
+	# hidden until it's the current objective — so you talk to people in quest order.
+	# The NPC the current step needs always stays reachable.
 	var need_npc := _current_step_npc()
+	var later_npcs := _future_objective_npcs()
 	for npc in r.get("npcs", []):
-		if GameState.has_flag("spoke_" + str(npc)) and str(npc) != need_npc:
+		var nid := str(npc)
+		if nid != need_npc and (GameState.has_flag("spoke_" + nid) or later_npcs.has(nid)):
 			continue
 		var b := Button.new()
-		b.text = "Talk: %s" % _npc_label(str(npc))
-		b.pressed.connect(_go_dialog.bind(str(npc)))
+		b.text = "Talk: %s" % _npc_label(nid)
+		b.pressed.connect(_go_dialog.bind(nid))
 		_button_bar.add_child(b)
 	# Pickups (quest items lying in the world). Taken-state rides story_flags.
 	for p in r.get("pickups", []):
