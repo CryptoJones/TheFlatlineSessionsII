@@ -3,6 +3,17 @@
 All notable changes to **The Flatline Sessions II — Count Binary** are documented
 here. This project adheres to [Semantic Versioning](https://semver.org).
 
+## [1.1.1] — 2026-07-11
+
+### Changed
+- **Quest-ordered conversations.** A **Talk to X** button now appears only when X is
+  the *current* quest objective — an NPC a later step needs stays hidden until it's
+  their turn, so you talk to people in quest order (all chapters).
+- **Chapter 1 flow.** The quest now runs **Talk to Allison → Insert the Spanish
+  microsoft → Talk to Allison**: you meet her, realize you can't understand her,
+  slot the language chip, then have the real conversation. Her Talk button appears,
+  disappears while you slot the chip, and reappears.
+
 ## [1.1.0] — 2026-07-11
 
 ### Added
