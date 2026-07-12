@@ -3,6 +3,12 @@
 All notable changes to **The Flatline Sessions II — Count Binary** are documented
 here. This project adheres to [Semantic Versioning](https://semver.org).
 
+## [1.1.2] — 2026-07-12
+
+### Changed
+- **New studio logo.** The Ronin 48 Games Studio pre-splash ident is now the
+  pixel-art version (samurai on a hill of skulls under a red sun).
+
 ## [1.1.1] — 2026-07-11
 
 ### Changed
