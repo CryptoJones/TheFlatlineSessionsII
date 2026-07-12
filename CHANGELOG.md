@@ -3,6 +3,17 @@
 All notable changes to **The Flatline Sessions II — Count Binary** are documented
 here. This project adheres to [Semantic Versioning](https://semver.org).
 
+## [1.1.3] — 2026-07-12
+
+### Fixed
+- **Title screen mouse click.** "Press any key" now also responds to a mouse
+  click — clicks were previously swallowed before reaching the input handler.
+
+### Changed
+- **Allison stays talkable.** Her Talk button on the beach no longer disappears
+  after the first conversation — you can keep talking to her (and hear her
+  random Spanish one-liners) until you slot the language chip.
+
 ## [1.1.2] — 2026-07-12
 
 ### Changed
