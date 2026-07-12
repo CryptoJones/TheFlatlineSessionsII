@@ -1,6 +1,7 @@
 {
 	"id": "allison",
 	"name": "Allison",
+	"repeat_until_flag": "slotted_spanish_microsoft",
 	"start": "greet",
 	"start_gates": [
 		{ "unless_flag": "slotted_spanish_microsoft", "start": "spanish" }
