@@ -6,6 +6,10 @@
 			"name": "Your Room",
 			"bg": "C2_bedroom",
 			"desc": "A mattress, a poster of Tally Isham, and the Ono-Sendai you'd sell a kidney to upgrade. Handle: Count Binary Interrupt. Runs completed: zero. Tonight that number changes.",
+			"interactions": [
+				{"id":"ch02_read_home","label":"Look around before the run","pages":["The room is a museum of intended escape: cowboy magazines, hand-copied ICE diagrams, and a Tally Isham poster concealing the stain where the wall leaks. Your mother calls the deck a toy because admitting its price would mean admitting what you plan to become. Count Binary Interrupt is written inside the case in marker, a handle waiting for evidence."],"set_flag":"ch02_read_home","once":true,"minutes":6},
+				{"id":"ch02_hear_barrytown","label":"Monitor the Barrytown boards","pages":["The local board treats first runs as comedy until somebody dies. Veterans trade contradictory rules: never borrow software, never trust a broker, never hit a target you cannot name. Two-a-Day's node is absent from every warning, which feels less like innocence than careful maintenance. You disconnect before caution can become good sense."],"set_flag":"ch02_heard_barrytown","once":true,"minutes":8}
+			],
 			"exits": { "east": "c2_living" }
 		},
 		"c2_living": {

@@ -6,6 +6,10 @@
 			"name": "Andrea's Flat",
 			"bg": "C6_andrea",
 			"desc": "Morning light through tall windows, coffee going cold beside Virek's dossier. Andrea watches you dress for a meeting with the man who broke your career and asks, gently, if you're sure.",
+			"interactions": [
+				{"id":"ch06_review_provenance","label":"Arrange the box provenance notes","pages":["Names and sales form a trail designed to look accidental: collectors who never met, galleries that handled one object and closed, payments routed through dead companies. The boxes move like messages passed hand to hand. Every owner believes they purchased an artwork; none asks whether the artwork was traveling somewhere."],"set_flag":"ch06_reviewed_provenance","once":true,"minutes":14},
+				{"id":"ch06_watch_paco","label":"Review Andrea's street-camera loop","pages":["Andrea's security loop caught Paco outside before dawn. He watches reflections instead of faces and keeps the street on one side so nobody can approach unseen. His protection is competent, conspicuous, and meant to remind you that Virek's reach is a physical fact. Twice he checks a figure who is watching him back."],"set_flag":"ch06_watched_paco","once":true,"minutes":7}
+			],
 			"npcs": ["andrea6"],
 			"exits": { "south": "c6_ternes" }
 		},

@@ -13,6 +13,10 @@
 			"name": "Dead Mall Concourse",
 			"bg": "C4_mall",
 			"desc": "A shopping mall the desert has been eating for fifty years. Sand drifts through shattered skylights across the food court. Your team moves through the ruins like ghosts with clipboards.",
+			"interactions": [
+				{"id":"ch04_read_mall","label":"Walk the mall as a battlefield","pages":["The concourse offers long fields of fire and almost no honest cover. Storefront mirrors multiply movement; service corridors bypass every checkpoint; the broken roof gives anything airborne a view straight into the operation. Conroy chose concealment from civilians, not defense from Maas. Those are not the same problem."],"set_flag":"ch04_read_mall","once":true,"minutes":12},
+				{"id":"ch04_audit_pod","label":"Audit the pod manifest","pages":["The official manifest describes a defector arriving intact. The sealed drawers prepare for something else: synthetic blood, cranial stabilization, immune suppressants, restraints sized for a smaller patient. Somebody planned for catastrophic injury and somebody may have known Mitchell would not be the body on the table."],"set_flag":"ch04_audited_pod","once":true,"minutes":11}
+			],
 			"exits": { "south": "c4_bunker", "west": "c4_perimeter", "east": "c4_medpod", "north": "c4_pad" }
 		},
 		"c4_perimeter": {

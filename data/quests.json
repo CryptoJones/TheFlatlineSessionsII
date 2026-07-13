@@ -5,18 +5,29 @@
 			"name": "The Job",
 			"desc": "Say goodbye to the beach. Hear Conroy out. Take the Mitchell contract — or admit you have nothing else.",
 			"steps": [
-				{ "text": "Talk to Allison on the beach.", "flag": "ch01_heard_allison" },
+				{ "text": "Take stock of the body the clinics rebuilt.", "flag": "ch01_examined_reconstruction", "optional": true },
+				{ "text": "Find out who paid for your recovery.", "flag": "ch01_found_clinic_invoice", "optional": true },
+				{ "text": "Look closely at the beach house Hosaka provided.", "flag": "ch01_read_the_set", "optional": true },
+				{ "text": "Talk to Allison on the beach before inserting the microsoft.", "flag": "ch01_heard_allison", "optional": true },
 				{ "text": "Insert the Spanish Language microsoft into your skull socket", "flag": "slotted_spanish_microsoft" },
 				{ "text": "Talk to Allison — now that you can understand her.", "flag": "ch01_allison_truth" },
+				{ "text": "Walk the tide pools and test your recovered memory.", "flag": "ch01_tested_memory", "optional": true },
+				{ "text": "Check the coast road for surveillance.", "flag": "ch01_swept_road", "optional": true },
 				{ "text": "Meet Conroy at the cantina.", "flag": "ch01_met_conroy" },
 				{ "text": "Review the Mitchell dossier.", "flag": "granted_mitchell_dossier" },
-				{ "text": "Accept the extraction contract.", "flag": "ch01_accepted_job" }
+				{ "text": "Study the gaps in Mitchell's dossier.", "flag": "ch01_reviewed_dossier", "optional": true },
+				{ "text": "Accept the extraction contract.", "flag": "ch01_accepted_job" },
+				{ "text": "Review the Arizona site briefing.", "flag": "ch01_reviewed_site", "optional": true },
+				{ "text": "Review the extraction crew briefing.", "flag": "ch01_reviewed_crew", "optional": true },
+				{ "text": "Board Hosaka's charter and depart for Arizona.", "flag": "ch01_boarded_charter" }
 			]
 		},
 		"q02_first_run": {
 			"name": "First Run",
 			"desc": "Run the target Two-a-Day sold you. Survive what's waiting in the ice. Get out of Barrytown alive.",
 			"steps": [
+				{ "text": "Study the traces of Bobby's life in the condo.", "flag": "ch02_read_home", "optional": true },
+				{ "text": "Listen to what Barrytown says about first runs.", "flag": "ch02_heard_barrytown", "optional": true },
 				{ "text": "Pick up the icebreaker slab's run codes from Leon's.", "flag": "ch02_got_codes" },
 				{ "text": "Jack in from your mother's condo and run the target.", "flag": "cracked_barrytown_target" },
 				{ "text": "Come to on the floor — and understand what saved you.", "flag": "ch02_saved_by_girl" },
@@ -28,6 +39,8 @@
 			"name": "The Commission",
 			"desc": "The richest man alive wants to hire the most disgraced gallerist in Paris. Hear the offer. See the box. Decide.",
 			"steps": [
+				{ "text": "Revisit the evidence that destroyed Marly's gallery.", "flag": "ch03_revisited_forgery", "optional": true },
+				{ "text": "Consider what Virek's garden reveals about its owner.", "flag": "ch03_read_garden", "optional": true },
 				{ "text": "Survive the interview at Galerie Duperey.", "flag": "ch03_interviewed" },
 				{ "text": "Walk in Virek's garden — the Güell Park construct.", "flag": "ch03_met_virek" },
 				{ "text": "Study the Cornell box he keeps in the dark.", "flag": "ch03_saw_box" },
@@ -39,6 +52,8 @@
 			"name": "The Extraction",
 			"desc": "Mitchell comes over the wire at dawn. Have the site, the surgeons, and the exit ready when he does.",
 			"steps": [
+				{ "text": "Read the abandoned mall as a defensive position.", "flag": "ch04_read_mall", "optional": true },
+				{ "text": "Audit the medical pod's unlisted capabilities.", "flag": "ch04_audited_pod", "optional": true },
 				{ "text": "Inspect the perimeter with Sutcliffe.", "flag": "ch04_perimeter_walked" },
 				{ "text": "Check the medical pod and its surgical team.", "flag": "ch04_medpod_checked" },
 				{ "text": "Take Webber's read on the crew — and on Conroy.", "flag": "ch04_webber_talk" },
@@ -51,6 +66,8 @@
 			"name": "The Loa",
 			"desc": "The men who saved you deal with things that live in the matrix. Find out what touched you in the ice — and what it wants.",
 			"steps": [
+				{ "text": "Look out over the Projects and Barrytown.", "flag": "ch05_read_projects", "optional": true },
+				{ "text": "Study the offerings in the hounfor.", "flag": "ch05_studied_altar", "optional": true },
 				{ "text": "Hear Beauvoir's explanation of the loa.", "flag": "ch05_beauvoir_lesson" },
 				{ "text": "Learn who really owns the icebreaker you ran.", "flag": "ch05_slab_truth" },
 				{ "text": "Ask Jackie about the girl in the ice — Vyèj Mirak.", "flag": "ch05_vyej_named" },
@@ -62,6 +79,8 @@
 			"name": "Names of the Dead",
 			"desc": "Alain has a lead on the boxes and a price. Pay it. Then deal with what paying it uncovers.",
 			"steps": [
+				{ "text": "Review Marly's notes on the boxes' provenance.", "flag": "ch06_reviewed_provenance", "optional": true },
+				{ "text": "Watch Paco watching the Louvre crowd.", "flag": "ch06_watched_paco", "optional": true },
 				{ "text": "Meet Alain at the brasserie.", "flag": "ch06_met_alain" },
 				{ "text": "Raise his price from Virek's chip.", "flag": "ch06_paid_alain" },
 				{ "text": "Confide in Andrea — someone has to know.", "flag": "ch06_andrea_talk" },
@@ -74,6 +93,8 @@
 			"name": "The Squirrel Wood",
 			"desc": "Rudy can scan what Mitchell grew in his daughter's head. Stay long enough to learn it. Leave before it kills your brother.",
 			"steps": [
+				{ "text": "Remember the brothers who grew up at the farm.", "flag": "ch07_remembered_farm", "optional": true },
+				{ "text": "Study the machines Rudy built outside the system.", "flag": "ch07_studied_workshop", "optional": true },
 				{ "text": "Talk your way past Rudy's dogs and Rudy.", "flag": "ch07_rudy_greeting" },
 				{ "text": "Let Sally settle Angie in.", "flag": "ch07_angie_settled" },
 				{ "text": "Help Rudy run the scan.", "flag": "ch07_scan_done" },
@@ -86,6 +107,8 @@
 			"name": "Count Binary Interrupt",
 			"desc": "The club is a box with you inside it. Break the siege the only way a cowboy can — from the inside of the matrix.",
 			"steps": [
+				{ "text": "Listen to the Hypermart closing around the siege.", "flag": "ch08_heard_hypermart", "optional": true },
+				{ "text": "Study the relics of Jammer's cowboy years.", "flag": "ch08_studied_relics", "optional": true },
 				{ "text": "Take stock of the siege with Jammer.", "flag": "ch08_jammer_briefed" },
 				{ "text": "Hear Beauvoir's read on who's paying the street.", "flag": "ch08_beauvoir_read" },
 				{ "text": "Jack in from Jammer's deck with Jackie.", "flag": "ch08_jacked_in" },
@@ -98,6 +121,8 @@
 			"name": "Wrack and Whirl",
 			"desc": "Dock at the dead cores. Find the hands that make the boxes. Be standing somewhere survivable when Virek reaches for them.",
 			"steps": [
+				{ "text": "Listen to the Sweet Jane's salvagers describe the cores.", "flag": "ch09_heard_salvagers", "optional": true },
+				{ "text": "Examine what the dead corridors remember.", "flag": "ch09_read_corridor", "optional": true },
 				{ "text": "Dock the Sweet Jane at the cores.", "flag": "ch09_docked" },
 				{ "text": "Follow Jones through the dark to the Wig.", "flag": "ch09_met_wig" },
 				{ "text": "Reach the boxmaker's dome.", "flag": "ch09_found_boxmaker" },

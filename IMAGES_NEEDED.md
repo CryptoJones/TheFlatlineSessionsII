@@ -2,11 +2,9 @@
 
 Completed image inventory for **The Flatline Sessions II — Count Binary**.
 
-**Status: complete and officially approved as of v1.0.7.** All 100 production
-plates have been replaced with the selected Unsplash and Unsplash+ artwork at
-1344×768. See [`docs/The_Art_of_The_Flatline_Sessions_II.pdf`](docs/The_Art_of_The_Flatline_Sessions_II.pdf)
-for the art book and [`docs/IMAGE_CREDITS.md`](docs/IMAGE_CREDITS.md) for complete
-contributor attribution.
+**Status: complete.** The production plates use the current story-aligned artwork
+at 1344×768. See [`docs/The_Art_of_The_Flatline_Sessions_II.pdf`](docs/The_Art_of_The_Flatline_Sessions_II.pdf)
+for the indexed artbook and scene context.
 
 The game references **100 unique image files**:
 
@@ -15,10 +13,8 @@ The game references **100 unique image files**:
 - 27 unique chapter-intro story plates
 - 10 unique chapter-outro story plates
 
-The intended replacement source for grounded scenes is the free/open Unsplash
-library. Keep the final game images at 16:9 / 1344×768 or crop them to that
-shape. Avoid readable text, logos, watermarks, and identifiable people where
-possible.
+Keep final game images at 16:9 / 1344×768 or crop them to that shape. Avoid
+readable text, logos, watermarks, and identifiable people where possible.
 
 ## Room/location plates
 

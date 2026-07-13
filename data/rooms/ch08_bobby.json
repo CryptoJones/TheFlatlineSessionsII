@@ -6,6 +6,10 @@
 			"name": "Hypermart Maze",
 			"bg": "C8_hypermart",
 			"desc": "A dead department store gone coral reef: stall growing on stall, incense and solder smoke, a hundred small economies stacked to the water-stained ceiling. Half the stalls are shuttering early. The street knows something's coming.",
+			"interactions": [
+				{"id":"ch08_hear_hypermart","label":"Listen to the market closing","pages":["Shutters descend in a sequence no alarm announced. Vendors pass warnings in three languages, moving children and expensive stock toward hidden stairs. The gangs outside think they are gathering spontaneously. Everyone who actually lives here can hear the money behind the anger."],"set_flag":"ch08_heard_hypermart","once":true,"minutes":8},
+				{"id":"ch08_study_relics","label":"Browse a cowboy-memory stall","pages":["Old trodes, obsolete decks, and bootleg photographs of people whose handles became legends fill a shuttering stall. Several faces are marked dead. Jammer appears in the oldest images, already standing at the edge. He survived the era by remembering that every glorious run ended with a body waking somewhere in the meat."],"set_flag":"ch08_studied_relics","once":true,"minutes":9}
+			],
 			"shop": "hyper_stall",
 			"net": true,
 			"exits": { "north": "c8_escalator" }

@@ -13,6 +13,10 @@
 			"name": "Hounfor — Altar Room",
 			"bg": "C5_altar",
 			"desc": "Candles, chromed vévé traced in flour on the floor, a bottle of rum beside a keyboard older than you are. Beauvoir calls it a hounfor — a server room for gods. He says both words like they mean the same thing, because to him they do.",
+			"interactions": [
+				{"id":"ch05_study_altar","label":"Study the altar's circuitry","pages":["Copper traces disappear beneath flour symbols and return beside candles burned down over old circuit boards. Nothing here separates ritual from engineering. Each offering is also an interface, each name also an address. The arrangement makes your deck look less advanced, not more."],"set_flag":"ch05_studied_altar","once":true,"minutes":9},
+				{"id":"ch05_read_projects","label":"Study the Projects map","pages":["A hand-drawn wall map turns the supposedly empty towers into kitchens, workshops, schools, markets, and hounfors. Barrytown occupies one tired corner below. You spent your life imagining the Projects as a void; the map shows a city doing business with intelligences the corporations insist do not exist."],"set_flag":"ch05_read_projects","once":true,"minutes":8}
+			],
 			"npcs": ["beauvoir"],
 			"exits": { "west": "c5_recovery", "east": "c5_kitchen", "south": "c5_gallery", "north": "c5_elevator" }
 		},

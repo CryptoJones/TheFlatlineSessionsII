@@ -6,6 +6,10 @@
 			"name": "Galerie Duperey — Interview",
 			"bg": "C3_gallery",
 			"desc": "Glass, steel, and money too old to raise its voice. The receptionist's smile is exactly four percent warm. You are one scandal deep and they made you wait forty minutes to be sure you felt it.",
+			"interactions": [
+				{"id":"ch03_revisit_forgery","label":"Review the forged box dossier","pages":["The old images still produce the same shame: a Cornell-like box, impeccable aging, persuasive provenance, and Alain's assurances arranged around it like flowers at a funeral. You had wanted discovery badly enough to mistake desire for judgment. Virek has hired that wound as much as he has hired your eye."],"set_flag":"ch03_revisited_forgery","once":true,"minutes":9},
+				{"id":"ch03_read_garden","label":"Study the construct's seams","pages":["The sunlight is too even and the pigeons repeat their smallest gestures. Beyond the tiled bench, Barcelona dissolves into choices made by a designer: what Virek remembers, what he purchased, what he wishes visitors to believe. A dying man has built himself a garden without decay and still cannot stop speaking about escape."],"set_flag":"ch03_read_garden","once":true,"minutes":10}
+			],
 			"npcs": ["paco"],
 			"exits": { "south": "c3_street", "east": "c3_construct" }
 		},

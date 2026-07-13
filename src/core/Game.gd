@@ -74,6 +74,7 @@ var _autosave := true                 # rolling autosave, on by default
 var _world: World
 var _dialog: DialogEngine
 var _dialog_npc: String = ""
+var _interaction_room: String = ""
 var _chapters: Chapters
 var _quests: Quests
 var _catalog: Catalog
@@ -674,8 +675,12 @@ func _open_quest_log() -> void:
 		var steps := _quests.steps(qid)
 		var cur := _quests.current_step(GameState, qid)
 		for i in steps.size():
-			var mark := "✓" if i < cur else ("▸" if i == cur else "·")
-			_menu_label("  %s  %s" % [mark, str(steps[i].get("text", ""))],  i > cur)
+			var step: Dictionary = steps[i]
+			var optional := bool(step.get("optional", false))
+			var done := _quests.step_done(GameState, step)
+			var mark := "✓" if done else ("▸" if i == cur else "·")
+			var tag := "[Optional] " if optional else ""
+			_menu_label("  %s  %s%s" % [mark, tag, str(step.get("text", ""))], not done and i != cur)
 	_menu_button("« Back", _go_explore)
 
 
@@ -728,6 +733,9 @@ func _resolve_flag_target(flag: String) -> Dictionary:
 			var iid := str(p.get("item", ""))
 			if flag == "took_" + iid or flag == "granted_" + iid:
 				return {"room": rid, "action": str(p.get("label", "Take " + _catalog.item_name(iid)))}
+		for interaction in ra.get("interactions", []):
+			if str(interaction.get("set_flag", "")) == flag:
+				return {"room": rid, "action": str(interaction.get("label", "Investigate"))}
 	for rid2 in _world.rooms:
 		var rb: Dictionary = _world.rooms[rid2]
 		for npc in rb.get("npcs", []):
@@ -772,6 +780,8 @@ func _future_objective_npcs() -> Dictionary:
 		return out
 	var ss := _quests.steps(qid)
 	for i in range(_quests.current_step(GameState, qid) + 1, ss.size()):
+		if bool(ss[i].get("optional", false)):
+			continue
 		var npc := str(_resolve_flag_target(str(ss[i].get("flag", ""))).get("npc", ""))
 		if npc != "":
 			out[npc] = true
@@ -1318,6 +1328,11 @@ func _rebuild_buttons(r: Dictionary) -> void:
 		b.text = str(p.get("label", "Take " + _catalog.item_name(iid)))
 		b.pressed.connect(_do_pickup.bind(iid))
 		_button_bar.add_child(b)
+	if not _available_interactions(r).is_empty():
+		var inspectb := Button.new()
+		inspectb.text = "Investigate"
+		inspectb.pressed.connect(_open_interactions)
+		_button_bar.add_child(inspectb)
 	if r.has("shop"):
 		var shopb := Button.new()
 		shopb.text = "Shop"
@@ -1403,6 +1418,69 @@ func _do_pickup(iid: String) -> void:
 	_toast("Taken: %s" % _catalog.item_name(iid))
 	_check_quest()
 	_refresh_room()
+
+func _available_interactions(room: Dictionary) -> Array:
+	var out: Array = []
+	var concluding: Array = []
+	for raw in room.get("interactions", []):
+		var interaction: Dictionary = raw
+		var iid := str(interaction.get("id", ""))
+		if iid == "":
+			continue
+		if bool(interaction.get("once", true)) and GameState.has_flag("seen_interaction_" + iid):
+			continue
+		var req := str(interaction.get("require_flag", ""))
+		if req != "" and not GameState.has_flag(req):
+			continue
+		var hide := str(interaction.get("hide_flag", ""))
+		if hide != "" and GameState.has_flag(hide):
+			continue
+		var item := str(interaction.get("require_item", ""))
+		if item != "" and not GameState.inventory.has(item):
+			continue
+		if bool(interaction.get("conclude_chapter", false)):
+			concluding.append(interaction)
+		else:
+			out.append(interaction)
+	out.append_array(concluding)
+	return out
+
+func _open_interactions() -> void:
+	var room := _world.room(GameState.current_room)
+	var available := _available_interactions(room)
+	if available.is_empty():
+		_go_explore()
+		return
+	_interaction_room = GameState.current_room
+	_menu_begin("INVESTIGATE — %s" % str(room.get("name", GameState.current_room)),
+		"Look closer, use what you know, or act on the moment.")
+	for interaction in available:
+		_menu_button(str(interaction.get("label", "Investigate")), _begin_interaction.bind(interaction))
+	_menu_button("« Back", _go_explore)
+
+func _begin_interaction(interaction: Dictionary) -> void:
+	var pages: Array = interaction.get("pages", [])
+	var art = interaction.get("art", "")
+	if (typeof(art) == TYPE_STRING and str(art) == "") or (typeof(art) == TYPE_ARRAY and art.is_empty()):
+		var bg := str(_world.room(_interaction_room).get("bg", ""))
+		art = "res://assets/backgrounds_hd/%s.png" % bg if bg != "" else ""
+	_begin_story(str(interaction.get("label", "Investigate")), art, pages,
+		[["« Return", _complete_interaction.bind(interaction)]])
+
+func _complete_interaction(interaction: Dictionary) -> void:
+	var iid := str(interaction.get("id", ""))
+	if iid != "":
+		GameState.set_flag("seen_interaction_" + iid)
+	var flag := str(interaction.get("set_flag", ""))
+	if flag != "":
+		GameState.set_flag(flag)
+	GameState.game_minutes += maxi(0, int(interaction.get("minutes", 0)))
+	_check_quest()
+	if bool(interaction.get("conclude_chapter", false)) and _quests.is_complete(GameState, str(_current_chapter().get("quest", ""))):
+		_conclude_chapter()
+		return
+	_autosave_now()
+	_go_explore()
 
 ## Slot a chip (item "slot": true) into the skull socket: consume the chip, set
 ## slotted_<id>, and chip in its skill if it names one (e.g. the Spanish

@@ -19,6 +19,10 @@
 			"name": "Farm Kitchen",
 			"bg": "C7_kitchen",
 			"desc": "Coffee in enamel cups, a shotgun over the door, Sally moving quiet between stove and table. She's already put the girl to bed twice; the girl keeps waking up saying names.",
+			"interactions": [
+				{"id":"ch07_remember_farm","label":"Remember the old kitchen","pages":["The table carries knife marks from when you and Rudy were boys. Your mother sat beneath the window through her long illness while you learned that departure could feel like survival. Rudy stayed, inherited the rooms and the dying, and made a life from whatever machines the county discarded."],"set_flag":"ch07_remembered_farm","once":true,"minutes":10},
+				{"id":"ch07_study_workshop","label":"Study Rudy's schematics","pages":["Schematics spread across the kitchen table show veterinary scanners talking to military surplus through boards Rudy etched himself. Dog hoods suppress scent, sound, and panic with patents nobody licensed. The drawings prove what your brother might have become inside a corporation—and why remaining outside one has consumed him."],"set_flag":"ch07_studied_workshop","once":true,"minutes":12}
+			],
 			"npcs": ["sally"],
 			"exits": { "south": "c7_yard", "east": "c7_lab", "west": "c7_backroom" }
 		},

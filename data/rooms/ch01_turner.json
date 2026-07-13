@@ -5,13 +5,53 @@
 		"c1_bedroom": {
 			"name": "Beach House — Bedroom",
 			"bg": "C1_bedroom",
-			"desc": "White walls, a ceiling fan turning slow, salt on the sea wind through the shutters. Three months of surgical reconstruction ended in this bed, and for once the dreams were only dreams.",
+			"desc": "White walls, a ceiling fan turning slow, salt on the sea wind through the shutters. Three months of surgical reconstruction ended in this bed. The room is restful in the calculated way of a clinic brochure, and nothing in it belongs to you.",
+			"interactions": [
+				{
+					"id": "ch01_examine_reconstruction",
+					"label": "Examine the clinic's work",
+					"pages": [
+						"The mirror gives you the inventory. The face is yours because the surgeons had records, but the left cheek carries a fraction more weight and one eye catches the light differently. Beneath the robe, pale seams cross your ribs and vanish into new-grown skin. You remember none of the procedures. You remember New Delhi as light, noise, and then an animal shape coming through a hotel door.",
+						"The Dutch clinic taught you to walk by making the floor tilt under you. It taught your hands with blocks, wire, and finally a disassembled pistol. Muscle memory returned before affection, appetite, or sleep. The doctors celebrated each recovered reflex without asking what the reflex had once been used for.",
+						"Your pulse remains steady while you inspect the scars. That steadiness is part of the reconstruction too: glands tuned, panic response shaved down, pain routed into something cold and usable. Whoever paid did not merely want Turner alive. They wanted the extraction specialist put back into service."
+					],
+					"set_flag": "ch01_examined_reconstruction",
+					"once": true,
+					"minutes": 8
+				},
+				{
+					"id": "ch01_find_invoice",
+					"label": "Search the bedside cabinet",
+					"pages": [
+						"The drawer holds clinic gauze, a hotel Bible in Spanish, and a folded thermal sheet somebody forgot to destroy. Most of the printing has faded, but the authorization block remains readable: HOSAKA BIOTECHNICAL, SPECIAL PROJECTS. The amounts are expressed in corporate accounting codes rather than money.",
+						"There are line items for vat growth, spinal reconstruction, endocrine conditioning, and psychological stabilization. The final entry is not medical at all: MEXICO RECOVERY ENVIRONMENT, SIX WEEKS, ASSET OBSERVATION INCLUDED. Allison's name does not appear. She has been entered as a service category.",
+						"You fold the sheet along its old crease. Conroy has not arrived yet, but his hand is already visible. Somebody bought the beach, the house, the woman, and the repaired body standing over the drawer. The only missing entry is the job that makes the expense worthwhile."
+					],
+					"set_flag": "ch01_found_clinic_invoice",
+					"once": true,
+					"minutes": 6
+				}
+			],
 			"exits": { "east": "c1_veranda" }
 		},
 		"c1_veranda": {
 			"name": "Beach House — Veranda",
 			"bg": "C1_veranda",
-			"desc": "Bleached boards, two chairs, a table with yesterday's glasses. Below, the Pacific rolls in the way it has since before anyone owned anything.",
+			"desc": "Bleached boards, two chairs, a table with yesterday's glasses. Below, the Pacific rolls in the way it has since before anyone owned anything. The house is positioned to make the horizon unavoidable and the road behind it easy to forget.",
+			"interactions": [
+				{
+					"id": "ch01_read_set",
+					"label": "Read the house like an operation",
+					"pages": [
+						"Once you stop treating the veranda as a place to recover, its choices become obvious. The chairs face the water but leave both doors in peripheral view. The rail is low enough to clear in one movement. A dark lens no larger than a nail head watches the beach path from beneath the eave.",
+						"The kitchen is stocked with foods from a rehabilitation profile you never filled out. The bottles are expensive but measured. Even the loose board by the stairs is theatrical: it squeaks loudly enough to announce anyone coming up from the sand. A security designer has built an idyll from the same principles as a safe house.",
+						"You feel no anger yet. Anger is expensive before the shape of the operation is known. You catalogue the lens, the road, the distance to the airstrip, and Allison below at the tideline. Then you go to hear which parts of the set she knows are false."
+					],
+					"set_flag": "ch01_read_the_set",
+					"once": true,
+					"minutes": 7
+				}
+			],
 			"exits": { "west": "c1_bedroom", "south": "c1_beach", "north": "c1_road" }
 		},
 		"c1_beach": {
@@ -24,13 +64,41 @@
 		"c1_tidepools": {
 			"name": "Tide Pools",
 			"bg": "C1_tidepools",
-			"desc": "Black volcanic rock full of small green worlds. Anemones, brittle stars, a crab working its patient trade. Simple machines, honestly employed. It won't stay this quiet.",
+			"desc": "Black volcanic rock full of small green worlds. Anemones, brittle stars, a crab working its patient trade. Each pool is complete until the next wave breaks over it. The fragile order makes you think of bodies, teams, and plans.",
+			"interactions": [
+				{
+					"id": "ch01_test_memory",
+					"label": "Test what the clinic restored",
+					"pages": [
+						"You crouch above a pool and begin naming what you see in three languages. Spanish arrives warm from the microsoft, laid over the older words without quite touching them. Beneath the names, procedural memory supplies tide tables, concealment angles, the weight of a compact pistol wet with salt.",
+						"Then come the involuntary fragments: a rooftop in Singapore; a scientist crying inside a freight elevator; the smooth pressure of a trigger while somebody else counts down. The clinic returned the skills in sealed compartments. The memories leak through at their edges.",
+						"A wave floods the pool and every small animal holds fast. You understand the lesson without liking it. Reconstruction did not make you new. It made you continuous enough for whoever owned the old obligations to collect them."
+					],
+					"set_flag": "ch01_tested_memory",
+					"once": true,
+					"minutes": 9
+				}
+			],
 			"exits": { "west": "c1_beach" }
 		},
 		"c1_road": {
 			"name": "Coast Road",
 			"bg": "C1_road",
-			"desc": "A cracked two-lane running north into haze. A rusted sign promises a town that mostly isn't there anymore. Something in you is already reading the road for ambush sites. That reflex never healed shut.",
+			"desc": "A cracked two-lane running north into haze. A rusted sign promises a town that mostly is not there anymore. The sea is invisible behind the palms, and your body has already begun measuring sightlines and places where a vehicle could wait.",
+			"interactions": [
+				{
+					"id": "ch01_sweep_road",
+					"label": "Sweep the road for surveillance",
+					"pages": [
+						"You walk north without looking hurried. A delivery van has passed twice since dawn, too clean for the village and carrying no company mark. Farther up, fresh tire cuts cross the dust beside an abandoned filling station. Somebody parked there through the night with a clear view of the house road.",
+						"At the cantina turnoff you find a fiber no thicker than hair caught under a stone. It leads to a discarded pickup smaller than a fingernail: passive optics, corporate quality, already wiped. The watcher wanted to know when you left the beach, not where you went afterward.",
+						"That means the meeting ahead is not an invitation. It is the next scheduled phase. You leave the pickup where it lies and continue toward the cantina, giving the unseen observer exactly the picture they expected."
+					],
+					"set_flag": "ch01_swept_road",
+					"once": true,
+					"minutes": 12
+				}
+			],
 			"exits": { "south": "c1_veranda", "east": "c1_cantina", "north": "c1_airstrip" }
 		},
 		"c1_cantina": {
@@ -38,6 +106,23 @@
 			"bg": "C1_cantina",
 			"desc": "Tin roof, warm beer, a dead jukebox. The man waiting at the corner table has a new face since you saw him last, but the smile underneath it hasn't improved: Conroy, who finds people for money, and has found you.",
 			"npcs": ["conroy"],
+			"interactions": [
+				{
+					"id": "ch01_review_dossier",
+					"label": "Open the Mitchell dossier",
+					"require_flag": "granted_mitchell_dossier",
+					"require_item": "mitchell_dossier",
+					"pages": [
+						"The chip paints Christopher Mitchell's professional life across your field of vision. Patents, conference footage, sealed Maas appointments. His work made living cells carry functions once assigned to silicon. Every corporation on the board wants the process, and Maas has buried its inventor inside an Arizona mesa.",
+						"The extraction plan is precise where machinery is concerned: ultralight flight path, perimeter frequencies, surgical pod, aircraft on standby. Where it concerns Mitchell himself, the file becomes fog. No current medical scan. No verified photograph. No explanation for how a man under total biological security contacted Hosaka—or why he requested Turner by name.",
+						"A personnel appendix lists specialists already assembling at a dead shopping mall: Sutcliffe on perimeter defense, Webber handling communications, a medical team without biographies, Conroy above everyone. The document calls them independent contractors. In your trade that often means witnesses selected for disposability.",
+						"You close the file knowing two things. The extraction is real, and the account of it is not. If you take the job, survival will depend on learning which missing fact Conroy expects to kill you."
+					],
+					"set_flag": "ch01_reviewed_dossier",
+					"once": true,
+					"minutes": 18
+				}
+			],
 			"net": true,
 			"exits": { "west": "c1_road" }
 		},
@@ -48,6 +133,48 @@
 			"requires_flag": "ch01_accepted_job",
 			"locked_text": "There's no reason to be out here. Not yet. The beach is still yours for a few more hours.",
 			"on_enter_flag": "ch01_at_airstrip",
+			"interactions": [
+				{
+					"id": "ch01_board_charter",
+					"label": "Board the Hosaka charter",
+					"pages": [
+						"The pilot checks your face against a retinal token and never asks for a name. Inside, six seats have been reduced to two, leaving room for encrypted communications gear and a restraint frame sized for a human body. The frame is folded flat, but its presence tells you what sort of return flight Hosaka planned.",
+						"The coast drops away beneath the wing. From altitude the beach house becomes a white mark between road and water, convincing only because distance hides the cameras. Allison is nowhere visible. You tell yourself that not looking longer is a professional choice.",
+						"North waits the border, the desert, and a mall emptied by an older economic disaster. You fasten the belt while the repaired bones in your chest register the engines as a vibration they have never felt before."
+					],
+					"set_flag": "ch01_boarded_charter",
+					"conclude_chapter": true,
+					"once": true,
+					"minutes": 35
+				},
+				{
+					"id": "ch01_review_site",
+					"label": "Study the Arizona site feed",
+					"art": ["res://assets/backgrounds_hd/C4_mall.png", "res://assets/backgrounds_hd/C4_bunker.png"],
+					"pages": [
+						"A preflight terminal wakes beside the charter stairs. Satellite imagery shows a dead mall beside a prewar highway, its roof peeled open in places by heat. Hosaka has hidden the command bunker beneath an old department store and parked the surgical pod where delivery trucks once unloaded appliances.",
+						"The mesa lies beyond the horizon, owned entirely by Maas. Mitchell is meant to cross that distance in an ultralight too small for radar, descending along an obsolete power corridor. At dawn the site will catch him, stabilize him, and move him to the waiting jet before Maas understands what has happened.",
+						"It is a beautiful plan in the way diagrams are beautiful. The feed does not show heat shimmer, frightened people, faulty equipment, or an enemy who has read the same terrain. You begin adding those things in your head until the clean arrows look like possible lines of fire."
+					],
+					"set_flag": "ch01_reviewed_site",
+					"once": true,
+					"minutes": 22
+				},
+				{
+					"id": "ch01_review_crew",
+					"label": "Review the extraction crew",
+					"art": ["res://assets/backgrounds_hd/C4_perimeter.png", "res://assets/backgrounds_hd/C4_ridge.png", "res://assets/backgrounds_hd/C4_medpod.png"],
+					"pages": [
+						"Sutcliffe's record is military and aggressively ordinary: perimeter work, corporate border actions, three contracts whose locations have been erased. His evaluations praise discipline and note that he asks for complete threat models. Conroy has given him the same incomplete file he gave you.",
+						"Webber appears under four surnames. Communications, intrusion, field intelligence. One photograph catches her looking away from the camera as if she has already found the person taking it. Her last two teams completed their assignments and dissolved without reunions.",
+						"The medical staff are almost blank. Their equipment manifest is not. The pod can replace blood, suppress immune response, and keep a shattered subject alive long enough to reach a better clinic. Hosaka expects Mitchell to arrive injured—or expects somebody else to need the machinery afterward.",
+						"Conroy's own page contains no history at all, only current authority. You shut down the feed as the desert appears beneath the wing. By the time you meet the crew, you know enough to distrust all of them and just enough to understand that some may deserve it less than others."
+					],
+					"set_flag": "ch01_reviewed_crew",
+					"once": true,
+					"minutes": 25
+				}
+			],
 			"exits": { "south": "c1_road" }
 		}
 	}
