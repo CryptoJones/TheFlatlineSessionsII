@@ -6,6 +6,10 @@
 			"name": "Sweet Jane — Cabin",
 			"bg": "C9_sweetjane",
 			"desc": "A salvage tug stitched from a century of parts, warm with the smell of coffee bulbs and machine oil. Rez hangs upside down in the pilot's web; Jones drifts with a cat that has opinions. Out the port, the dead cores tumble slowly against the stars.",
+			"interactions": [
+				{"id":"ch09_hear_salvagers","label":"Ask what the salvagers found","pages":["Rez describes rooms still set for dinners nobody attended and vaults full of family recordings sold by weight. Jones found a child's shoe sealed behind a server rack. The cores were stripped of value years ago, yet small objects keep migrating toward the section where the machinery still moves."],"set_flag":"ch09_heard_salvagers","once":true,"minutes":10},
+				{"id":"ch09_read_corridor","label":"Examine the tug's interior scan","pages":["The scan shows dust gathered around dead cables, except for one disturbed path. Buttons, scraps of paper, a ribbon, and a cracked photograph have all traveled in the same direction without gravity or human hands. The station is not dead. It is remembering selectively."],"set_flag":"ch09_read_corridor","once":true,"minutes":11}
+			],
 			"npcs": ["rez", "jones"],
 			"exits": { "east": "c9_dock" }
 		},

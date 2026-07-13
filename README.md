@@ -32,15 +32,13 @@ and Marly's stay in the meat.
 
 ## Status
 
-**Playable end to end with an officially approved photographic art pass.**
+**Playable end to end with a complete production art pass.**
 The whole story is playable from beginning to end.
 All dialog, quests, items, shops, and matrix targets are in place, written as original in-world
 prose throughout.
 
-The final art pass is in `assets/backgrounds_hd/` and `assets/cyberspace/`: 100
-approved Unsplash and Unsplash+ photographs cropped to the game's 1344×768 plate
-format. Every image retains its contributor, Unsplash username, profile link,
-original-photo link, destination, and license in the project credits.
+The final art pass is in `assets/backgrounds_hd/` and `assets/cyberspace/`, with
+production artwork cropped consistently to the game's 1344×768 plate format.
 
 The first soundtrack pass is in `assets/audio/music/`, with chapter cues plus title,
 shops, cyberspace, and ICE-combat loops. See [`docs/soundtrack.md`](docs/soundtrack.md).
@@ -48,9 +46,8 @@ Album-cover art is stored in [`assets/album_art/`](assets/album_art/) and mirror
 [`docs/album_art/`](docs/album_art/) for review/export workflows.
 
 Read **[The Art of The Flatline Sessions II](docs/The_Art_of_The_Flatline_Sessions_II.pdf)**
-for the complete 109-page art book. It includes every production plate, the room
-or story description explaining where it appears in the game, and clickable
-credits linking each contributor's `@username` to their Unsplash profile.
+for the complete indexed art book. It includes every production plate and the
+room, story, interaction, or dialogue context explaining where it appears.
 
 ## Run it
 
@@ -89,8 +86,3 @@ src/                      engine (see src/core/Game.gd)
 Fan project after a famous cyberpunk trilogy. Game code and all in-game
 prose are original to this project. Copyright **CryptoJones** <cryptojones@owasp.org>;
 engine shared with The Flatline Sessions.
-
-Photography credits are collected in
-[`docs/IMAGE_CREDITS.md`](docs/IMAGE_CREDITS.md), with structured attribution in
-[`data/image_credits.json`](data/image_credits.json). The art book links every
-contributor and original photograph directly.

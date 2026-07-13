@@ -3,6 +3,34 @@
 All notable changes to **The Flatline Sessions II — Count Binary** are documented
 here. This project adheres to [Semantic Versioning](https://semver.org).
 
+## [2.0.0] — 2026-07-13
+
+### Added
+- **Expanded visual-novel campaign.** Added data-driven investigations throughout
+  all nine chapters, with illustrated story pages, elapsed-time effects, flags,
+  autosaves, hints, and optional item or story gates.
+- **Optional objectives.** New story material is clearly marked `[Optional]`, does
+  not block chapter completion, and can be explored non-linearly whenever its
+  location is accessible.
+- **Chapter 1 story expansion.** Turner now passes through the mandatory Heathrow
+  sickness scene, can explore nine new interactions, and concludes the chapter by
+  boarding Hosaka's charter for Arizona.
+- **Expanded regression coverage.** Added dedicated optional-objective and content-
+  budget tests alongside the full automated campaign playthrough.
+
+### Changed
+- **Complete production-art replacement.** Updated 103 indexed game assets with
+  the new 1344×768 story-aligned artwork, including the Chapter 8 finale plate.
+- **Rebuilt production artbook.** The indexed PDF and Markdown catalogs now use the
+  current artwork and map each public plate to its story, interaction, and dialogue
+  context.
+- **Quest engine.** Quest ordering and completion now ignore unfinished optional
+  steps while continuing to track and display them in the quest log.
+
+### Removed
+- **Obsolete art metadata.** Removed legacy third-party metadata files and the
+  temporary art-review document after the production replacement pass.
+
 ## [1.1.3] — 2026-07-12
 
 ### Fixed
@@ -43,9 +71,8 @@ here. This project adheres to [Semantic Versioning](https://semver.org).
   random-line dialogue in the engine.
 - **Ronin 48 Games Studio logo.** A studio ident now plays on boot, before the
   dedication card and title.
-- **New title cover.** The title screen is now a circuit-board brain (Unsplash+,
-  photograph by Sumaid pal Singh Bakshi), credited in `data/image_credits.json`,
-  `docs/IMAGE_CREDITS.md`, and a new **Title Art** page in the art book.
+- **New title cover.** The title screen now uses circuit-board brain artwork,
+  documented on the **Title Art** page in the artbook.
 - **New game button.** Chapter select gains a **New game** button beside **Load game**
   (left of it when no save exists yet, right of it once a save exists).
 
@@ -55,18 +82,12 @@ here. This project adheres to [Semantic Versioning](https://semver.org).
 ## [1.0.7] — 2026-07-11
 
 ### Added
-- **Approved Unsplash art book.** A 109-page edition of *The Art of The
-  Flatline Sessions II* presents all 100 production plates with their in-game
-  room or story descriptions, contributor display names, clickable Unsplash
-  usernames, profile links, and original-photo links.
-- **Complete image attribution.** Human-readable and machine-readable credit
-  manifests record the contributor, profile, source photograph, destination,
-  and license for every plate.
+- **Production artbook.** *The Art of The Flatline Sessions II* presents the
+  production plates with their in-game room and story descriptions.
 
 ### Changed
-- **Final photographic art pass.** Replaced the 100 generated room,
-  cyberspace, and story placeholders with the officially approved Unsplash and
-  Unsplash+ selections, cropped consistently to 1344×768.
+- **Final photographic art pass.** Replaced the generated room, cyberspace, and
+  story placeholders with a consistent 1344×768 production set.
 
 ## [1.0.6] — 2026-07-10
 

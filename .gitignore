@@ -24,3 +24,5 @@ scratchpad/
 docs/*.pdf
 !docs/The_Art_of_The_Flatline_Sessions_*.pdf
 .agent-yes/
+# Local image replacement drop folder (review assets are intentionally untracked).
+/replacements/
