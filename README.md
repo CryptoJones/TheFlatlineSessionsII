@@ -59,6 +59,13 @@ GPU=1 ./run.sh      # force GPU rendering
 Requires Godot 4.3+. Keyboard: WASD/arrows move, I inventory, Q quest log, F5/F9 quick
 save/load, Esc backs out of menus.
 
+### macOS signing
+
+Starting with v2.0.1, the macOS app is Developer ID signed as Patrick Hannah but
+is not notarized. The signature protects artifact integrity and identifies its
+publisher, though Gatekeeper may still warn about the unnotarized download.
+Verify the release's SHA-256 manifest before bypassing a security warning.
+
 ## Validate the scaffold
 
 ```sh
