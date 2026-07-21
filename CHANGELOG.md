@@ -3,6 +3,14 @@
 All notable changes to **The Flatline Sessions II — Count Binary** are documented
 here. This project adheres to [Semantic Versioning](https://semver.org).
 
+## [2.0.1] — 2026-07-21
+
+### Added
+- Reproducible GitHub Actions tests and three-platform release exports.
+- macOS release archives are signed with a verified Developer ID Application
+  identity in a temporary native-runner keychain. The app remains unnotarized.
+- SHA-256 manifests accompany every release archive.
+
 ## [2.0.0] — 2026-07-13
 
 ### Added
