@@ -3,6 +3,14 @@
 All notable changes to **The Flatline Sessions II — Count Binary** are documented
 here. This project adheres to [Semantic Versioning](https://semver.org).
 
+## [2.0.2] — 2026-08-27
+
+### Changed
+- macOS archives are now signed as **Developer ID Application: Aaron Clark
+  (J6P99Q4479)**. Earlier releases were signed as Patrick Hannah (GPKDR6QL9Q);
+  that private key was destroyed and cannot be reissued, so the signing identity
+  moved to one we still hold. Builds remain signed but **not notarized**.
+- Release notes no longer attribute the signature to the retired identity.
 ## [2.0.1] — 2026-07-21
 
 ### Added
