@@ -3,6 +3,11 @@
 All notable changes to **The Flatline Sessions II — Count Binary** are documented
 here. This project adheres to [Semantic Versioning](https://semver.org).
 
+## [2.1.1] — 2026-10-01
+
+### Changed
+- Rebuilt and re-signed with the new Apple Developer ID (G2 Sub-CA) certificate; no gameplay changes.
+
 ## [2.1.0] — 2026-09-22
 
 ### Added
